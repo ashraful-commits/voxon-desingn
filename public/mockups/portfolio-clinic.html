@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Shifaa Medical Center</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Arial',sans-serif;background:#F0F8FF;color:#0A1A2A;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);box-shadow:0 2px 16px rgba(0,0,0,0.04)}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-cross{width:38px;height:38px;background:linear-gradient(135deg,#0EA5E9,#0284C7);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#fff}
+.logo-name{font-size:17px;font-weight:800;color:#0A1A2A}
+.logo-tag{font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:2px;margin-top:1px}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul a{color:rgba(10,26,42,0.55);text-decoration:none;font-size:12px;font-weight:600}
+.btn-blue{background:linear-gradient(135deg,#0EA5E9,#0284C7);color:#fff;border:none;padding:11px 24px;font-weight:700;font-size:12px;border-radius:8px;cursor:pointer}
+.emergency{background:#DC2626;color:#fff;padding:12px 60px;font-size:12px;font-weight:700;letter-spacing:1px;display:flex;align-items:center;gap:8px}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:460px}
+.hero-left{background:linear-gradient(135deg,#0A1A2A,#0F2A3A);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero-left::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.08),transparent 65%)}
+.tag{font-size:11px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin-bottom:20px}
+h1{font-size:44px;font-weight:900;line-height:1.1;color:#fff;margin-bottom:20px;letter-spacing:-1px}
+h1 em{color:#38BDF8;font-style:normal}
+.sub{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:36px}
+.stats{display:flex;gap:36px;margin-bottom:36px}
+.stat{text-align:left}
+.stat-val{font-size:28px;font-weight:900;color:#38BDF8}
+.stat-lbl{font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px}
+.hero-right{background:#fff;padding:50px;display:flex;flex-direction:column;gap:0}
+.appointment-form{background:#F8FBFF;border:1px solid rgba(14,165,233,0.15);border-radius:16px;padding:32px}
+.form-title{font-size:18px;font-weight:800;color:#0A1A2A;margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.field label{font-size:11px;color:rgba(0,0,0,0.45);font-weight:700;letter-spacing:1px;display:block;margin-bottom:6px}
+.field input,.field select{width:100%;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:8px;padding:12px 16px;font-size:13px;color:#0A1A2A;outline:none}
+.field.full{grid-column:1/-1}
+.quick-services{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.quick-btn{background:#F0F8FF;border:1px solid rgba(14,165,233,0.2);border-radius:8px;padding:12px 16px;font-size:12px;font-weight:600;color:#0284C7;cursor:pointer;text-align:center}
+.specialties{padding:60px;background:#fff}
+.specialties h2{font-size:30px;font-weight:900;letter-spacing:-1px;margin-bottom:36px}
+.spec-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.spec-card{background:#F0F8FF;border:1px solid rgba(14,165,233,0.12);border-radius:12px;padding:20px;text-align:center}
+.spec-icon{font-size:32px;margin-bottom:10px}
+.spec-name{font-size:12px;font-weight:700;color:#0A1A2A}
+</style></head><body>
+<div class="emergency">🚨 Emergency Hotline: 920 000 111 &nbsp;|&nbsp; Open 24/7 &nbsp;|&nbsp; Riyadh · Jeddah · Dammam · Khobar</div>
+<nav>
+  <div class="logo"><div class="logo-cross">+</div><div><div class="logo-name">Shifaa Medical Center</div><div class="logo-tag">ADVANCED HEALTHCARE · KSA</div></div></div>
+  <ul><li><a href="#">Specialties</a></li><li><a href="#">Doctors</a></li><li><a href="#">Services</a></li><li><a href="#">Insurance</a></li><li><a href="#">Branches</a></li></ul>
+  <button class="btn-blue">Book Appointment</button>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <div class="tag">CARING FOR KSA SINCE 2008</div>
+    <h1>Your Health,<br>Our <em>Priority.</em></h1>
+    <p class="sub">World-class medical care delivered with compassion. 30+ specialties, 200+ experienced physicians, and cutting-edge diagnostic technology.</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-val">200+</div><div class="stat-lbl">Physicians</div></div>
+      <div class="stat"><div class="stat-val">30+</div><div class="stat-lbl">Specialties</div></div>
+      <div class="stat"><div class="stat-val">500K+</div><div class="stat-lbl">Patients served</div></div>
+    </div>
+    <button class="btn-blue" style="align-self:flex-start;padding:14px 32px;font-size:13px">Find a Doctor</button>
+  </div>
+  <div class="hero-right">
+    <div class="appointment-form">
+      <div class="form-title">📅 Book an Appointment</div>
+      <div class="form-row">
+        <div class="field"><label>FULL NAME</label><input type="text" placeholder="Your full name"></div>
+        <div class="field"><label>PHONE NUMBER</label><input type="text" placeholder="+966 5X XXX XXXX"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label>SPECIALTY</label><select><option>Cardiology</option><option>Dermatology</option><option>Orthopedics</option></select></div>
+        <div class="field"><label>PREFERRED DATE</label><input type="text" placeholder="Select date"></div>
+      </div>
+      <div class="form-row"><div class="field full"><label>ADDITIONAL NOTES</label><input type="text" placeholder="Briefly describe your concern (optional)"></div></div>
+      <button class="btn-blue" style="width:100%;padding:14px;font-size:13px;border-radius:10px;margin-top:8px">Confirm Appointment</button>
+    </div>
+    <div class="quick-services">
+      <div class="quick-btn">🏥 Emergency Care</div>
+      <div class="quick-btn">💊 Online Pharmacy</div>
+      <div class="quick-btn">🔬 Lab Results</div>
+      <div class="quick-btn">💻 Video Consultation</div>
+    </div>
+  </div>
+</div>
+<section class="specialties">
+  <h2>Our Medical Specialties</h2>
+  <div class="spec-grid">
+    <div class="spec-card"><div class="spec-icon">❤️</div><div class="spec-name">Cardiology</div></div>
+    <div class="spec-card"><div class="spec-icon">🧠</div><div class="spec-name">Neurology</div></div>
+    <div class="spec-card"><div class="spec-icon">🦴</div><div class="spec-name">Orthopedics</div></div>
+    <div class="spec-card"><div class="spec-icon">👁️</div><div class="spec-name">Ophthalmology</div></div>
+    <div class="spec-card"><div class="spec-icon">🦷</div><div class="spec-name">Dentistry</div></div>
+    <div class="spec-card"><div class="spec-icon">👶</div><div class="spec-name">Pediatrics</div></div>
+  </div>
+</section>
+</body></html>

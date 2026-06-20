@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Al-Namaa Bank</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #FAF9F6; color: #0F172A; width: 1280px; overflow-x: hidden; }
+    header { background: #FFFFFF; border-bottom: 1px solid rgba(0,0,0,0.06); padding: 20px 80px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: #166534; text-transform: uppercase; letter-spacing: 1px; }
+    .logo span { background: #166534; color: #FFFFFF; padding: 4px 8px; border-radius: 6px; }
+    nav ul { display: flex; gap: 30px; list-style: none; }
+    nav ul a { color: #475569; text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.3s; }
+    nav ul a:hover { color: #166534; }
+    .btn-green { background: #166534; color: white; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
+    .btn-green:hover { background: #14532D; }
+    .hero { padding: 180px 80px 100px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; min-height: 580px; }
+    .hero-content { display: flex; flex-direction: column; gap: 24px; }
+    .tag { background: rgba(22, 101, 52, 0.08); color: #166534; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 700; width: fit-content; text-transform: uppercase; letter-spacing: 1px; }
+    h1 { font-size: 46px; font-weight: 800; line-height: 1.15; color: #0F172A; }
+    h1 span { color: #166534; }
+    .desc { font-size: 16px; color: #475569; line-height: 1.65; }
+    .hero-buttons { display: flex; gap: 16px; margin-top: 10px; }
+    .btn-outline { background: transparent; border: 1px solid #166534; color: #166534; padding: 12px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .btn-outline:hover { background: rgba(22, 101, 52, 0.05); }
+    .hero-visual { display: flex; justify-content: center; }
+    .card-mockup { background: linear-gradient(135deg, #1E1B4B, #312E81); color: white; width: 380px; height: 240px; border-radius: 20px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 25px 50px -12px rgba(30, 27, 75, 0.4); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; }
+    .card-mockup::before { content: ''; position: absolute; top: -50px; right: -50px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%); }
+    .card-top { display: flex; justify-content: space-between; align-items: center; }
+    .card-logo { font-size: 16px; font-weight: 700; letter-spacing: 1px; color: #E8C96A; }
+    .card-number { font-size: 20px; font-weight: 500; letter-spacing: 2.5px; word-spacing: 4px; margin-top: 20px; }
+    .card-holder { display: flex; justify-content: space-between; margin-top: 20px; }
+    .holder-label { font-size: 9px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; }
+    .holder-name { font-size: 13px; font-weight: 600; margin-top: 4px; color: #FAF9F6; }
+    .card-chip { width: 45px; height: 35px; background: linear-gradient(135deg, #E8C96A, #C9A84C); border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span>ن</span>Al-Namaa Bank</div>
+    <nav>
+      <ul>
+        <li><a href="#">Personal</a></li>
+        <li><a href="#">Business</a></li>
+        <li><a href="#">Islamic Finance</a></li>
+        <li><a href="#">Private Banking</a></li>
+      </ul>
+    </nav>
+    <button class="btn-green">Online Banking</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="tag">Sharia-Compliant Banking</div>
+      <h1>Future-Focused <span>Digital Banking</span> with Islamic Values</h1>
+      <p class="desc">Al-Namaa Bank merges cutting-edge digital experiences with strict adherence to Islamic banking principles. Open your account in minutes, manage your assets, and secure financing with complete peace of mind.</p>
+      <div class="hero-buttons">
+        <button class="btn-green">Open Account Online</button>
+        <button class="btn-outline">Calculate Finance</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="card-mockup">
+        <div class="card-top">
+          <div class="card-logo">AL-NAMAA</div>
+          <div class="card-chip"></div>
+        </div>
+        <div>
+          <div class="card-number">•••• •••• •••• 2030</div>
+          <div class="card-holder">
+            <div>
+              <div class="holder-label">Card Holder</div>
+              <div class="holder-name">MOHAMMED AL-OTAIBI</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="holder-label">Expiry Date</div>
+              <div class="holder-name" style="margin-top: 4px;">09/29</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

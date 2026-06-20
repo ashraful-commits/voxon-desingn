@@ -1,0 +1,198 @@
+<svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="sandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8C96A" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="camelBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A574"/>
+      <stop offset="30%" stop-color="#C9986A"/>
+      <stop offset="60%" stop-color="#B8875A"/>
+      <stop offset="100%" stop-color="#9A7048"/>
+    </linearGradient>
+    <linearGradient id="camelShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B6914" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#8B6914" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="humpGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4A574"/>
+      <stop offset="100%" stop-color="#B8875A"/>
+    </linearGradient>
+    <linearGradient id="legGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9A7048"/>
+      <stop offset="50%" stop-color="#C9986A"/>
+      <stop offset="100%" stop-color="#9A7048"/>
+    </linearGradient>
+    <filter id="camelBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+    </filter>
+    <radialGradient id="eyeGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="60%" stop-color="#2d1f0f"/>
+      <stop offset="100%" stop-color="#4a3020"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="200" cy="465" rx="140" ry="12" fill="url(#camelShadow)" opacity="0.6"/>
+  
+  <!-- Back legs (further away) -->
+  <g opacity="0.85">
+    <!-- Back left leg -->
+    <path d="M145,380 Q140,420 138,450 Q136,460 142,462 Q148,460 150,450 Q152,420 155,380" 
+          fill="url(#legGrad)" stroke="#9A7048" stroke-width="0.5"/>
+    <!-- Back right leg -->
+    <path d="M255,380 Q260,420 262,450 Q264,460 258,462 Q252,460 250,450 Q248,420 245,380" 
+          fill="url(#legGrad)" stroke="#9A7048" stroke-width="0.5"/>
+  </g>
+
+  <!-- Tail -->
+  <g>
+    <path d="M105,340 Q80,355 65,380 Q60,395 70,400 Q78,398 82,385 Q90,365 110,350" 
+          fill="url(#camelBody)" stroke="#9A7048" stroke-width="1"/>
+    <!-- Tail tuft -->
+    <path d="M65,380 Q55,390 58,400 Q65,405 75,398 Q78,390 70,380" 
+          fill="#8B7355" stroke="#7a6545" stroke-width="0.5"/>
+  </g>
+
+  <!-- Main body -->
+  <path d="M110,340 
+           Q100,300 115,270 
+           Q130,245 170,235 
+           Q210,228 250,235 
+           Q290,245 305,270 
+           Q320,300 310,340 
+           Q305,370 280,385 
+           L250,385 
+           Q230,385 220,380 
+           Q200,378 180,380 
+           Q170,385 150,385 
+           L120,385 
+           Q115,370 110,340 Z" 
+        fill="url(#camelBody)" stroke="#9A7048" stroke-width="1.2" filter="url(#camelBlur)"/>
+  
+  <!-- Body shading/detail lines -->
+  <path d="M130,280 Q150,275 180,272" stroke="#B8875A" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M220,272 Q250,275 280,280" stroke="#B8875A" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M140,310 Q170,305 200,303 Q230,305 270,310" stroke="#B8875A" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <path d="M145,340 Q175,335 200,333 Q225,335 265,340" stroke="#B8875A" stroke-width="0.6" fill="none" opacity="0.4"/>
+
+  <!-- Hump -->
+  <path d="M160,268 
+           Q155,240 170,220 
+           Q185,205 205,210 
+           Q225,215 235,235 
+           Q240,250 230,265 
+           Q215,275 195,275 
+           Q175,275 160,268 Z" 
+        fill="url(#humpGrad)" stroke="#9A7048" stroke-width="1"/>
+  <!-- Hump detail/texture -->
+  <path d="M175,245 Q190,240 205,242" stroke="#A07850" stroke-width="0.7" fill="none" opacity="0.5"/>
+  <path d="M180,255 Q195,250 210,252" stroke="#A07850" stroke-width="0.6" fill="none" opacity="0.4"/>
+
+  <!-- Neck -->
+  <path d="M285,280 
+           Q305,265 315,240 
+           Q320,220 318,200 
+           Q315,185 305,180 
+           Q295,178 290,185 
+           Q288,195 292,210 
+           Q295,230 290,250 
+           Q288,265 285,280 Z" 
+        fill="url(#camelBody)" stroke="#9A7048" stroke-width="1"/>
+
+  <!-- Head -->
+  <path d="M305,180 
+           Q315,175 322,165 
+           Q328,152 325,140 
+           Q320,128 308,125 
+           Q295,124 288,132 
+           Q283,140 285,150 
+           Q288,162 295,170 
+           Q300,176 305,180 Z" 
+        fill="url(#camelBody)" stroke="#9A7048" stroke-width="1"/>
+  
+  <!-- Snout/nose area -->
+  <path d="M325,140 
+           Q332,138 335,145 
+           Q336,152 330,155 
+           Q322,156 318,150 
+           Q316,145 325,140 Z" 
+        fill="#C9986A" stroke="#9A7048" stroke-width="0.6"/>
+  
+  <!-- Nostril -->
+  <ellipse cx="332" cy="146" rx="1.5" ry="2" fill="#7a5a3a" opacity="0.7"/>
+
+  <!-- Eye -->
+  <ellipse cx="312" cy="138" rx="4" ry="5" fill="url(#eyeGrad)"/>
+  <ellipse cx="312" cy="137" rx="2" ry="2.5" fill="#1a1a1a"/>
+  <ellipse cx="313" cy="136" rx="0.8" ry="1" fill="#fff" opacity="0.7"/>
+  
+  <!-- Eyebrow ridge -->
+  <path d="M306,132 Q312,128 318,130" stroke="#9A7048" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+  <!-- Ear -->
+  <path d="M298,130 Q290,115 295,105 Q300,100 305,108 Q308,118 302,130" 
+        fill="#C9986A" stroke="#9A7048" stroke-width="0.8"/>
+  <path d="M296,118 Q300,112 303,118" stroke="#9A7048" stroke-width="0.5" fill="none"/>
+
+  <!-- Mouth line -->
+  <path d="M330,152 Q325,155 318,153" stroke="#9A7048" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Front legs -->
+  <g>
+    <!-- Front left leg -->
+    <path d="M230,380 Q228,420 226,445 Q224,458 230,462 Q236,460 238,445 Q240,420 242,380" 
+          fill="url(#legGrad)" stroke="#9A7048" stroke-width="0.8"/>
+    <!-- Front left knee bump -->
+    <ellipse cx="230" cy="410" rx="8" ry="5" fill="#B8875A" stroke="#9A7048" stroke-width="0.5"/>
+    <!-- Front left hoof -->
+    <path d="M224,460 Q226,468 230,470 Q234,468 236,460 Q234,455 230,455 Q226,455 224,460" 
+          fill="#6b4a2a" stroke="#5a3d20" stroke-width="0.5"/>
+    
+    <!-- Front right leg -->
+    <path d="M260,380 Q262,420 264,445 Q266,458 260,462 Q254,460 252,445 Q250,420 248,380" 
+          fill="url(#legGrad)" stroke="#9A7048" stroke-width="0.8"/>
+    <!-- Front right knee bump -->
+    <ellipse cx="260" cy="410" rx="8" ry="5" fill="#B8875A" stroke="#9A7048" stroke-width="0.5"/>
+    <!-- Front right hoof -->
+    <path d="M254,460 Q256,468 260,470 Q264,468 266,460 Q264,455 260,455 Q256,455 254,460" 
+          fill="#6b4a2a" stroke="#5a3d20" stroke-width="0.5"/>
+  </g>
+
+  <!-- Back leg details -->
+  <g opacity="0.9">
+    <!-- Back left knee -->
+    <ellipse cx="143" cy="410" rx="8" ry="5" fill="#B8875A" stroke="#9A7048" stroke-width="0.5"/>
+    <!-- Back left hoof -->
+    <path d="M137,458 Q139,466 143,468 Q147,466 149,458 Q147,453 143,453 Q139,453 137,458" 
+          fill="#6b4a2a" stroke="#5a3d20" stroke-width="0.5"/>
+    <!-- Back right knee -->
+    <ellipse cx="257" cy="410" rx="8" ry="5" fill="#B8875A" stroke="#9A7048" stroke-width="0.5"/>
+    <!-- Back right hoof -->
+    <path d="M251,458 Q253,466 257,468 Q261,466 263,458 Q261,453 257,453 Q253,453 251,458" 
+          fill="#6b4a2a" stroke="#5a3d20" stroke-width="0.5"/>
+  </g>
+
+  <!-- Chest fluff/wool detail -->
+  <g opacity="0.4">
+    <path d="M280,320 Q285,315 290,320" stroke="#D4B896" stroke-width="1" fill="none"/>
+    <path d="M275,330 Q282,325 288,330" stroke="#D4B896" stroke-width="0.8" fill="none"/>
+    <path d="M278,340 Q285,335 292,340" stroke="#D4B896" stroke-width="0.8" fill="none"/>
+  </g>
+
+  <!-- Subtle highlight on back -->
+  <path d="M170,250 Q200,245 240,250" stroke="#E8C896" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round"/>
+
+  <!-- Small desert plants near feet -->
+  <g opacity="0.5">
+    <path d="M160,465 Q158,455 155,450 M160,465 Q160,452 162,448 M160,465 Q165,455 168,450" 
+          stroke="#8B9A46" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M300,462 Q298,452 295,448 M300,462 Q302,450 304,446 M300,462 Q305,454 308,450" 
+          stroke="#8B9A46" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

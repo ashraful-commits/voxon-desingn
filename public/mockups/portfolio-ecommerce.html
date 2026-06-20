@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Souq Al-Waha</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #FFFDF9; color: #1E293B; width: 1280px; overflow-x: hidden; }
+    header { background: #FFFFFF; border-bottom: 1px solid rgba(0,0,0,0.06); padding: 15px 80px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.01); }
+    .logo { font-weight: 800; font-size: 22px; color: #D97706; text-transform: uppercase; letter-spacing: 0.5px; }
+    .search-bar { width: 400px; display: flex; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden; }
+    .search-bar input { flex-1: 1; border: none; padding: 10px 16px; outline: none; font-size: 13px; width: 100%; }
+    .search-bar button { background: #D97706; color: white; border: none; padding: 0 20px; font-weight: 600; cursor: pointer; }
+    .nav-actions { display: flex; gap: 24px; align-items: center; list-style: none; }
+    .nav-actions a { color: #475569; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .nav-actions .cart { background: #FEF3C7; color: #D97706; padding: 8px 16px; border-radius: 6px; display: flex; gap: 8px; align-items: center; }
+    .hero { padding: 150px 80px 80px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; min-height: 520px; }
+    .hero-content { display: flex; flex-direction: column; gap: 20px; }
+    .tag { background: #FEF3C7; color: #D97706; padding: 6px 14px; border-radius: 9999px; font-size: 11px; font-weight: 700; width: fit-content; text-transform: uppercase; letter-spacing: 1px; }
+    h1 { font-size: 42px; font-weight: 800; line-height: 1.15; color: #1E293B; }
+    h1 span { color: #D97706; }
+    .desc { font-size: 15px; color: #475569; line-height: 1.6; }
+    .hero-buttons { display: flex; gap: 16px; margin-top: 10px; }
+    .btn-primary { background: #D97706; color: white; border: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    .btn-secondary { background: white; border: 1px solid #CBD5E1; color: #475569; padding: 12px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    .products-grid { padding: 0 80px 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .product-card { background: white; border: 1px solid #F1F5F9; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.01); transition: transform 0.3s; }
+    .product-card:hover { transform: translateY(-4px); }
+    .product-image { height: 160px; background: #F8FAFC; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 32px; }
+    .product-info { display: flex; flex-direction: column; gap: 4px; }
+    .p-category { font-size: 10px; color: #94A3B8; text-transform: uppercase; }
+    .p-title { font-size: 14px; font-weight: 600; color: #1E293B; }
+    .p-price { font-size: 16px; font-weight: 700; color: #D97706; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Souq Al-Waha</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search traditional rugs, perfumes, coffee pots...">
+      <button>Search</button>
+    </div>
+    <div class="nav-actions">
+      <a href="#">Sell on Souq</a>
+      <a href="#" class="cart">🛒 Cart <span>(0)</span></a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="tag">Traditional & Modern Saudi Products</div>
+      <h1>Bring the Essence of the <span>Saudi Heritage</span> to Your Home</h1>
+      <p class="desc">Discover curated, high-quality traditional Saudi goods, visual art, premium organic coffee, dates, and luxurious perfumes. Delivered directly from local artisans to your doorstep with instant digital tracking.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Shop Collection</button>
+        <button class="btn-secondary">Explore Artisans</button>
+      </div>
+    </div>
+    <div class="product-card" style="width: 320px; justify-self: center;">
+      <div class="product-image">☕</div>
+      <div class="product-info">
+        <span class="p-category">Coffee Pots</span>
+        <h4 class="p-title">Classic Brass Dallah (Coffee Pot)</h4>
+        <span class="p-price">349 SAR</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-grid">
+    <div class="product-card">
+      <div class="product-image">🏺</div>
+      <div class="product-info">
+        <span class="p-category">Ceramics</span>
+        <h4 class="p-title">Hand-painted Clay Vase</h4>
+        <span class="p-price">180 SAR</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">🪵</div>
+      <div class="product-info">
+        <span class="p-category">Bakhoor & Incense</span>
+        <h4 class="p-title">Premium Royal Oud Chips</h4>
+        <span class="p-price">450 SAR</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">🧎</div>
+      <div class="product-info">
+        <span class="p-category">Home Decor</span>
+        <h4 class="p-title">Woven Sadu Pattern Rug</h4>
+        <span class="p-price">890 SAR</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">🌴</div>
+      <div class="product-info">
+        <span class="p-category">Dates</span>
+        <h4 class="p-title">Premium Organic Ajwa Dates</h4>
+        <span class="p-price">120 SAR</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

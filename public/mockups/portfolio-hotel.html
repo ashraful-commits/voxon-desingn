@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Al Waha Grand Hotel</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Georgia',serif;background:#0A1520;color:#fff;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:76px;background:rgba(10,21,32,0.97);border-bottom:1px solid rgba(201,168,76,0.15)}
+.logo{font-size:22px;letter-spacing:3px;color:#F8F5EF}.logo span{color:#C9A84C;font-size:11px;display:block;letter-spacing:6px;font-family:sans-serif;margin-top:2px}
+nav ul{display:flex;gap:36px;list-style:none}
+nav ul a{color:rgba(255,255,255,0.5);text-decoration:none;font-family:sans-serif;font-size:12px;letter-spacing:1px}
+.btn-gold{background:linear-gradient(135deg,#C9A84C,#E8C96A);color:#1A0A00;border:none;padding:12px 26px;font-family:sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;cursor:pointer}
+.hero{position:relative;height:560px;background:linear-gradient(135deg,#0A1520,#0F2535);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,168,76,0.08),transparent 65%)}
+.stars{color:#C9A84C;font-size:14px;letter-spacing:8px;margin-bottom:24px}
+h1{font-size:58px;line-height:1.1;margin-bottom:16px}
+h1 em{color:#C9A84C}
+.tagline{font-family:sans-serif;font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:40px;letter-spacing:1px}
+.booking-bar{background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);backdrop-filter:blur(12px);display:flex;align-items:center;gap:0;border-radius:4px;overflow:hidden}
+.booking-field{padding:16px 28px;border-right:1px solid rgba(255,255,255,0.08)}
+.booking-field label{font-family:sans-serif;font-size:9px;color:rgba(255,255,255,0.4);letter-spacing:2px;display:block;margin-bottom:6px}
+.booking-field span{font-family:sans-serif;font-size:14px;color:#fff;font-weight:600}
+.booking-btn{background:linear-gradient(135deg,#C9A84C,#E8C96A);color:#1A0A00;padding:20px 32px;font-family:sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;border:none;cursor:pointer}
+.amenities{display:flex;justify-content:center;gap:50px;margin-top:36px}
+.amenity{text-align:center;font-family:sans-serif;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px}
+.amenity .icon{font-size:24px;display:block;margin-bottom:8px}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);padding:60px;gap:24px;background:#0D1C2A}
+.room-card{border-radius:8px;overflow:hidden;background:#0A1520;border:1px solid rgba(201,168,76,0.1)}
+.room-img{height:220px;display:flex;align-items:center;justify-content:center;font-size:70px;position:relative}
+.r1{background:linear-gradient(135deg,#1A2840,#0F1E30)}
+.r2{background:linear-gradient(135deg,#1E2030,#121828)}
+.r3{background:linear-gradient(135deg,#1A2030,#0E1820)}
+.room-badge{position:absolute;top:14px;left:14px;background:linear-gradient(135deg,#C9A84C,#E8C96A);color:#1A0A00;font-family:sans-serif;font-size:10px;font-weight:700;padding:4px 10px;letter-spacing:1px}
+.room-info{padding:24px}
+.room-info h3{font-size:20px;margin-bottom:8px}
+.room-info p{font-family:sans-serif;font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px}
+.room-footer{display:flex;justify-content:space-between;align-items:center}
+.room-price{font-family:sans-serif}.room-price .amount{font-size:22px;font-weight:800;color:#C9A84C}
+.room-price .per{font-size:11px;color:rgba(255,255,255,0.35)}
+</style></head><body>
+<nav>
+  <div class="logo">AL WAHA<span>GRAND HOTEL & RESORT</span></div>
+  <ul><li><a href="#">Rooms</a></li><li><a href="#">Dining</a></li><li><a href="#">Spa</a></li><li><a href="#">Meetings</a></li><li><a href="#">Offers</a></li></ul>
+  <button class="btn-gold">BOOK NOW</button>
+</nav>
+<section class="hero">
+  <div class="stars">★ ★ ★ ★ ★</div>
+  <h1>Where <em>Heritage</em><br>Meets Luxury</h1>
+  <p class="tagline">Experience unparalleled Saudi hospitality in the heart of Riyadh</p>
+  <div class="booking-bar">
+    <div class="booking-field"><label>CHECK-IN</label><span>20 Jun 2025</span></div>
+    <div class="booking-field"><label>CHECK-OUT</label><span>25 Jun 2025</span></div>
+    <div class="booking-field"><label>GUESTS</label><span>2 Adults</span></div>
+    <div class="booking-field" style="border:none"><label>ROOM TYPE</label><span>Deluxe Suite</span></div>
+    <button class="booking-btn">CHECK AVAILABILITY</button>
+  </div>
+  <div class="amenities">
+    <div class="amenity"><span class="icon">🏊</span>INFINITY POOL</div>
+    <div class="amenity"><span class="icon">🧖</span>LUXURY SPA</div>
+    <div class="amenity"><span class="icon">🍽️</span>5 RESTAURANTS</div>
+    <div class="amenity"><span class="icon">🏋️</span>FITNESS CENTER</div>
+    <div class="amenity"><span class="icon">🚗</span>VALET PARKING</div>
+  </div>
+</section>
+<section class="rooms">
+  <div class="room-card">
+    <div class="room-img r1"><span>🛏️</span><div class="room-badge">BEST SELLER</div></div>
+    <div class="room-info"><h3>Deluxe King Room</h3><p>Spacious 55m² room with panoramic city views, king bed, and marble bathroom.</p><div class="room-footer"><div class="room-price"><div class="amount">SAR 850</div><div class="per">per night</div></div><button class="btn-gold" style="padding:10px 20px;font-size:11px">BOOK</button></div></div>
+  </div>
+  <div class="room-card">
+    <div class="room-img r2"><span>👑</span><div class="room-badge">EXCLUSIVE</div></div>
+    <div class="room-info"><h3>Royal Penthouse Suite</h3><p>200m² private penthouse with personal butler, rooftop terrace, and Jacuzzi.</p><div class="room-footer"><div class="room-price"><div class="amount">SAR 6,500</div><div class="per">per night</div></div><button class="btn-gold" style="padding:10px 20px;font-size:11px">BOOK</button></div></div>
+  </div>
+  <div class="room-card">
+    <div class="room-img r3"><span>🌿</span></div>
+    <div class="room-info"><h3>Garden Villa</h3><p>Private 150m² villa with pool garden, outdoor dining area, and premium amenities.</p><div class="room-footer"><div class="room-price"><div class="amount">SAR 3,200</div><div class="per">per night</div></div><button class="btn-gold" style="padding:10px 20px;font-size:11px">BOOK</button></div></div>
+  </div>
+</section>
+</body></html>

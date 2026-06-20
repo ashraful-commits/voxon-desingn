@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Sabeel Water Solutions</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Arial',sans-serif;background:#F0F9FF;color:#0A1A2A;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:68px;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);box-shadow:0 1px 20px rgba(0,0,0,0.04)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-drop{width:36px;height:36px;background:linear-gradient(135deg,#0EA5E9,#38BDF8);border-radius:50% 50% 50% 0;display:flex;align-items:center;justify-content:center;font-size:16px;transform:rotate(-45deg)}
+.logo-drop span{transform:rotate(45deg);display:block}
+.logo-name{font-size:18px;font-weight:800;color:#0A1A2A}
+.logo-name em{color:#0EA5E9;font-style:normal}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul a{color:rgba(10,26,42,0.5);text-decoration:none;font-size:12px;font-weight:600}
+.btn-sky{background:linear-gradient(135deg,#0EA5E9,#0284C7);color:#fff;border:none;padding:11px 24px;font-weight:700;font-size:12px;border-radius:8px;cursor:pointer}
+.hero{background:linear-gradient(160deg,#0A1A2A,#0F2A3F);padding:90px 60px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;min-height:480px}
+.overline{font-size:11px;color:#38BDF8;font-weight:700;letter-spacing:4px;margin-bottom:20px}
+h1{font-size:50px;font-weight:900;line-height:1.1;letter-spacing:-2px;color:#fff;margin-bottom:20px}
+h1 em{color:#38BDF8;font-style:normal}
+.sub{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:36px}
+.certifications{display:flex;gap:16px;margin-bottom:36px}
+.cert{background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:8px 16px;border-radius:8px;font-size:11px;color:#38BDF8;font-weight:700;letter-spacing:1px}
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.solution-card{background:rgba(255,255,255,0.04);border:1px solid rgba(56,189,248,0.12);border-radius:14px;padding:24px}
+.sol-icon{font-size:36px;margin-bottom:14px}
+.sol-title{font-size:14px;font-weight:800;margin-bottom:8px}
+.sol-desc{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5}
+.sol-stat{font-size:22px;font-weight:900;color:#38BDF8;margin-top:12px}
+.services{padding:60px;background:#fff}
+.services h2{font-size:30px;font-weight:900;letter-spacing:-1px;margin-bottom:40px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc{background:#F0F9FF;border:1px solid rgba(14,165,233,0.12);border-radius:12px;padding:24px}
+.svc-icon{font-size:28px;margin-bottom:14px}
+.svc h4{font-size:14px;font-weight:700;margin-bottom:8px}
+.svc p{font-size:12px;color:rgba(0,0,0,0.5);line-height:1.6}
+.clients-bar{background:linear-gradient(135deg,#0EA5E9,#0284C7);padding:20px 60px;display:flex;gap:60px;align-items:center}
+.clients-bar p{font-size:11px;color:rgba(255,255,255,0.7);font-weight:700;letter-spacing:2px;white-space:nowrap}
+.client-name{font-size:13px;font-weight:800;color:rgba(255,255,255,0.8);letter-spacing:1px}
+</style></head><body>
+<nav>
+  <div class="logo"><div class="logo-drop"><span>💧</span></div><div class="logo-name">Sabeel<em>Water</em></div></div>
+  <ul><li><a href="#">Solutions</a></li><li><a href="#">Projects</a></li><li><a href="#">Technology</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Contact</a></li></ul>
+  <button class="btn-sky">Get a Free Assessment</button>
+</nav>
+<div class="hero">
+  <div>
+    <div class="overline">WATER TREATMENT · SAUDI ARABIA</div>
+    <h1>Transforming<br><em>Water.</em><br>Building Futures.</h1>
+    <p class="sub">Saudi Arabia's leading water treatment and solutions provider — serving municipalities, industry, and Vision 2030 mega-projects with cutting-edge technology.</p>
+    <div class="certifications">
+      <div class="cert">✓ ISO 9001</div>
+      <div class="cert">✓ ISO 14001</div>
+      <div class="cert">✓ Saudi SASO</div>
+    </div>
+    <div style="display:flex;gap:14px">
+      <button class="btn-sky" style="padding:14px 32px;font-size:13px">Our Solutions</button>
+      <button style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);padding:14px 28px;font-weight:600;font-size:12px;border-radius:8px;cursor:pointer">View Projects →</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="solution-card"><div class="sol-icon">🏭</div><div class="sol-title">Industrial Treatment</div><div class="sol-desc">Full wastewater treatment plants for manufacturing and industrial facilities across KSA</div><div class="sol-stat">500+ plants</div></div>
+    <div class="solution-card"><div class="sol-icon">🏙️</div><div class="sol-title">Municipal Systems</div><div class="sol-desc">City-scale water networks, desalination, and smart distribution for Saudi municipalities</div><div class="sol-stat">30+ cities</div></div>
+    <div class="solution-card"><div class="sol-icon">🌱</div><div class="sol-title">Green Technology</div><div class="sol-desc">Solar-powered, energy-efficient systems aligned with Saudi Green Initiative goals</div><div class="sol-stat">40% energy saved</div></div>
+    <div class="solution-card"><div class="sol-icon">📊</div><div class="sol-title">Smart Monitoring</div><div class="sol-desc">IoT-powered real-time water quality monitoring and predictive maintenance systems</div><div class="sol-stat">24/7 monitoring</div></div>
+  </div>
+</div>
+<section class="services">
+  <h2>Core Services</h2>
+  <div class="svc-grid">
+    <div class="svc"><div class="svc-icon">💧</div><h4>Desalination</h4><p>Reverse osmosis and thermal desalination plants delivering clean water across Saudi Arabia.</p></div>
+    <div class="svc"><div class="svc-icon">♻️</div><h4>Water Recycling</h4><p>Advanced wastewater treatment and water reuse systems for agriculture and industry.</p></div>
+    <div class="svc"><div class="svc-icon">🔧</div><h4>Maintenance & O&M</h4><p>Full operations and maintenance contracts for all types of water treatment facilities.</p></div>
+    <div class="svc"><div class="svc-icon">🛠️</div><h4>Engineering & Design</h4><p>Complete EPC services from concept design through commissioning for water projects.</p></div>
+  </div>
+</section>
+<div class="clients-bar">
+  <p>KEY CLIENTS</p>
+  <div class="client-name">NEOM</div>
+  <div class="client-name">ARAMCO</div>
+  <div class="client-name">SABIC</div>
+  <div class="client-name">MINISTRY OF WATER</div>
+  <div class="client-name">ROSHN GROUP</div>
+  <div class="client-name">AMAALA</div>
+</div>
+</body></html>

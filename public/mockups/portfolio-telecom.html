@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Sila Telecom</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #070B19; color: #E2E8F0; width: 1280px; overflow-x: hidden; }
+    header { background: rgba(7, 11, 25, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 20px 80px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: #38BDF8; text-transform: uppercase; letter-spacing: 1.5px; }
+    .logo span { color: #581C87; background: #38BDF8; padding: 4px 8px; border-radius: 6px; margin-right: 4px; }
+    nav ul { display: flex; gap: 30px; list-style: none; }
+    nav ul a { color: #94A3B8; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+    nav ul a:hover { color: #38BDF8; }
+    .btn-glow { background: linear-gradient(135deg, #0EA5E9, #2563EB); color: white; border: none; padding: 10px 24px; border-radius: 9999px; font-weight: 600; cursor: pointer; box-shadow: 0 0 15px rgba(14, 165, 233, 0.4); }
+    .hero { padding: 180px 80px 100px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; min-height: 600px; position: relative; }
+    .hero::before { content: ''; position: absolute; top: -10%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%); filter: blur(50px); pointer-events: none; }
+    .hero-content { display: flex; flex-direction: column; gap: 24px; }
+    .tag { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: #38BDF8; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 700; width: fit-content; text-transform: uppercase; letter-spacing: 1px; }
+    h1 { font-size: 48px; font-weight: 800; line-height: 1.15; color: white; }
+    h1 span { background: linear-gradient(to right, #38BDF8, #818CF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .desc { font-size: 16px; color: #94A3B8; line-height: 1.6; }
+    .hero-buttons { display: flex; gap: 16px; margin-top: 10px; }
+    .btn-secondary { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 12px 28px; border-radius: 9999px; font-weight: 600; cursor: pointer; }
+    .hero-visual { position: relative; background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 80%); border-radius: 24px; padding: 40px; border: 1px solid rgba(255,255,255,0.05); }
+    .glass-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: flex; flex-direction: column; gap: 20px; }
+    .stat-row { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 15px; }
+    .stat-row:last-child { border: none; padding: 0; }
+    .stat-label { font-size: 12px; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-value { font-size: 18px; font-weight: 700; color: white; display: flex; align-items: center; gap: 8px; }
+    .indicator { width: 8px; height: 8px; background: #10B981; border-radius: 50%; box-shadow: 0 0 10px #10B981; }
+    .features { padding: 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; background: rgba(15, 23, 42, 0.4); border-top: 1px solid rgba(255,255,255,0.04); }
+    .feat-card { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 16px; }
+    .feat-icon { width: 48px; height: 48px; background: rgba(56, 189, 248, 0.1); border-radius: 12px; color: #38BDF8; font-size: 24px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .feat-card h3 { font-size: 18px; font-weight: 600; color: white; }
+    .feat-card p { font-size: 14px; color: #64748B; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span>S</span>Sila Telecom</div>
+    <nav>
+      <ul>
+        <li><a href="#">Consumer</a></li>
+        <li><a href="#">Business</a></li>
+        <li><a href="#">5G Network</a></li>
+        <li><a href="#">Digital Services</a></li>
+      </ul>
+    </nav>
+    <button class="btn-glow">My Sila Portal</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="tag">Future of Connectivity</div>
+      <h1>Next-Gen <span>5G & Fiber</span> Solutions for Saudi Enterprises</h1>
+      <p class="desc">Sila Telecom delivers ultra-reliable, high-speed telecom services designed for KSA's Vision 2030 digital transformation. Secure your business infrastructure with cloud integration, IoT, and custom private networks.</p>
+      <div class="hero-buttons">
+        <button class="btn-glow">Explore Business Plans</button>
+        <button class="btn-secondary">View Network Map</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="glass-card">
+        <div class="stat-row">
+          <div>
+            <div class="stat-label">Network Status</div>
+            <div class="stat-value"><span class="indicator"></span> Active & Secure</div>
+          </div>
+          <div style="text-align: right;">
+            <div class="stat-label">Coverage</div>
+            <div class="stat-value">99.8% KSA</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-label">Private 5G Nodes</div>
+            <div class="stat-value">1,420 Active</div>
+          </div>
+          <div style="text-align: right;">
+            <div class="stat-label">Avg. Speed</div>
+            <div class="stat-value" style="color: #38BDF8;">1.2 Gbps</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-label">Enterprise Clients</div>
+            <div class="stat-value">450+ Major Brands</div>
+          </div>
+          <div style="text-align: right;">
+            <div class="stat-label">Latency</div>
+            <div class="stat-value" style="color: #A78BFA;">&lt; 9ms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <h3>Enterprise Private 5G</h3>
+      <p>Dedicated cellular infrastructure tailored for factories, logistics centers, and large corporate campuses with guaranteed throughput.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🌐</div>
+      <h3>Fiber Leased Line</h3>
+      <p>Symmetric, direct, and unshared internet access backed by a robust SLA for uninterrupted business operations.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🛡️</div>
+      <h3>IoT & Smart Spaces</h3>
+      <p>Secure sensor networks and communication platforms designed to power smart offices and automated warehouses.</p>
+    </div>
+  </section>
+</body>
+</html>

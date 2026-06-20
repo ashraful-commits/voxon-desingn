@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>AlSahra Auto Gallery</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Arial',sans-serif;background:#0C0C0C;color:#fff;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;background:#080808;border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-icon{width:40px;height:40px;background:linear-gradient(135deg,#DC2626,#991B1B);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+.logo-sub{font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:4px;margin-top:2px}
+nav ul{display:flex;gap:36px;list-style:none}
+nav ul a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.btn-red{background:linear-gradient(135deg,#DC2626,#B91C1C);color:#fff;border:none;padding:11px 26px;font-weight:700;font-size:11px;letter-spacing:2px;cursor:pointer}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+.hero-text{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,#0C0C0C,#1A0A0A)}
+.overline{font-size:10px;color:#DC2626;font-weight:700;letter-spacing:5px;margin-bottom:20px}
+h1{font-size:58px;font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:20px;text-transform:uppercase}
+h1 em{color:#9CA3AF;font-style:normal}
+.sub{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:36px;max-width:420px}
+.cta-row{display:flex;gap:14px;align-items:center}
+.link-white{color:rgba(255,255,255,0.6);font-size:12px;font-weight:700;letter-spacing:2px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px}
+.hero-showcase{background:#111;display:grid;grid-template-columns:1fr;gap:0}
+.showcase-main{flex:1;background:linear-gradient(135deg,#1A1A1A,#111);display:flex;align-items:center;justify-content:center;font-size:120px;padding:40px;position:relative}
+.showcase-badge{position:absolute;top:20px;right:20px;background:#DC2626;color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;padding:6px 14px}
+.showcase-info{background:#0A0A0A;padding:24px 30px;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center}
+.car-name{font-size:18px;font-weight:800;letter-spacing:1px}
+.car-price{font-size:22px;font-weight:900;color:#DC2626}
+.cars{padding:50px 60px;background:#080808}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+h2{font-size:28px;font-weight:900;text-transform:uppercase;letter-spacing:-1px}
+.cars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.car-card{background:#111;border:1px solid rgba(255,255,255,0.05);overflow:hidden}
+.car-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:64px;background:linear-gradient(135deg,#1A1A1A,#111)}
+.car-info{padding:20px}
+.car-info .brand{font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin-bottom:6px}
+.car-info h4{font-size:17px;font-weight:800;margin-bottom:8px}
+.car-specs{display:flex;gap:12px;margin-bottom:14px}
+.spec{font-size:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);padding:4px 10px;color:rgba(255,255,255,0.5)}
+.car-footer{display:flex;justify-content:space-between;align-items:center}
+.car-price-sm{font-size:18px;font-weight:900;color:#DC2626}
+</style></head><body>
+<nav>
+  <div class="logo"><div class="logo-icon">▶</div><div><div class="logo-text">AlSahra Auto</div><div class="logo-sub">PREMIUM GALLERY · RIYADH</div></div></div>
+  <ul><li><a href="#">New Cars</a></li><li><a href="#">Used Cars</a></li><li><a href="#">Finance</a></li><li><a href="#">Service</a></li><li><a href="#">Compare</a></li></ul>
+  <button class="btn-red">BOOK TEST DRIVE</button>
+</nav>
+<div class="hero">
+  <div class="hero-text">
+    <div class="overline">NEW ARRIVALS 2025</div>
+    <h1>Drive in<br><em>Pure</em><br>Luxury.</h1>
+    <p class="sub">Riyadh's finest selection of premium and luxury vehicles. Transparent pricing, easy financing, and lifetime service guarantee.</p>
+    <div class="cta-row">
+      <button class="btn-red" style="padding:14px 32px;font-size:12px">BROWSE INVENTORY</button>
+      <a href="#" class="link-white">BOOK TEST DRIVE</a>
+    </div>
+    <div style="display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.06)">
+      <div><div style="font-size:30px;font-weight:900;color:#DC2626">500+</div><div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px">VEHICLES</div></div>
+      <div><div style="font-size:30px;font-weight:900;color:#DC2626">30+</div><div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px">BRANDS</div></div>
+      <div><div style="font-size:30px;font-weight:900;color:#DC2626">5yr</div><div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px">WARRANTY</div></div>
+    </div>
+  </div>
+  <div class="hero-showcase">
+    <div class="showcase-main">🏎️<div class="showcase-badge">FEATURED</div></div>
+    <div class="showcase-info">
+      <div><div class="car-name">Porsche Cayenne GTS</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px">2025 · AWD · 460 HP · Turbo</div></div>
+      <div style="text-align:right"><div class="car-price">SAR 620,000</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px">Or SAR 8,400/month</div></div>
+    </div>
+  </div>
+</div>
+<section class="cars">
+  <div class="section-header"><h2>FEATURED VEHICLES</h2><a href="#" style="color:#DC2626;font-size:11px;font-weight:700;letter-spacing:2px;text-decoration:none">VIEW ALL →</a></div>
+  <div class="cars-grid">
+    <div class="car-card"><div class="car-img">🚗</div><div class="car-info"><div class="brand">LEXUS</div><h4>LX 600 Luxury+</h4><div class="car-specs"><div class="spec">2025</div><div class="spec">4x4</div><div class="spec">409 HP</div></div><div class="car-footer"><div class="car-price-sm">SAR 385,000</div><button class="btn-red" style="padding:8px 18px;font-size:10px">INQUIRE</button></div></div></div>
+    <div class="car-card"><div class="car-img">🚙</div><div class="car-info"><div class="brand">BMW</div><h4>X7 M60i xDrive</h4><div class="car-specs"><div class="spec">2025</div><div class="spec">AWD</div><div class="spec">530 HP</div></div><div class="car-footer"><div class="car-price-sm">SAR 520,000</div><button class="btn-red" style="padding:8px 18px;font-size:10px">INQUIRE</button></div></div></div>
+    <div class="car-card"><div class="car-img">🚕</div><div class="car-info"><div class="brand">MERCEDES</div><h4>GLE 63 S AMG</h4><div class="car-specs"><div class="spec">2025</div><div class="spec">AWD</div><div class="spec">612 HP</div></div><div class="car-footer"><div class="car-price-sm">SAR 680,000</div><button class="btn-red" style="padding:8px 18px;font-size:10px">INQUIRE</button></div></div></div>
+  </div>
+</section>
+</body></html>

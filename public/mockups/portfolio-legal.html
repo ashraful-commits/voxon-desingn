@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Zuhair Law Group</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Georgia',serif;background:#F8F5EF;color:#1A0A00;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:72px;background:#1C0A0A;border-bottom:3px solid #C9A84C}
+.logo{color:#F8F5EF;font-size:20px;letter-spacing:2px}.logo span{color:#C9A84C}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul a{color:rgba(248,245,239,0.65);text-decoration:none;font-family:sans-serif;font-size:12px;font-weight:600;letter-spacing:1px}
+.btn{background:#C9A84C;color:#1A0A00;border:none;padding:10px 22px;font-family:sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;cursor:pointer}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.hero-left{background:#1C0A0A;padding:80px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero-left::after{content:'⚖';position:absolute;right:-20px;bottom:-40px;font-size:200px;opacity:0.04;color:#C9A84C}
+.overline{font-family:sans-serif;font-size:10px;color:#C9A84C;letter-spacing:5px;font-weight:700;margin-bottom:20px}
+h1{font-size:46px;color:#F8F5EF;line-height:1.15;margin-bottom:20px}
+h1 em{color:#C9A84C;font-style:italic}
+.sub{font-family:sans-serif;font-size:13px;color:rgba(248,245,239,0.5);line-height:1.8;margin-bottom:32px}
+.hero-right{background:#EDE8DF;padding:50px;display:flex;flex-direction:column;gap:16px}
+.practice-card{background:#fff;border-left:4px solid #C9A84C;padding:20px 24px;border-radius:0 8px 8px 0}
+.practice-card h4{font-size:15px;margin-bottom:6px}
+.practice-card p{font-family:sans-serif;font-size:12px;color:rgba(26,10,0,0.55);line-height:1.5}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#1C0A0A;padding:40px 60px}
+.stat-item{text-align:center;border-right:1px solid rgba(201,168,76,0.2);padding:0 20px}
+.stat-item:last-child{border:none}
+.stat-val{font-size:36px;color:#C9A84C;font-weight:700;font-family:sans-serif}
+.stat-lbl{font-family:sans-serif;font-size:11px;color:rgba(248,245,239,0.4);margin-top:6px;letter-spacing:1px}
+.team{padding:60px;background:#F8F5EF}
+.team h2{font-size:32px;margin-bottom:36px;font-style:italic}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.attorney{background:#fff;border:1px solid rgba(0,0,0,0.08)}
+.attorney-img{height:180px;background:linear-gradient(135deg,#EDE8DF,#D8D0C4);display:flex;align-items:center;justify-content:center;font-size:60px}
+.attorney-info{padding:16px}
+.attorney-info h4{font-size:15px;margin-bottom:4px}
+.attorney-info .role{font-family:sans-serif;font-size:11px;color:#C9A84C;font-weight:600;letter-spacing:1px;margin-bottom:8px}
+.attorney-info p{font-family:sans-serif;font-size:12px;color:rgba(0,0,0,0.5)}
+</style></head><body>
+<nav>
+  <div class="logo">ZUHAIR <span>LAW GROUP</span></div>
+  <ul><li><a href="#">Practice Areas</a></li><li><a href="#">Our Team</a></li><li><a href="#">Cases</a></li><li><a href="#">Insights</a></li></ul>
+  <button class="btn">FREE CONSULTATION</button>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <div class="overline">ESTABLISHED 2005 · RIYADH, KSA</div>
+    <h1>Justice.<br>Integrity.<br><em>Results.</em></h1>
+    <p class="sub">Saudi Arabia's most trusted litigation and corporate law firm — 20 years protecting businesses and families across the Kingdom.</p>
+    <button class="btn" style="align-self:flex-start;padding:14px 32px">BOOK A CONSULTATION</button>
+  </div>
+  <div class="hero-right">
+    <h3 style="font-size:18px;margin-bottom:4px;font-style:italic">Practice Areas</h3>
+    <div class="practice-card"><h4>Corporate & Commercial Law</h4><p>Mergers, acquisitions, joint ventures, and full corporate governance for Saudi entities.</p></div>
+    <div class="practice-card"><h4>Real Estate & Construction</h4><p>Property disputes, developer contracts, and Vision 2030 mega-project advisory.</p></div>
+    <div class="practice-card"><h4>Employment & Labour</h4><p>Nitaqat compliance, expat contracts, and workplace dispute resolution.</p></div>
+    <div class="practice-card"><h4>Banking & Finance</h4><p>Islamic finance structures, SAMA regulations, and investment advisory.</p></div>
+  </div>
+</div>
+<div class="stats">
+  <div class="stat-item"><div class="stat-val">2,400+</div><div class="stat-lbl">CASES WON</div></div>
+  <div class="stat-item"><div class="stat-val">98%</div><div class="stat-lbl">SUCCESS RATE</div></div>
+  <div class="stat-item"><div class="stat-val">20+</div><div class="stat-lbl">YEARS ACTIVE</div></div>
+  <div class="stat-item"><div class="stat-val">60+</div><div class="stat-lbl">ATTORNEYS</div></div>
+</div>
+<section class="team">
+  <h2>Senior Partners</h2>
+  <div class="team-grid">
+    <div class="attorney"><div class="attorney-img">👨‍⚖️</div><div class="attorney-info"><h4>Zuhair Al-Rashidi</h4><div class="role">MANAGING PARTNER</div><p>25 years experience in corporate & litigation law</p></div></div>
+    <div class="attorney"><div class="attorney-img">👩‍⚖️</div><div class="attorney-info"><h4>Hessa Al-Otaibi</h4><div class="role">SENIOR PARTNER</div><p>Expert in banking, finance & SAMA compliance</p></div></div>
+    <div class="attorney"><div class="attorney-img">👨‍⚖️</div><div class="attorney-info"><h4>Faisal Al-Ghamdi</h4><div class="role">PARTNER</div><p>Real estate & construction law specialist</p></div></div>
+    <div class="attorney"><div class="attorney-img">👩‍⚖️</div><div class="attorney-info"><h4>Nora Al-Dossari</h4><div class="role">PARTNER</div><p>Employment law & labour relations expert</p></div></div>
+  </div>
+</section>
+</body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Sahara Petroleum</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0A0D14; color: #E2E8F0; width: 1280px; overflow-x: hidden; }
+    header { background: rgba(10, 13, 20, 0.9); border-bottom: 1px solid rgba(201, 168, 76, 0.15); padding: 20px 80px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: #C9A84C; text-transform: uppercase; letter-spacing: 1.5px; }
+    .logo span { background: #C9A84C; color: #0A0D14; padding: 4px 8px; border-radius: 4px; }
+    nav ul { display: flex; gap: 30px; list-style: none; }
+    nav ul a { color: #94A3B8; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+    nav ul a:hover { color: #C9A84C; }
+    .btn-gold { background: linear-gradient(135deg, #C9A84C, #E8C96A); color: #0A0D14; border: none; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 12px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+    .hero { padding: 190px 80px 100px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 50px; align-items: center; min-height: 580px; position: relative; }
+    .hero-content { display: flex; flex-direction: column; gap: 24px; }
+    .tag { color: #C9A84C; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; display: flex; align-items: center; gap: 8px; }
+    .tag::before { content: ''; display: inline-block; width: 12px; height: 12px; background: #C9A84C; border-radius: 50%; }
+    h1 { font-size: 46px; font-weight: 900; line-height: 1.15; color: white; letter-spacing: -0.5px; }
+    h1 span { color: #C9A84C; }
+    .desc { font-size: 15px; color: #94A3B8; line-height: 1.7; }
+    .hero-buttons { display: flex; gap: 16px; margin-top: 10px; }
+    .btn-outline { background: transparent; border: 1px solid rgba(201, 168, 76, 0.4); color: #C9A84C; padding: 12px 28px; border-radius: 4px; font-weight: 700; font-size: 12px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
+    .btn-outline:hover { background: rgba(201, 168, 76, 0.05); }
+    .hero-visual { position: relative; padding: 20px; }
+    .industrial-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(201, 168, 76, 0.1); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; gap: 24px; position: relative; overflow: hidden; }
+    .industrial-panel::before { content: ''; position: absolute; bottom: 0; right: 0; width: 150px; height: 150px; background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%); }
+    .panel-title { font-size: 14px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 1px solid rgba(201,168,76,0.15); padding-bottom: 10px; }
+    .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .data-item { display: flex; flex-direction: column; gap: 4px; }
+    .data-label { font-size: 10px; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px; }
+    .data-value { font-size: 20px; font-weight: 800; color: #fff; }
+    .data-value span { font-size: 12px; font-weight: 500; color: #C9A84C; }
+    .energy-bar { height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; margin-top: 6px; }
+    .energy-progress { height: 100%; background: linear-gradient(90deg, #C9A84C, #E8C96A); border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span>S</span>Sahara Energy</div>
+    <nav>
+      <ul>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Operations</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Investors</a></li>
+      </ul>
+    </nav>
+    <button class="btn-gold">Corporate Login</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="tag">Energy & Infrastructure</div>
+      <h1>Pioneering Sustainable <span>Energy Solutions</span> for the Desert Kingdom</h1>
+      <p class="desc">Sahara Petroleum combines cutting-edge extraction technologies with massive investments in solar and green hydrogen. We power communities and industries across KSA while strictly adhering to international environmental standards.</p>
+      <div class="hero-buttons">
+        <button class="btn-gold">Our Operations</button>
+        <button class="btn-outline">2026 ESG Report</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="industrial-panel">
+        <div class="panel-title">Production Dashboard</div>
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Solar Output</span>
+            <span class="data-value">4.2 <span>GW</span></span>
+            <div class="energy-bar"><div class="energy-progress" style="width: 82%;"></div></div>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Refined Products</span>
+            <span class="data-value">850K <span>BPD</span></span>
+            <div class="energy-bar"><div class="energy-progress" style="width: 65%;"></div></div>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Hydrogen (Green)</span>
+            <span class="data-value">120K <span>MTPY</span></span>
+            <div class="energy-bar"><div class="energy-progress" style="width: 90%;"></div></div>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Carbon Abatement</span>
+            <span class="data-value">3.6M <span>Tons</span></span>
+            <div class="energy-bar"><div class="energy-progress" style="width: 78%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

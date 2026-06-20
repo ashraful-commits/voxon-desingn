@@ -1,0 +1,230 @@
+<svg viewBox="0 0 500 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B7355"/>
+      <stop offset="25%" stop-color="#A0896C"/>
+      <stop offset="50%" stop-color="#B5A085"/>
+      <stop offset="75%" stop-color="#A0896C"/>
+      <stop offset="100%" stop-color="#8B7355"/>
+    </linearGradient>
+    <linearGradient id="trunkDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6B5344"/>
+      <stop offset="50%" stop-color="#8B7355"/>
+      <stop offset="100%" stop-color="#6B5344"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#228B3B"/>
+      <stop offset="40%" stop-color="#1A7A32"/>
+      <stop offset="100%" stop-color="#0D5A22"/>
+    </linearGradient>
+    <linearGradient id="leafDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A7A32"/>
+      <stop offset="100%" stop-color="#0D4A1A"/>
+    </linearGradient>
+    <linearGradient id="coconutGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B6914"/>
+      <stop offset="70%" stop-color="#6B4F10"/>
+      <stop offset="100%" stop-color="#4A3508"/>
+    </linearGradient>
+    <filter id="palmShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="250" cy="685" rx="120" ry="15" fill="url(#camelShadow)" opacity="0.3"/>
+
+  <!-- Trunk - main body with texture rings -->
+  <g filter="url(#palmShadow)">
+    <!-- Trunk base/wider bottom -->
+    <path d="M220,700 Q215,650 218,600 Q220,550 222,500 Q224,450 225,400 Q226,350 228,300 Q230,250 232,200" 
+          stroke="url(#trunkGrad)" stroke-width="28" fill="none" stroke-linecap="round"/>
+    
+    <!-- Trunk texture rings -->
+    <g stroke="#6B5344" stroke-width="1.5" fill="none" opacity="0.5">
+      <path d="M210,680 Q250,678 290,680"/>
+      <path d="M212,660 Q250,658 288,660"/>
+      <path d="M214,640 Q250,638 286,640"/>
+      <path d="M216,620 Q250,618 284,620"/>
+      <path d="M217,600 Q250,598 283,600"/>
+      <path d="M218,580 Q250,578 282,580"/>
+      <path d="M219,560 Q250,558 281,560"/>
+      <path d="M220,540 Q250,538 280,540"/>
+      <path d="M221,520 Q250,518 279,520"/>
+      <path d="M222,500 Q250,498 278,500"/>
+      <path d="M223,480 Q250,478 277,480"/>
+      <path d="M224,460 Q250,458 276,460"/>
+      <path d="M225,440 Q250,438 275,440"/>
+      <path d="M226,420 Q250,418 274,420"/>
+      <path d="M227,400 Q250,398 273,400"/>
+      <path d="M228,380 Q250,378 272,380"/>
+      <path d="M229,360 Q250,358 271,360"/>
+      <path d="M230,340 Q250,338 270,340"/>
+      <path d="M231,320 Q250,318 269,320"/>
+      <path d="M232,300 Q250,298 268,300"/>
+      <path d="M233,280 Q250,278 267,280"/>
+      <path d="M234,260 Q250,258 266,260"/>
+      <path d="M235,240 Q250,238 265,240"/>
+    </g>
+
+    <!-- Trunk center highlight -->
+    <path d="M232,200 Q234,250 235,300 Q236,350 237,400 Q238,450 238,500 Q239,550 238,600 Q237,650 235,700" 
+          stroke="#C4B09A" stroke-width="3" fill="none" opacity="0.3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Crown base where leaves emerge -->
+  <ellipse cx="250" cy="195" rx="25" ry="15" fill="#8B7355" stroke="#6B5344" stroke-width="1"/>
+  <ellipse cx="250" cy="192" rx="20" ry="10" fill="#A0896C" opacity="0.6"/>
+
+  <!-- ===== LEAVES - Left side ===== -->
+  <g>
+    <!-- Large left arching leaf 1 -->
+    <path d="M248,188 
+             Q200,150 140,120 
+             Q100,100 60,90 
+             Q30,85 10,95" 
+          stroke="url(#leafGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <!-- Leaf segments 1 -->
+    <g stroke="#1A7A32" stroke-width="0.5" fill="none" opacity="0.4">
+      <path d="M220,145 Q200,130 170,115"/>
+      <path d="M180,120 Q150,105 120,95"/>
+      <path d="M140,100 Q100,85 60,80"/>
+    </g>
+    <!-- Leaf tip droop 1 -->
+    <path d="M10,95 Q5,100 15,105 Q25,102 20,95" fill="#0D5A22" opacity="0.7"/>
+
+    <!-- Large left arching leaf 2 (slightly different angle) -->
+    <path d="M250,185 
+             Q230,140 200,100 
+             Q170,70 130,50 
+             Q100,38 70,42" 
+          stroke="url(#leafDark)" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <g stroke="#0D4A1A" stroke-width="0.4" fill="none" opacity="0.35">
+      <path d="M220,110 Q190,85 150,65"/>
+      <path d="M170,75 Q140,55 110,48"/>
+    </g>
+    <path d="M70,42 Q65,48 75,50 Q82,46 78,40" fill="#0D4A1A" opacity="0.6"/>
+
+    <!-- Left drooping leaf 3 -->
+    <path d="M245,190 
+             Q210,170 170,160 
+             Q130,152 90,155 
+             Q60,158 40,165" 
+          stroke="url(#leafGrad)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M40,165 Q35,170 45,172 Q52,168 48,162" fill="#1A7A32" opacity="0.5"/>
+
+    <!-- Left low leaf 4 -->
+    <path d="M240,195 
+             Q220,210 190,225 
+             Q160,238 130,245 
+             Q100,250 75,248" 
+          stroke="url(#leafDark)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.75"/>
+    <path d="M75,248 Q70,254 80,255 Q88,251 84,245" fill="#0D5A22" opacity="0.5"/>
+  </g>
+
+  <!-- ===== LEAVES - Right side ===== -->
+  <g>
+    <!-- Large right arching leaf 1 -->
+    <path d="M252,188 
+             Q300,150 360,120 
+             Q400,100 440,90 
+             Q470,85 490,95" 
+          stroke="url(#leafGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <g stroke="#1A7A32" stroke-width="0.5" fill="none" opacity="0.4">
+      <path d="M280,145 Q300,130 330,115"/>
+      <path d="M320,120 Q350,105 380,95"/>
+      <path d="M360,100 Q400,85 440,80"/>
+    </g>
+    <path d="M490,95 Q495,100 485,105 Q475,102 480,95" fill="#0D5A22" opacity="0.7"/>
+
+    <!-- Large right arching leaf 2 -->
+    <path d="M250,185 
+             Q270,140 300,100 
+             Q330,70 370,50 
+             Q400,38 430,42" 
+          stroke="url(#leafDark)" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <g stroke="#0D4A1A" stroke-width="0.4" fill="none" opacity="0.35">
+      <path d="M280,110 Q310,85 350,65"/>
+      <path d="M330,75 Q360,55 390,48"/>
+    </g>
+    <path d="M430,42 Q435,48 425,50 Q418,46 422,40" fill="#0D4A1A" opacity="0.6"/>
+
+    <!-- Right drooping leaf 3 -->
+    <path d="M255,190 
+             Q290,170 330,160 
+             Q370,152 410,155 
+             Q440,158 460,165" 
+          stroke="url(#leafGrad)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M460,165 Q465,170 455,172 Q448,168 452,162" fill="#1A7A32" opacity="0.5"/>
+
+    <!-- Right low leaf 4 -->
+    <path d="M260,195 
+             Q280,210 310,225 
+             Q340,238 370,245 
+             Q400,250 425,248" 
+          stroke="url(#leafDark)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.75"/>
+    <path d="M425,248 Q430,254 420,255 Q412,251 416,245" fill="#0D5A22" opacity="0.5"/>
+  </g>
+
+  <!-- ===== LEAVES - Top/Center ===== -->
+  <g>
+    <!-- Center top leaf 1 -->
+    <path d="M250,182 
+             Q255,140 258,100 
+             Q260,60 255,20 
+             Q252,5 245,0" 
+          stroke="url(#leafGrad)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M245,0 Q240,5 248,8 Q254,5 252,0" fill="#1A7A32" opacity="0.6"/>
+    
+    <!-- Center top leaf 2 (slight curve) -->
+    <path d="M252,185 
+             Q260,150 268,110 
+             Q275,70 280,35 
+             Q282,15 278,5" 
+          stroke="url(#leafDark)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <path d="M278,5 Q274,10 282,12 Q286,8 284,3" fill="#0D5A22" opacity="0.5"/>
+
+    <!-- Center top leaf 3 -->
+    <path d="M248,183 
+             Q240,145 232,105 
+             Q225,65 220,30 
+             Q218,12 222,3" 
+          stroke="url(#leafGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <path d="M222,3 Q218,8 226,10 Q230,6 228,1" fill="#1A7A32" opacity="0.5"/>
+  </g>
+
+  <!-- ===== COCONUTS/FRUIT ===== -->
+  <g>
+    <!-- Coconut cluster 1 -->
+    <circle cx="245" cy="190" r="6" fill="url(#coconutGrad)" stroke="#4A3508" stroke-width="0.8"/>
+    <circle cx="258" cy="188" r="5.5" fill="url(#coconutGrad)" stroke="#4A3508" stroke-width="0.8"/>
+    <circle cx="252" cy="195" r="5" fill="url(#coconutGrad)" stroke="#4A3508" stroke-width="0.8"/>
+    <circle cx="240" cy="195" r="5.2" fill="url(#coconutGrad)" stroke="#4A3508" stroke-width="0.8"/>
+    
+    <!-- Coconut highlights -->
+    <circle cx="243" cy="187" r="1.5" fill="#C4A050" opacity="0.5"/>
+    <circle cx="256" cy="185" r="1.3" fill="#C4A050" opacity="0.5"/>
+    <circle cx="250" cy="192" r="1.2" fill="#C4A050" opacity="0.4"/>
+
+    <!-- Coconut cluster 2 (smaller, behind) -->
+    <circle cx="242" cy="185" r="4.5" fill="#6B4F10" stroke="#4A3508" stroke-width="0.6" opacity="0.7"/>
+    <circle cx="255" cy="183" r="4" fill="#6B4F10" stroke="#4A3508" stroke-width="0.6" opacity="0.7"/>
+  </g>
+
+  <!-- Small detail: leaf stem connections at crown -->
+  <g stroke="#8B7355" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M248,188 Q230,175 210,165"/>
+    <path d="M252,186 Q270,172 290,162"/>
+    <path d="M250,183 Q248,160 245,140"/>
+    <path d="M251,184 Q258,158 265,138"/>
+  </g>
+
+  <!-- Dry frond remnants on trunk -->
+  <g stroke="#8B6914" stroke-width="1" fill="none" opacity="0.35">
+    <path d="M228,350 Q210,340 195,345"/>
+    <path d="M229,350 Q215,355 200,352"/>
+    <path d="M228,380 Q205,375 188,380"/>
+    <path d="M272,350 Q290,340 305,345"/>
+    <path d="M271,350 Q285,355 300,352"/>
+  </g>
+</svg>

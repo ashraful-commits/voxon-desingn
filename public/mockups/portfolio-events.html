@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Durra Events</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Arial',sans-serif;background:#080510;color:#fff;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;background:rgba(5,2,15,0.97);border-bottom:1px solid rgba(168,85,247,0.15)}
+.logo{font-size:22px;font-weight:900;letter-spacing:2px;background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo span{font-size:10px;display:block;letter-spacing:5px;color:rgba(255,255,255,0.3);-webkit-text-fill-color:rgba(255,255,255,0.3);font-weight:400;margin-top:1px}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1px}
+.btn-purple{background:linear-gradient(135deg,#A855F7,#EC4899);color:#fff;border:none;padding:11px 24px;font-weight:700;font-size:12px;border-radius:24px;cursor:pointer}
+.hero{padding:90px 60px;background:radial-gradient(ellipse at center,rgba(168,85,247,0.08),transparent 65%);display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;min-height:480px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.25);padding:8px 18px;border-radius:20px;font-size:11px;color:#C084FC;font-weight:700;letter-spacing:1px;margin-bottom:28px}
+h1{font-size:54px;font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:20px}
+h1 span{background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:40px}
+.hero-right{display:flex;flex-direction:column;gap:16px}
+.event-card{background:rgba(255,255,255,0.03);border:1px solid rgba(168,85,247,0.12);border-radius:16px;padding:22px;display:flex;gap:18px;align-items:center}
+.event-date{background:linear-gradient(135deg,#A855F7,#EC4899);border-radius:10px;padding:12px 16px;text-align:center;flex-shrink:0}
+.event-day{font-size:26px;font-weight:900;line-height:1}
+.event-mon{font-size:11px;letter-spacing:2px;opacity:0.85}
+.event-info h4{font-size:15px;font-weight:700;margin-bottom:5px}
+.event-info p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5}
+.event-tag{display:inline-block;margin-top:8px;font-size:10px;font-weight:700;letter-spacing:2px;padding:3px 10px;border-radius:20px}
+.tag-wedding{background:rgba(236,72,153,0.15);color:#F472B6;border:1px solid rgba(236,72,153,0.25)}
+.tag-corp{background:rgba(168,85,247,0.15);color:#C084FC;border:1px solid rgba(168,85,247,0.25)}
+.tag-gala{background:rgba(245,158,11,0.12);color:#FCD34D;border:1px solid rgba(245,158,11,0.2)}
+.portfolio-section{padding:60px;background:#060310}
+.portfolio-section h2{font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:36px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative}
+.gallery-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:64px}
+.g1{background:linear-gradient(135deg,#2D0A3A,#1A0522)}
+.g2{background:linear-gradient(135deg,#0A1A2A,#051018)}
+.g3{background:linear-gradient(135deg,#1A0A2A,#100518)}
+.g4{background:linear-gradient(135deg,#2A1A0A,#180E05)}
+.gallery-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);padding:16px}
+.gallery-name{font-size:13px;font-weight:700}
+.gallery-type{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 60px 60px}
+.svc{background:rgba(255,255,255,0.02);border:1px solid rgba(168,85,247,0.1);border-radius:12px;padding:24px;text-align:center}
+.svc .icon{font-size:32px;margin-bottom:14px}
+.svc h4{font-size:14px;font-weight:700;margin-bottom:8px}
+.svc p{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6}
+</style></head><body>
+<nav>
+  <div class="logo">DURRA<span>EVENT MANAGEMENT</span></div>
+  <ul><li><a href="#">Weddings</a></li><li><a href="#">Corporate</a></li><li><a href="#">Galas</a></li><li><a href="#">Gallery</a></li></ul>
+  <button class="btn-purple">Plan Your Event</button>
+</nav>
+<section class="hero">
+  <div>
+    <div class="tag">✨ Riyadh's Premium Event Management</div>
+    <h1>Events That<br><span>Inspire.</span></h1>
+    <p class="sub">From royal weddings to corporate galas — we design unforgettable moments that reflect Saudi culture and modern luxury in perfect harmony.</p>
+    <div style="display:flex;gap:14px;margin-bottom:40px">
+      <button class="btn-purple" style="padding:14px 32px;font-size:13px">Plan Your Event</button>
+      <button style="background:transparent;border:1px solid rgba(168,85,247,0.3);color:rgba(255,255,255,0.7);padding:14px 28px;font-weight:600;font-size:12px;border-radius:24px;cursor:pointer">View Portfolio →</button>
+    </div>
+    <div style="display:flex;gap:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.06)">
+      <div><div style="font-size:28px;font-weight:900;background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">800+</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px">Events executed</div></div>
+      <div><div style="font-size:28px;font-weight:900;background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">12yr</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px">Experience</div></div>
+      <div><div style="font-size:28px;font-weight:900;background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">99%</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px">Client satisfaction</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="event-card"><div class="event-date"><div class="event-day">28</div><div class="event-mon">JUN</div></div><div class="event-info"><h4>Al-Rashidi Wedding Reception</h4><p>Grand Ballroom · 500 guests · Riyadh Ritz-Carlton</p><div class="event-tag tag-wedding">WEDDING</div></div></div>
+    <div class="event-card"><div class="event-date"><div class="event-day">05</div><div class="event-mon">JUL</div></div><div class="event-info"><h4>Saudi Digital Summit 2025</h4><p>Conference · 1,200 attendees · KAEC Conference Center</p><div class="event-tag tag-corp">CORPORATE</div></div></div>
+    <div class="event-card"><div class="event-date"><div class="event-day">15</div><div class="event-mon">JUL</div></div><div class="event-info"><h4>Vision 2030 Charity Gala</h4><p>Black-tie dinner · 300 guests · Fairmont Hotel Riyadh</p><div class="event-tag tag-gala">GALA DINNER</div></div></div>
+  </div>
+</section>
+<section class="portfolio-section">
+  <h2>Our Work</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><div class="gallery-img g1">💍</div><div class="gallery-overlay"><div class="gallery-name">Royal Wedding</div><div class="gallery-type">800 guests · Riyadh</div></div></div>
+    <div class="gallery-item"><div class="gallery-img g2">🎤</div><div class="gallery-overlay"><div class="gallery-name">Tech Conference</div><div class="gallery-type">2,000 attendees</div></div></div>
+    <div class="gallery-item"><div class="gallery-img g3">🎆</div><div class="gallery-overlay"><div class="gallery-name">National Day Gala</div><div class="gallery-type">1,500 guests</div></div></div>
+    <div class="gallery-item"><div class="gallery-img g4">🍽️</div><div class="gallery-overlay"><div class="gallery-name">Luxury Dinner</div><div class="gallery-type">Private event</div></div></div>
+  </div>
+</section>
+<div class="services">
+  <div class="svc"><div class="icon">💒</div><h4>Weddings</h4><p>Luxury Saudi weddings with full design, catering, décor, and entertainment management.</p></div>
+  <div class="svc"><div class="icon">🏢</div><h4>Corporate Events</h4><p>Conferences, product launches, and team-building experiences for leading KSA companies.</p></div>
+  <div class="svc"><div class="icon">🎊</div><h4>Gala Dinners</h4><p>Black-tie galas, charity events, and award ceremonies with world-class production.</p></div>
+  <div class="svc"><div class="icon">🎂</div><h4>Private Celebrations</h4><p>Birthday parties, graduation ceremonies, and exclusive private gatherings.</p></div>
+</div>
+</body></html>

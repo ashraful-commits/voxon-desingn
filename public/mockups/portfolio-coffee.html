@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Qahwa Coffee Roasters</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Georgia',serif;background:#1A0A00;color:#F5ECD7;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:72px;background:#0F0600;border-bottom:1px solid rgba(201,168,76,0.12)}
+.logo{font-style:italic;font-size:26px;color:#E8C96A;letter-spacing:1px}
+.logo span{color:rgba(245,236,215,0.5);font-size:10px;font-style:normal;letter-spacing:5px;font-family:sans-serif;display:block}
+nav ul{display:flex;gap:36px;list-style:none}
+nav ul a{color:rgba(245,236,215,0.45);text-decoration:none;font-family:sans-serif;font-size:12px;letter-spacing:1.5px;font-weight:600}
+.btn-warm{background:linear-gradient(135deg,#92400E,#B45309);color:#F5ECD7;border:none;padding:12px 26px;font-family:sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;border-radius:24px;cursor:pointer}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.hero-left{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero-left::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.06),transparent 70%)}
+.tag{font-family:sans-serif;font-size:10px;color:#C9A84C;font-weight:700;letter-spacing:5px;margin-bottom:24px}
+h1{font-size:54px;line-height:1.1;margin-bottom:20px}
+h1 em{color:#C9A84C}
+.sub{font-family:sans-serif;font-size:13px;color:rgba(245,236,215,0.5);line-height:1.8;margin-bottom:36px;max-width:420px}
+.origin-badge{display:flex;align-items:center;gap:16px;padding:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.15);border-radius:12px;margin-bottom:28px}
+.origin-badge .flag{font-size:32px}
+.origin-badge p{font-family:sans-serif;font-size:12px;color:rgba(245,236,215,0.6);line-height:1.5}
+.origin-badge strong{color:#F5ECD7;font-size:14px}
+.hero-right{background:#110700;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.menu-item{border:1px solid rgba(201,168,76,0.08);padding:32px;display:flex;flex-direction:column;gap:10px;position:relative}
+.menu-item:hover{background:rgba(201,168,76,0.03)}
+.menu-icon{font-size:40px;margin-bottom:4px}
+.menu-name{font-size:18px}
+.menu-desc{font-family:sans-serif;font-size:12px;color:rgba(245,236,215,0.4);line-height:1.5}
+.menu-price{font-family:sans-serif;font-size:16px;font-weight:700;color:#C9A84C;margin-top:auto}
+.menu-section{padding:60px;background:#150800}
+.menu-section h2{font-size:36px;margin-bottom:8px;font-style:italic}
+.sub-title{font-family:sans-serif;font-size:13px;color:rgba(245,236,215,0.4);margin-bottom:40px}
+.menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.menu-card{background:#1C0C02;border:1px solid rgba(201,168,76,0.08);border-radius:12px;overflow:hidden}
+.menu-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:64px;background:rgba(201,168,76,0.04)}
+.menu-info{padding:18px}
+.menu-cat{font-family:sans-serif;font-size:10px;color:#C9A84C;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+.menu-title{font-size:16px;margin-bottom:6px}
+.menu-price2{font-family:sans-serif;font-size:15px;font-weight:700;color:#C9A84C}
+</style></head><body>
+<nav>
+  <div class="logo">Qahwa<span>SPECIALTY COFFEE ROASTERS</span></div>
+  <ul><li><a href="#">Menu</a></li><li><a href="#">Our Story</a></li><li><a href="#">Roastery</a></li><li><a href="#">Locations</a></li></ul>
+  <button class="btn-warm">ORDER ONLINE</button>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <div class="tag">☕ SPECIALTY COFFEE · EST. 2018 · RIYADH</div>
+    <h1>From Bean<br>to <em>Cup.</em></h1>
+    <p class="sub">Sourced from the world's finest estates, roasted with precision in Riyadh — every cup tells a story of craft and heritage.</p>
+    <div class="origin-badge">
+      <div class="flag">🌍</div>
+      <div><strong>Single-Origin Arabica</strong><p>Hand-picked from Yemen, Ethiopia & Colombia. Roasted fresh weekly at our Riyadh roastery.</p></div>
+    </div>
+    <button class="btn-warm" style="align-self:flex-start;padding:14px 32px">EXPLORE THE MENU</button>
+  </div>
+  <div class="hero-right">
+    <div class="menu-item"><div class="menu-icon">☕</div><div class="menu-name">Arabica Espresso</div><div class="menu-desc">Double shot, rich crema, single-origin Yemen Arabica</div><div class="menu-price">SAR 18</div></div>
+    <div class="menu-item"><div class="menu-icon">🌿</div><div class="menu-name">Matcha Latte</div><div class="menu-desc">Ceremonial grade matcha, oat milk, light honey</div><div class="menu-price">SAR 22</div></div>
+    <div class="menu-item"><div class="menu-icon">🫖</div><div class="menu-name">Arabic Qahwa</div><div class="menu-desc">Heritage recipe, cardamom, saffron & rose water</div><div class="menu-price">SAR 14</div></div>
+    <div class="menu-item"><div class="menu-icon">🍪</div><div class="menu-name">Date Croissant</div><div class="menu-desc">Fresh baked, Medjool dates, pistachio cream</div><div class="menu-price">SAR 16</div></div>
+  </div>
+</div>
+<section class="menu-section">
+  <h2>Our <em>Full Menu</em></h2>
+  <p class="sub-title">Crafted with care, served with love</p>
+  <div class="menu-grid">
+    <div class="menu-card"><div class="menu-thumb">☕</div><div class="menu-info"><div class="menu-cat">ESPRESSO</div><div class="menu-title">Flat White</div><div class="menu-price2">SAR 20</div></div></div>
+    <div class="menu-card"><div class="menu-thumb">🥤</div><div class="menu-info"><div class="menu-cat">COLD BREW</div><div class="menu-title">Nitro Cold Brew</div><div class="menu-price2">SAR 24</div></div></div>
+    <div class="menu-card"><div class="menu-thumb">🥐</div><div class="menu-info"><div class="menu-cat">PASTRY</div><div class="menu-title">Saffron Muffin</div><div class="menu-price2">SAR 18</div></div></div>
+    <div class="menu-card"><div class="menu-thumb">🧋</div><div class="menu-info"><div class="menu-cat">SPECIALTY</div><div class="menu-title">Rose Latte</div><div class="menu-price2">SAR 26</div></div></div>
+  </div>
+</section>
+</body></html>

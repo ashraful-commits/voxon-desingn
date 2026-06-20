@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Tamweel Fintech</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Arial',sans-serif;background:#050A14;color:#fff;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:70px;background:#040810;border-bottom:1px solid rgba(255,255,255,0.05)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,#6366F1,#8B5CF6);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px}
+.logo-name{font-size:18px;font-weight:800;letter-spacing:-0.5px}
+.logo-name span{color:#818CF8}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.5px}
+.btn-purple{background:linear-gradient(135deg,#6366F1,#8B5CF6);color:#fff;border:none;padding:11px 24px;font-weight:700;font-size:12px;border-radius:8px;cursor:pointer}
+.hero{padding:90px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;background:radial-gradient(ellipse at 15% 50%,rgba(99,102,241,0.08),transparent 55%)}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.25);padding:6px 16px;border-radius:20px;font-size:11px;color:#818CF8;font-weight:700;letter-spacing:1px;margin-bottom:28px}
+h1{font-size:52px;font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:20px}
+h1 span{background:linear-gradient(135deg,#6366F1,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:36px}
+.cta-row{display:flex;gap:14px;margin-bottom:48px}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);padding:12px 24px;font-weight:600;font-size:12px;border-radius:8px;cursor:pointer}
+.trust-row{display:flex;gap:24px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.4)}
+.trust-icon{width:20px;height:20px;background:rgba(99,102,241,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px}
+.dashboard{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:28px;position:relative;overflow:hidden}
+.dashboard::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(99,102,241,0.1),transparent 70%);border-radius:50%}
+.dash-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.dash-title{font-size:13px;font-weight:700;color:rgba(255,255,255,0.7)}
+.dash-period{font-size:11px;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);padding:4px 12px;border-radius:20px}
+.balance-card{background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.15));border:1px solid rgba(99,102,241,0.2);border-radius:14px;padding:24px;margin-bottom:16px}
+.balance-label{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:2px;margin-bottom:8px}
+.balance-amount{font-size:36px;font-weight:900;color:#fff}
+.balance-change{font-size:12px;color:#4ADE80;margin-top:6px;font-weight:600}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.metric{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px}
+.metric-label{font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:6px;letter-spacing:1px}
+.metric-val{font-size:18px;font-weight:800;color:#818CF8}
+.chart-mini{height:50px;display:flex;align-items:flex-end;gap:4px}
+.bar-mini{flex:1;border-radius:2px 2px 0 0;background:linear-gradient(to top,#6366F1,#A78BFA);opacity:0.6}
+.features{padding:60px;background:#04080F}
+.features h2{font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:40px}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feat{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:24px}
+.feat-icon{font-size:28px;margin-bottom:14px}
+.feat h4{font-size:14px;font-weight:700;margin-bottom:8px}
+.feat p{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6}
+</style></head><body>
+<nav>
+  <div class="logo"><div class="logo-mark">T</div><div class="logo-name">Tamweel<span>Pay</span></div></div>
+  <ul><li><a href="#">Personal</a></li><li><a href="#">Business</a></li><li><a href="#">Investments</a></li><li><a href="#">BNPL</a></li><li><a href="#">About</a></li></ul>
+  <button class="btn-purple">Open Account Free</button>
+</nav>
+<section class="hero">
+  <div>
+    <div class="pill">🇸🇦 Saudi-licensed Fintech · SAMA Regulated</div>
+    <h1>Money Made<br><span>Smarter.</span></h1>
+    <p class="sub">Saudi Arabia's next-generation digital wallet — instant transfers, Shariah-compliant investments, and smart spending insights all in one app.</p>
+    <div class="cta-row">
+      <button class="btn-purple" style="padding:14px 32px;font-size:13px">Get Started Free</button>
+      <button class="btn-outline">See How It Works →</button>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><div class="trust-icon">🔒</div>Bank-grade security</div>
+      <div class="trust-item"><div class="trust-icon">✅</div>SAMA approved</div>
+      <div class="trust-item"><div class="trust-icon">⚡</div>Instant transfers</div>
+    </div>
+  </div>
+  <div class="dashboard">
+    <div class="dash-header"><div class="dash-title">My Dashboard</div><div class="dash-period">June 2025</div></div>
+    <div class="balance-card">
+      <div class="balance-label">TOTAL BALANCE</div>
+      <div class="balance-amount">SAR 48,250.00</div>
+      <div class="balance-change">↑ +12.4% this month</div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-label">SPENT</div><div class="metric-val">SAR 3,200</div></div>
+      <div class="metric"><div class="metric-label">SAVED</div><div class="metric-val">SAR 8,500</div></div>
+      <div class="metric"><div class="metric-label">INVESTED</div><div class="metric-val">SAR 15,000</div></div>
+    </div>
+    <div class="chart-mini">
+      <div class="bar-mini" style="height:40%"></div><div class="bar-mini" style="height:65%"></div><div class="bar-mini" style="height:45%"></div><div class="bar-mini" style="height:80%"></div><div class="bar-mini" style="height:55%"></div><div class="bar-mini" style="height:90%"></div><div class="bar-mini" style="height:70%"></div><div class="bar-mini" style="height:85%"></div><div class="bar-mini" style="height:60%"></div><div class="bar-mini" style="height:100%"></div>
+    </div>
+  </div>
+</section>
+<section class="features">
+  <h2>Everything You Need in One App</h2>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-icon">💳</div><h4>Digital Wallet</h4><p>Pay anywhere instantly — physical, online, or via NFC tap with your Tamweel card.</p></div>
+    <div class="feat"><div class="feat-icon">📈</div><h4>Smart Investments</h4><p>Shariah-compliant Sukuk, ETFs, and gold — start investing from SAR 100.</p></div>
+    <div class="feat"><div class="feat-icon">🏦</div><h4>Instant Transfers</h4><p>Send money to any Saudi bank in seconds — 24/7, zero fees for premium members.</p></div>
+    <div class="feat"><div class="feat-icon">🤖</div><h4>AI Spending Insights</h4><p>Smart categorisation, budget alerts, and savings recommendations powered by AI.</p></div>
+  </div>
+</section>
+</body></html>

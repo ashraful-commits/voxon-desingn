@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Arabia Voyages</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Georgia',serif;background:#020E1A;color:#fff;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:72px;background:rgba(2,14,26,0.95);border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{font-style:italic;font-size:22px;color:#F8F5EF}
+.logo span{color:#F59E0B;font-style:normal;font-family:sans-serif;font-size:10px;display:block;letter-spacing:5px}
+nav ul{display:flex;gap:36px;list-style:none}
+nav ul a{color:rgba(255,255,255,0.45);text-decoration:none;font-family:sans-serif;font-size:12px;font-weight:600;letter-spacing:1px}
+.btn-amber{background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;border:none;padding:12px 26px;font-family:sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;border-radius:6px;cursor:pointer}
+.hero{position:relative;min-height:540px;background:linear-gradient(135deg,#020E1A 0%,#071525 50%,#0A1E2E 100%);display:flex;align-items:center;overflow:hidden;padding:80px 60px}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F59E0B' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{flex:1;max-width:580px;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.25);padding:8px 18px;border-radius:24px;font-family:sans-serif;font-size:11px;color:#F59E0B;font-weight:700;letter-spacing:1px;margin-bottom:28px}
+h1{font-size:56px;line-height:1.1;margin-bottom:20px}
+h1 em{color:#F59E0B}
+.sub{font-family:sans-serif;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:40px}
+.search-bar{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;display:flex;overflow:hidden;margin-bottom:32px}
+.search-field{flex:1;padding:18px 24px;border-right:1px solid rgba(255,255,255,0.08)}
+.search-field label{font-family:sans-serif;font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:2px;display:block;margin-bottom:5px}
+.search-field span{font-family:sans-serif;font-size:14px;color:#fff;font-weight:600}
+.search-btn{background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;padding:18px 28px;font-family:sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;border:none;cursor:pointer;white-space:nowrap}
+.hero-cards{position:absolute;right:60px;top:50%;transform:translateY(-50%);display:grid;grid-template-columns:1fr 1fr;gap:16px;z-index:2}
+.dest-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;width:200px}
+.dest-img{height:130px;display:flex;align-items:center;justify-content:center;font-size:52px}
+.dest-info{padding:14px}
+.dest-name{font-size:14px;margin-bottom:4px}
+.dest-price{font-family:sans-serif;font-size:13px;font-weight:700;color:#F59E0B}
+.packages{padding:60px;background:#030F1B}
+.packages h2{font-size:34px;margin-bottom:8px;font-style:italic}
+.packages .sub2{font-family:sans-serif;font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:40px}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pkg-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden}
+.pkg-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:72px}
+.pkg-info{padding:24px}
+.pkg-badge{display:inline-block;font-family:sans-serif;font-size:10px;color:#F59E0B;font-weight:700;letter-spacing:2px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);padding:4px 10px;border-radius:20px;margin-bottom:12px}
+.pkg-name{font-size:20px;margin-bottom:8px}
+.pkg-details{font-family:sans-serif;font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px}
+.pkg-footer{display:flex;justify-content:space-between;align-items:center}
+.pkg-price{font-family:sans-serif;font-size:20px;font-weight:800;color:#F59E0B}
+</style></head><body>
+<nav>
+  <div class="logo">Arabia Voyages<span>PREMIUM TRAVEL EXPERIENCES</span></div>
+  <ul><li><a href="#">Destinations</a></li><li><a href="#">Packages</a></li><li><a href="#">Luxury Tours</a></li><li><a href="#">Hajj & Umrah</a></li></ul>
+  <button class="btn-amber">PLAN YOUR TRIP</button>
+</nav>
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">✈️ Saudi Arabia's Premier Travel Curator</div>
+    <h1>Discover the<br>World in <em>Style.</em></h1>
+    <p class="sub">Tailored luxury journeys, exclusive destination access, and seamless travel experiences curated for the discerning Saudi traveller.</p>
+    <div class="search-bar">
+      <div class="search-field"><label>DESTINATION</label><span>Maldives, Paris, Tokyo...</span></div>
+      <div class="search-field" style="border-right:none"><label>TRAVEL DATES</label><span>Select dates</span></div>
+      <button class="search-btn">SEARCH PACKAGES →</button>
+    </div>
+    <div style="display:flex;gap:36px">
+      <div><span style="font-family:sans-serif;font-size:22px;font-weight:800;color:#F59E0B">150+</span><span style="font-family:sans-serif;font-size:11px;color:rgba(255,255,255,0.35);display:block">Destinations</span></div>
+      <div><span style="font-family:sans-serif;font-size:22px;font-weight:800;color:#F59E0B">50K+</span><span style="font-family:sans-serif;font-size:11px;color:rgba(255,255,255,0.35);display:block">Happy travellers</span></div>
+      <div><span style="font-family:sans-serif;font-size:22px;font-weight:800;color:#F59E0B">15yr</span><span style="font-family:sans-serif;font-size:11px;color:rgba(255,255,255,0.35);display:block">In business</span></div>
+    </div>
+  </div>
+  <div class="hero-cards">
+    <div class="dest-card"><div class="dest-img" style="background:linear-gradient(135deg,#1a3a4a,#0d2535)">🏝️</div><div class="dest-info"><div class="dest-name">Maldives</div><div class="dest-price">From SAR 8,500</div></div></div>
+    <div class="dest-card"><div class="dest-img" style="background:linear-gradient(135deg,#2a1a0a,#1a0e05)">🗼</div><div class="dest-info"><div class="dest-name">Paris</div><div class="dest-price">From SAR 6,200</div></div></div>
+    <div class="dest-card"><div class="dest-img" style="background:linear-gradient(135deg,#0a1a2a,#05101a)">🗾</div><div class="dest-info"><div class="dest-name">Japan</div><div class="dest-price">From SAR 7,800</div></div></div>
+    <div class="dest-card"><div class="dest-img" style="background:linear-gradient(135deg,#1a2a0a,#0e1a05)">🌍</div><div class="dest-info"><div class="dest-name">Safari Kenya</div><div class="dest-price">From SAR 9,200</div></div></div>
+  </div>
+</div>
+<section class="packages">
+  <h2>Featured <em>Packages</em></h2>
+  <p class="sub2">Handpicked experiences for every type of traveller</p>
+  <div class="pkg-grid">
+    <div class="pkg-card"><div class="pkg-img" style="background:linear-gradient(135deg,#0d2535,#071520)">🌊</div><div class="pkg-info"><div class="pkg-badge">LUXURY</div><div class="pkg-name">Maldives Overwater Retreat</div><div class="pkg-details">7 nights · Private villa · All-inclusive · Seaplane transfer · Spa access</div><div class="pkg-footer"><div class="pkg-price">SAR 18,500</div><button class="btn-amber" style="padding:10px 20px;font-size:11px">BOOK NOW</button></div></div></div>
+    <div class="pkg-card"><div class="pkg-img" style="background:linear-gradient(135deg,#200d05,#150805)">🏔️</div><div class="pkg-info"><div class="pkg-badge">ADVENTURE</div><div class="pkg-name">Swiss Alps Winter Escape</div><div class="pkg-details">10 nights · Chalet stay · Ski passes · Private guide · Gourmet dining</div><div class="pkg-footer"><div class="pkg-price">SAR 24,000</div><button class="btn-amber" style="padding:10px 20px;font-size:11px">BOOK NOW</button></div></div></div>
+    <div class="pkg-card"><div class="pkg-img" style="background:linear-gradient(135deg,#0d1520,#070d15)">🕌</div><div class="pkg-info"><div class="pkg-badge">SPIRITUAL</div><div class="pkg-name">Premium Umrah Package</div><div class="pkg-details">14 nights · 5-star hotels · Business class · Personal guide · Ziyarat</div><div class="pkg-footer"><div class="pkg-price">SAR 12,800</div><button class="btn-amber" style="padding:10px 20px;font-size:11px">BOOK NOW</button></div></div></div>
+  </div>
+</section>
+</body></html>

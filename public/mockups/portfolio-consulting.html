@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280"><title>Saqr Consulting Group</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Arial',sans-serif;background:#F8F8F6;color:#0A1420;width:1280px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:72px;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);box-shadow:0 2px 20px rgba(0,0,0,0.04)}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#1A4D2E,#2D7A4A);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:900}
+.logo-name{font-size:17px;font-weight:800;letter-spacing:-0.5px;color:#0A1420}
+.logo-tag{font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:2px;text-transform:uppercase;margin-top:1px}
+nav ul{display:flex;gap:36px;list-style:none}
+nav ul a{color:rgba(10,20,32,0.55);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.5px}
+.btn-green{background:linear-gradient(135deg,#1A4D2E,#2D7A4A);color:#fff;border:none;padding:11px 26px;font-weight:700;font-size:12px;border-radius:6px;cursor:pointer}
+.hero{background:linear-gradient(135deg,#0A1420,#1A2E3A);padding:100px 60px;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;min-height:480px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(45,122,74,0.2);border:1px solid rgba(45,122,74,0.3);padding:6px 16px;border-radius:20px;font-size:11px;color:#4ADE80;font-weight:700;letter-spacing:1px;margin-bottom:28px}
+h1{font-size:50px;font-weight:900;line-height:1.08;letter-spacing:-2px;color:#fff;margin-bottom:20px}
+h1 em{color:#4ADE80;font-style:normal}
+.sub{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:40px;max-width:480px}
+.cta-row{display:flex;gap:14px}
+.btn-outline-w{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);padding:12px 26px;font-weight:600;font-size:12px;border-radius:6px;cursor:pointer}
+.hero-right{display:flex;flex-direction:column;gap:16px}
+.insight-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+.insight-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.insight-card h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
+.insight-card p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5}
+.services{padding:70px 60px;background:#fff}
+.services h2{font-size:36px;font-weight:900;letter-spacing:-1px;margin-bottom:8px}
+.services .sub2{font-size:14px;color:rgba(0,0,0,0.45);margin-bottom:48px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc-card{border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:32px;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1A4D2E,#4ADE80)}
+.svc-num{font-size:52px;font-weight:900;color:rgba(0,0,0,0.04);line-height:1;margin-bottom:12px}
+.svc-card h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.svc-card p{font-size:13px;color:rgba(0,0,0,0.5);line-height:1.6}
+.svc-link{display:inline-flex;align-items:center;gap:6px;color:#1A4D2E;font-size:12px;font-weight:700;margin-top:20px;text-decoration:none}
+.clients{padding:50px 60px;background:#F0F4F0;display:flex;align-items:center;gap:60px}
+.clients p{font-size:12px;color:rgba(0,0,0,0.35);font-weight:700;letter-spacing:2px;white-space:nowrap}
+.client-logos{display:flex;gap:40px;align-items:center;flex:1}
+.client-logo{font-size:13px;font-weight:800;color:rgba(0,0,0,0.2);letter-spacing:1px}
+</style></head><body>
+<nav>
+  <div class="logo"><div class="logo-icon">S</div><div><div class="logo-name">Saqr Consulting</div><div class="logo-tag">STRATEGY · GROWTH · TRANSFORMATION</div></div></div>
+  <ul><li><a href="#">Services</a></li><li><a href="#">Industries</a></li><li><a href="#">Insights</a></li><li><a href="#">About</a></li><li><a href="#">Careers</a></li></ul>
+  <button class="btn-green">Talk to an Expert</button>
+</nav>
+<section class="hero">
+  <div>
+    <div class="hero-tag">🚀 Vision 2030 Transformation Partner</div>
+    <h1>Strategy That<br>Drives <em>Growth.</em></h1>
+    <p class="sub">We partner with Saudi Arabia's leading organisations to design strategy, accelerate digital transformation, and deliver measurable results.</p>
+    <div class="cta-row">
+      <button class="btn-green" style="padding:14px 32px;font-size:13px;border-radius:8px">Get a Free Consultation</button>
+      <button class="btn-outline-w">View Case Studies →</button>
+    </div>
+    <div style="display:flex;gap:40px;margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,0.08)">
+      <div><div style="font-size:28px;font-weight:900;color:#4ADE80">200+</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px">Projects delivered</div></div>
+      <div><div style="font-size:28px;font-weight:900;color:#4ADE80">15yr+</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px">Market presence</div></div>
+      <div><div style="font-size:28px;font-weight:900;color:#4ADE80">95%</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px">Client retention</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="insight-card"><div class="insight-icon" style="background:rgba(74,222,128,0.12)">📊</div><div><h4>Market Intelligence</h4><p>Data-driven insights into the Saudi and GCC market landscape, tailored to your industry.</p></div></div>
+    <div class="insight-card"><div class="insight-icon" style="background:rgba(59,130,246,0.12)">🏗️</div><div><h4>Organizational Design</h4><p>Restructuring, talent strategy, and leadership development for high-growth Saudi companies.</p></div></div>
+    <div class="insight-card"><div class="insight-icon" style="background:rgba(245,158,11,0.12)">⚡</div><div><h4>Digital Acceleration</h4><p>End-to-end digital transformation aligned with Saudi Vision 2030 objectives and NEOM ambitions.</p></div></div>
+  </div>
+</section>
+<section class="services">
+  <h2>Our Services</h2>
+  <p class="sub2">Comprehensive advisory across strategy, technology, and operations</p>
+  <div class="services-grid">
+    <div class="svc-card"><div class="svc-num">01</div><h3>Corporate Strategy</h3><p>Market entry, competitive positioning, and growth roadmaps for Saudi and GCC expansion.</p><a href="#" class="svc-link">Learn more →</a></div>
+    <div class="svc-card"><div class="svc-num">02</div><h3>Digital Transformation</h3><p>Technology strategy, digital operating models, and innovation programs for enterprise clients.</p><a href="#" class="svc-link">Learn more →</a></div>
+    <div class="svc-card"><div class="svc-num">03</div><h3>Financial Advisory</h3><p>M&amp;A advisory, valuations, restructuring, and capital strategy for Saudi corporations.</p><a href="#" class="svc-link">Learn more →</a></div>
+  </div>
+</section>
+<div class="clients">
+  <p>TRUSTED BY</p>
+  <div class="client-logos">
+    <div class="client-logo">SAUDI ARAMCO</div><div class="client-logo">STC GROUP</div><div class="client-logo">AL RAJHI</div><div class="client-logo">SABIC</div><div class="client-logo">PIF</div>
+  </div>
+</div>
+</body></html>

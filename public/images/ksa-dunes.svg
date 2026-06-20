@@ -1,0 +1,25 @@
+<svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#E8C96A" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#F5E9C8" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Back dunes -->
+  <path d="M0,280 Q200,220 400,260 T800,240 L800,400 L0,400 Z" fill="url(#sandGrad)" opacity="0.4"/>
+  
+  <!-- Middle dunes -->
+  <path d="M0,320 Q150,260 350,300 T700,280 L800,290 L800,400 L0,400 Z" fill="url(#sandGrad)" opacity="0.6"/>
+  
+  <!-- Front dunes -->
+  <path d="M0,360 Q250,300 500,340 T800,320 L800,400 L0,400 Z" fill="url(#sandGrad)" opacity="0.85"/>
+  
+  <!-- Subtle wind lines -->
+  <g stroke="#C9A84C" stroke-width="0.5" opacity="0.15" stroke-dasharray="4 6">
+    <path d="M100,250 Q300,230 500,260"/>
+    <path d="M200,290 Q400,270 600,300"/>
+    <path d="M50,330 Q250,310 450,340"/>
+  </g>
+</svg>

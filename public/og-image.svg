@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" rx="32" fill="#08111F"/>
+  <rect x="56" y="56" width="1088" height="518" rx="28" fill="url(#bg)"/>
+  <circle cx="296" cy="208" r="140" fill="#1A6B3C" fill-opacity="0.25"/>
+  <circle cx="954" cy="420" r="180" fill="#C9A84C" fill-opacity="0.18"/>
+  <path d="M768 180H978" stroke="#E8C96A" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+  <path d="M720 242H1040" stroke="#C9A84C" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <path d="M680 304H1080" stroke="#E8C96A" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+  <rect x="130" y="160" width="340" height="310" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="170" y="210" width="130" height="18" rx="9" fill="#E8C96A" fill-opacity="0.9"/>
+  <rect x="170" y="248" width="220" height="14" rx="7" fill="#F8F6F0" fill-opacity="0.65"/>
+  <rect x="170" y="286" width="180" height="14" rx="7" fill="#F8F6F0" fill-opacity="0.35"/>
+  <rect x="170" y="340" width="240" height="64" rx="18" fill="#1A6B3C" fill-opacity="0.75"/>
+  <text x="670" y="250" fill="#F8F6F0" font-family="Georgia, Times New Roman, serif" font-size="72" font-weight="700">Voxon</text>
+  <text x="670" y="320" fill="#E8C96A" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="6">PREMIUM WEB DESIGN</text>
+  <text x="670" y="380" fill="#F8F6F0" font-family="Arial, Helvetica, sans-serif" font-size="28" opacity="0.88">Arabic &amp; English websites for Saudi brands</text>
+  <defs>
+    <linearGradient id="bg" x1="56" y1="56" x2="1144" y2="574" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+</svg>
