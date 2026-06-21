@@ -28,8 +28,8 @@ export async function GET() {
       } else {
         results.push(`Source file does not exist: ${srcName}`);
       }
-    } catch (err: any) {
-      results.push(`Error copying ${srcName}: ${err.message}`);
+    } catch (err: unknown) {
+      results.push(`Error copying ${srcName}: ${err instanceof Error ? err.message : String(err)}`);
     }
   }
 
