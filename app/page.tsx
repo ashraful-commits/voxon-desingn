@@ -80,7 +80,7 @@ function useCountUp(target: number, duration = 1800, start = false) {
 
 
 // Mouse movement handler to support glowing cursor radial effects on cards
-const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+const handleCardMouseMove = (e: React.MouseEvent<HTMLElement>) => {
   const card = e.currentTarget;
   const rect = card.getBoundingClientRect();
   const x = e.clientX - rect.left;
@@ -149,37 +149,48 @@ const STATS_DATA = [
 ];
 
 const PORTFOLIO = [
-  { name: "Al Bina Construction", cat: "Corporate Website", image: "/images/portfolio-construction.png" },
-  { name: "Thouq Restaurant", cat: "Restaurant & Booking", image: "/images/portfolio-restaurant.png" },
-  { name: "Al Salam Clinics", cat: "Medical & Health", image: "/images/portfolio-medical.png" },
-  { name: "Al Aqariyah", cat: "Real Estate", image: "/images/portfolio-realestate.png" },
-  { name: "NurLight Academy", cat: "Education Platform", image: "/images/portfolio-academy.png" },
-  { name: "Barakat Pharma", cat: "Pharmaceutical", image: "/images/portfolio-medical.png" },
-  { name: "AutoWorld Motors", cat: "Automotive", image: "/images/portfolio-automotive.png" },
-  { name: "Gulf National Bank", cat: "Banking & Finance", image: "/images/portfolio-bank.png" },
-  { name: "Al Noor Clinic", cat: "Healthcare", image: "/images/portfolio-clinic.png" },
-  { name: "Qahwa Cafe", cat: "Coffee Shop", image: "/images/portfolio-coffe.png" },
-  { name: "Dar Al-Khibra", cat: "Consulting", image: "/images/portfolio-consulting.png" },
-  { name: "Saudi Drive", cat: "Transport & Logistics", image: "/images/portfolio-drive.png" },
-  { name: "Najd E-Commerce", cat: "E-Commerce", image: "/images/portfolio-ecommerce.png" },
-  { name: "Al Manar Academy", cat: "Education Portal", image: "/images/portfolio-education.png" },
-  { name: "Riyadh Events", cat: "Event Management", image: "/images/portfolio-events.png" },
-  { name: "GreenFields Farm", cat: "Agriculture", image: "/images/portfolio-farm.png" },
-  { name: "Mirage Fashion", cat: "Fashion & Retail", image: "/images/portfolio-fashion.png" },
-  { name: "PaySaudi Fintech", cat: "Financial Tech", image: "/images/portfolio-fintech.png" },
-  { name: "FitZone KSA", cat: "Fitness Center", image: "/images/portfolio-fitness.png" },
-  { name: "Elite Fitness", cat: "Premium Fitness", image: "/images/portfolio-fitness2.png" },
-  { name: "Arabian Hospitality", cat: "Hotel & Resort", image: "/images/portfolio-hotel.png" },
-  { name: "Al Durrat Resort", cat: "Luxury Hotel", image: "/images/portfolio-hotel2.png" },
-  { name: "Saudi Industries", cat: "Industrial", image: "/images/portfolio-industrial.png" },
-  { name: "Al Adl Legal", cat: "Legal Services", image: "/images/portfolio-legal.png" },
-  { name: "Haqouq Law", cat: "Law Firm", image: "/images/portfolio-legal2.png" },
-  { name: "ShipFast Logistics", cat: "Logistics", image: "/images/portfolio-logistics.png" },
-  { name: "Saudi Petroleum", cat: "Oil & Gas", image: "/images/portfolio-petroleu.png" },
-  { name: "TechVanguard", cat: "Technology", image: "/images/portfolio-tech.png" },
-  { name: "Salam Telecom", cat: "Telecommunications", image: "/images/portfolio-telecom.png" },
-  { name: "Wanderlust Travel", cat: "Travel Agency", image: "/images/portfolio-travel.png" },
-  { name: "Al Safar Tourism", cat: "Travel & Tourism", image: "/images/portfolio-travel2.png" },
+  { name: "Seba Bazar", cat: "E-Commerce Marketplace", image: "/images/sebabazar.png", url: "https://sebabazar.vercel.app" },
+  { name: "SalesFarm", cat: "Sales Platform", image: "/images/salesfarm.png", url: "https://salesfam.com" },
+  { name: "Nenosoft Agency", cat: "Digital Agency", image: "/images/nenosoft agency.png", url: "" },
+  { name: "Nanosoft", cat: "Technology", image: "/images/nanosoft.png", url: "https://www.nanosoft.agency" },
+  { name: "Voxon", cat: "Digital Agency", image: "/images/voxon.png", url: "https://voxon.sa" },
+  { name: "Movix", cat: "Entertainment", image: "/images/Movix.png", url: "https://movixproject01.netlify.app" },
+  { name: "Course Mater", cat: "Education Platform", image: "/images/coursemater.png", url: "https://coursemester.vercel.app" },
+  { name: "After We", cat: "Social Platform", image: "/images/afterwe.png", url: "https://afterwe.xyz/en" },
+  { name: "Make Mini Me", cat: "E-Commerce", image: "/images/facepillow.png", url: "https://makeminime-seven.vercel.app" },
+  { name: "Bright Smile", cat: "Healthcare", image: "/images/brightsimile.png", url: "https://brightsmile-iota.vercel.app" },
+  { name: "Fam Clinic", cat: "Medical & Health", image: "/images/famclinic.png", url: "https://clinic-application-design-five.vercel.app" },
+  { name: "Al Bina Construction", cat: "Corporate Website", image: "/images/portfolio-construction.png", url: "" },
+  { name: "Thouq Restaurant", cat: "Restaurant & Booking", image: "/images/portfolio-restaurant.png", url: "" },
+  { name: "Al Salam Clinics", cat: "Medical & Health", image: "/images/portfolio-medical.png", url: "" },
+  { name: "Al Aqariyah", cat: "Real Estate", image: "/images/portfolio-realestate.png", url: "" },
+  { name: "NurLight Academy", cat: "Education Platform", image: "/images/portfolio-academy.png", url: "" },
+  { name: "Barakat Pharma", cat: "Pharmaceutical", image: "/images/portfolio-medical.png", url: "" },
+  { name: "AutoWorld Motors", cat: "Automotive", image: "/images/portfolio-automotive.png", url: "" },
+  { name: "Gulf National Bank", cat: "Banking & Finance", image: "/images/portfolio-bank.png", url: "" },
+  { name: "Al Noor Clinic", cat: "Healthcare", image: "/images/portfolio-clinic.png", url: "" },
+  { name: "Qahwa Cafe", cat: "Coffee Shop", image: "/images/portfolio-coffe.png", url: "" },
+  { name: "Dar Al-Khibra", cat: "Consulting", image: "/images/portfolio-consulting.png", url: "" },
+  { name: "Saudi Drive", cat: "Transport & Logistics", image: "/images/portfolio-drive.png", url: "" },
+  { name: "Najd E-Commerce", cat: "E-Commerce", image: "/images/portfolio-ecommerce.png", url: "" },
+  { name: "Al Manar Academy", cat: "Education Portal", image: "/images/portfolio-education.png", url: "" },
+  { name: "Riyadh Events", cat: "Event Management", image: "/images/portfolio-events.png", url: "" },
+  { name: "GreenFields Farm", cat: "Agriculture", image: "/images/portfolio-farm.png", url: "" },
+  { name: "Mirage Fashion", cat: "Fashion & Retail", image: "/images/portfolio-fashion.png", url: "" },
+  { name: "PaySaudi Fintech", cat: "Financial Tech", image: "/images/portfolio-fintech.png", url: "" },
+  { name: "FitZone KSA", cat: "Fitness Center", image: "/images/portfolio-fitness.png", url: "" },
+  { name: "Elite Fitness", cat: "Premium Fitness", image: "/images/portfolio-fitness2.png", url: "" },
+  { name: "Arabian Hospitality", cat: "Hotel & Resort", image: "/images/portfolio-hotel.png", url: "" },
+  { name: "Al Durrat Resort", cat: "Luxury Hotel", image: "/images/portfolio-hotel2.png", url: "" },
+  { name: "Saudi Industries", cat: "Industrial", image: "/images/portfolio-industrial.png", url: "" },
+  { name: "Al Adl Legal", cat: "Legal Services", image: "/images/portfolio-legal.png", url: "" },
+  { name: "Haqouq Law", cat: "Law Firm", image: "/images/portfolio-legal2.png", url: "" },
+  { name: "ShipFast Logistics", cat: "Logistics", image: "/images/portfolio-logistics.png", url: "" },
+  { name: "Saudi Petroleum", cat: "Oil & Gas", image: "/images/portfolio-petroleu.png", url: "" },
+  { name: "TechVanguard", cat: "Technology", image: "/images/portfolio-tech.png", url: "" },
+  { name: "Salam Telecom", cat: "Telecommunications", image: "/images/portfolio-telecom.png", url: "" },
+  { name: "Wanderlust Travel", cat: "Travel Agency", image: "/images/portfolio-travel.png", url: "" },
+  { name: "Al Safar Tourism", cat: "Travel & Tourism", image: "/images/portfolio-travel2.png", url: "" },
 ];
 
 
@@ -713,7 +724,7 @@ function HeroSection() {
   const isGreen = theme === "green";
   const [slideIdx, setSlideIdx] = useState(0);
   const touchX = useRef(0);
-  const slides = useMemo(() => PORTFOLIO.slice(0, 8), []);
+  const slides = useMemo(() => PORTFOLIO, []);
   const [isDesktop, setIsDesktop] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -926,35 +937,7 @@ function HeroSection() {
                     {slides.map((item) => (
                       <SwiperSlide key={item.name} className="rounded-xl overflow-hidden">
                         <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                          <div className="card-overlay" />
-                          <div className="card-content">
-                            <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
-                              style={{ color: "rgba(201,168,76,0.8)" }}>
-                              {item.cat}
-                            </div>
-                            <div className={`text-white font-bold text-lg ${isAr ? "font-arabic-display" : "font-outfit"}`}>
-                              {item.name}
-                            </div>
-                            <div className="flex items-center gap-2 mt-2">
-                              <span className="text-[10px] text-white/50 tracking-wide uppercase font-outfit">{t("hero.view_work")}</span>
-                              <ArrowRight size={12} className="text-[#C9A84C]" style={{ transform: isAr ? "rotate(180deg)" : "none" }} />
-                            </div>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                ) : (
-                  <div className="relative w-full h-full overflow-hidden rounded-xl select-none"
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}>
-                    <div className="flex h-full transition-transform duration-300 ease-out cursor-grab active:cursor-grabbing"
-                      style={{ transform: isAr ? `translateX(${slideIdx * 100}%)` : `translateX(-${slideIdx * 100}%)` }}>
-                      {slides.map((item) => (
-                        <div key={item.name} className="min-w-full h-full shrink-0 overflow-hidden">
-                          <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
-                            <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                          <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                             <div className="card-overlay" />
                             <div className="card-content">
                               <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
@@ -968,6 +951,34 @@ function HeroSection() {
                                 <span className="text-[10px] text-white/50 tracking-wide uppercase font-outfit">{t("hero.view_work")}</span>
                                 <ArrowRight size={12} className="text-[#C9A84C]" style={{ transform: isAr ? "rotate(180deg)" : "none" }} />
                               </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="relative w-full h-full overflow-hidden rounded-xl select-none"
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}>
+                    <div className="flex h-full transition-transform duration-300 ease-out cursor-grab active:cursor-grabbing"
+                      style={{ transform: isAr ? `translateX(${slideIdx * 100}%)` : `translateX(-${slideIdx * 100}%)` }}>
+                      {slides.map((item) => (
+                        <div key={item.name} className="min-w-full h-full shrink-0 overflow-hidden">
+                          <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
+                            <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                              <div className="card-overlay" />
+                              <div className="card-content">
+                                <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
+                                  style={{ color: "rgba(201,168,76,0.8)" }}>
+                                  {item.cat}
+                                </div>
+                                <div className={`text-white font-bold text-lg ${isAr ? "font-arabic-display" : "font-outfit"}`}>
+                                  {item.name}
+                                </div>
+                                <div className="flex items-center gap-2 mt-2">
+                                  <span className="text-[10px] text-white/50 tracking-wide uppercase font-outfit">{t("hero.view_work")}</span>
+                                  <ArrowRight size={12} className="text-[#C9A84C]" style={{ transform: isAr ? "rotate(180deg)" : "none" }} />
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -1636,22 +1647,25 @@ function PortfolioSection() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {PORTFOLIO.map((p) => (
-            <div 
-              key={p.name} 
+            <a
+              key={p.name}
+              href={p.url || undefined}
+              target={p.url ? "_blank" : undefined}
+              rel={p.url ? "noopener noreferrer" : undefined}
               data-cursor-label="VIEW"
-              className="group bg-white rounded-lg overflow-hidden border transition-all duration-300 hover:shadow-xl cursor-pointer border-ink-6 portfolio-card glow-card card-circle relative"
+              className="group bg-white rounded-lg overflow-hidden border transition-all duration-300 hover:shadow-xl cursor-pointer border-ink-6 portfolio-card glow-card card-circle relative block"
               onMouseMove={handleCardMouseMove}
             >
-              <div className="relative h-52 overflow-hidden bg-[#0A0E1A]">
+              <div className="relative h-52 overflow-hidden bg-[#0A0E1A] pt-3">
                 <Image
                   src={p.image}
                   alt={p.name}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover parallax-img"
+                  className="object-contain parallax-img"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,14,26,0.4),transparent)] z-10"/>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-[rgba(10,14,26,0.5)] backdrop-blur-[1px] z-20">
+                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,14,26,0.4),transparent)] z-10"/>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-[rgba(10,14,26,0.5)] backdrop-blur-[1px] z-20">
                   <span className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)]">
                     {t("portfolio.view_project")} <ExternalLink size={12}/>
                   </span>
@@ -1661,7 +1675,7 @@ function PortfolioSection() {
                 <div className={`text-xs font-medium mb-1 text-ink-soft2 ${isAr ? "font-arabic" : ""}`}>{p.cat}</div>
                 <div className={`font-semibold text-[#0A0E1A] text-sm ${isAr ? "font-arabic-display" : ""}`}>{p.name}</div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -2498,19 +2512,253 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": ["Organization", "LocalBusiness"],
+            "@id": "https://voxon.sa/#organization",
             name: "Voxon Digital Agency",
             url: "https://voxon.sa",
             logo: "https://voxon.sa/og-image.svg",
-            sameAs: ["https://wa.me/966542288828"],
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+966542288828",
-              contactType: "customer service",
-              areaServed: "SA",
-              availableLanguage: ["Arabic", "English"],
-            },
+            image: "https://voxon.sa/og-image.svg",
             description: "Premium web design, development, SEO, and branding services for Saudi businesses.",
+            foundingDate: "2020",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Riyadh",
+              addressRegion: "Riyadh Province",
+              addressCountry: "SA",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 24.7136,
+              longitude: 46.6753,
+            },
+            telephone: "+966542288828",
+            email: "hello@voxon.sa",
+            areaServed: "SA",
+            priceRange: "$$",
+            openingHours: "Mo-Fr 09:00-18:00",
+            sameAs: [
+              "https://wa.me/966542288828",
+              "https://www.linkedin.com/company/voxon-sa",
+              "https://twitter.com/voxon_sa",
+              "https://www.instagram.com/voxon_sa",
+              "https://www.facebook.com/voxonsa",
+            ],
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                telephone: "+966542288828",
+                contactType: "customer service",
+                areaServed: "SA",
+                availableLanguage: ["Arabic", "English"],
+              },
+              {
+                "@type": "ContactPoint",
+                telephone: "+966542288828",
+                contactType: "sales",
+                contactOption: "TollFree",
+                areaServed: "SA",
+                availableLanguage: ["Arabic", "English"],
+              },
+            ],
+            knowsLanguage: ["en", "ar"],
+            numberOfEmployees: { "@type": "QuantitativeValue", minValue: 10, maxValue: 25 },
+          }),
+        }}
+      />
+      <Script
+        id="website-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://voxon.sa/#website",
+            name: "Voxon Digital Agency",
+            url: "https://voxon.sa",
+            description: "Premium web design, development, SEO, and branding services for Saudi businesses.",
+            inLanguage: ["en", "ar"],
+            publisher: { "@id": "https://voxon.sa/#organization" },
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://voxon.sa/?q={search_term_string}",
+              },
+              "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "@id": "https://voxon.sa/#breadcrumb",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://voxon.sa" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://voxon.sa/#services" },
+              { "@type": "ListItem", position: 3, name: "Portfolio", item: "https://voxon.sa/#portfolio" },
+              { "@type": "ListItem", position: 4, name: "Contact", item: "https://voxon.sa/#contact" },
+            ],
+          }),
+        }}
+      />
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "@id": "https://voxon.sa/#services",
+            name: "Voxon Digital Services",
+            description: "End-to-end digital services for Saudi businesses",
+            numberOfItems: 6,
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@type": "Service",
+                  "@id": "https://voxon.sa/#service-web-design",
+                  name: "Website Design",
+                  description: "Custom corporate sites, landing pages, and bilingual web experiences built to convert Saudi audiences.",
+                  provider: { "@id": "https://voxon.sa/#organization" },
+                  areaServed: "SA",
+                  serviceType: "Web Design",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                  "@type": "Service",
+                  "@id": "https://voxon.sa/#service-web-dev",
+                  name: "Web Development",
+                  description: "Next.js and modern stack development — fast, scalable, and SEO-ready from day one.",
+                  provider: { "@id": "https://voxon.sa/#organization" },
+                  areaServed: "SA",
+                  serviceType: "Web Development",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                  "@type": "Service",
+                  "@id": "https://voxon.sa/#service-seo",
+                  name: "SEO & Growth",
+                  description: "Arabic and English SEO, Google Ads, and analytics to keep your business visible and growing.",
+                  provider: { "@id": "https://voxon.sa/#organization" },
+                  areaServed: "SA",
+                  serviceType: "SEO",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                item: {
+                  "@type": "Service",
+                  "@id": "https://voxon.sa/#service-branding",
+                  name: "Brand Identity",
+                  description: "Logo, visual identity, and brand guidelines designed with Saudi cultural aesthetics in mind.",
+                  provider: { "@id": "https://voxon.sa/#organization" },
+                  areaServed: "SA",
+                  serviceType: "Branding",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 5,
+                item: {
+                  "@type": "Service",
+                  "@id": "https://voxon.sa/#service-ecommerce",
+                  name: "E-Commerce",
+                  description: "Full-featured online stores with Arabic payment gateways, inventory, and order management.",
+                  provider: { "@id": "https://voxon.sa/#organization" },
+                  areaServed: "SA",
+                  serviceType: "E-Commerce",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 6,
+                item: {
+                  "@type": "Service",
+                  "@id": "https://voxon.sa/#service-support",
+                  name: "Ongoing Support",
+                  description: "Dedicated 24/7 maintenance, speed optimization, and technical support.",
+                  provider: { "@id": "https://voxon.sa/#organization" },
+                  areaServed: "SA",
+                  serviceType: "Technical Support",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AggregateRating",
+            "@id": "https://voxon.sa/#rating",
+            itemReviewed: { "@id": "https://voxon.sa/#organization" },
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "127",
+            reviewCount: "127",
+          }),
+        }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": "https://voxon.sa/#faq",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What services does Voxon offer?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Voxon offers comprehensive digital services including website design, web development (Next.js/modern stack), SEO & growth (Arabic and English), brand identity, e-commerce solutions, and ongoing 24/7 technical support for Saudi businesses.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Does Voxon build bilingual Arabic-English websites?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, Voxon specializes in bilingual Arabic-English websites with proper RTL support, cultural aesthetics, and full SEO optimization for both languages targeting the Saudi market.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Where is Voxon based?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Voxon is a Saudi digital agency based in Riyadh, serving clients across the Kingdom including Jeddah, Dammam, and other major cities.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to build a website with Voxon?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Typical delivery for a corporate website is 2-4 weeks from discovery to launch. E-commerce and complex platforms may take 6-8 weeks depending on requirements.",
+                },
+              },
+            ],
           }),
         }}
       />

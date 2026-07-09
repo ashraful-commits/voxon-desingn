@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Amiri, Reem_Kufi, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -25,10 +25,23 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0A0E1A" },
+    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+  ],
+  colorScheme: "dark light",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://voxon.sa"),
-  title: "Voxon | Premium Web Design & Development in Saudi Arabia",
-  description: "Voxon builds high-converting Arabic-English websites, e-commerce, SEO, branding, and digital growth systems for Saudi businesses.",
+  title: {
+    default: "Voxon | Premium Web Design & Development in Saudi Arabia",
+    template: "%s | Voxon",
+  },
+  description: "Voxon is a premium Saudi digital agency building high-converting Arabic-English websites, e-commerce stores, SEO strategies, branding, and digital growth systems for businesses across Riyadh, Jeddah, and Dammam.",
   keywords: [
     "web design Saudi Arabia",
     "digital agency Riyadh",
@@ -36,28 +49,83 @@ export const metadata: Metadata = {
     "e-commerce Saudi Arabia",
     "SEO Saudi Arabia",
     "branding agency Saudi Arabia",
+    "web development Jeddah",
+    "website design Dammam",
+    "Saudi digital agency",
+    "business website Saudi Arabia",
+    "web design company Riyadh",
+    "Saudi web development",
+    "digital marketing Saudi Arabia",
+    "UI UX design Saudi Arabia",
+    "mobile app development Saudi Arabia",
   ],
-  alternates: { canonical: "https://voxon.sa" },
+  alternates: {
+    canonical: "https://voxon.sa",
+    languages: {
+      "en-SA": "https://voxon.sa",
+      "ar-SA": "https://voxon.sa/ar",
+    },
+  },
   applicationName: "Voxon",
-  authors: [{ name: "Voxon Digital Agency" }],
+  authors: [{ name: "Voxon Digital Agency", url: "https://voxon.sa" }],
   creator: "Voxon Digital Agency",
   publisher: "Voxon Digital Agency",
-  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  category: "technology",
+  classification: "Digital Agency & Web Development Services",
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+  },
+  verification: {
+    google: "YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
+  },
   openGraph: {
     type: "website",
     locale: "en_SA",
+    alternateLocale: "ar_SA",
     url: "https://voxon.sa",
-    title: "Voxon | Premium Web Design & Development in Saudi Arabia",
-    description: "World-class digital experiences for Saudi companies, built with performance, SEO, and conversion in mind.",
     siteName: "Voxon",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "Voxon digital agency branding" }],
+    title: "Voxon | Premium Web Design & Development in Saudi Arabia",
+    description: "World-class digital experiences for Saudi companies — web design, e-commerce, SEO, branding, and digital growth. Built with performance and conversion in mind.",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Voxon digital agency branding — web design and development in Saudi Arabia",
+      },
+    ],
+    countryName: "Saudi Arabia",
+    ttl: 604800,
   },
   twitter: {
     card: "summary_large_image",
     title: "Voxon | Premium Web Design & Development in Saudi Arabia",
-    description: "World-class digital experiences for Saudi companies, built with performance, SEO, and conversion in mind.",
+    description: "World-class digital experiences for Saudi companies — web design, e-commerce, SEO, branding, and digital growth.",
     creator: "@voxon_sa",
+    site: "@voxon_sa",
     images: ["/og-image.svg"],
+  },
+  appleWebApp: {
+    capable: true,
+    title: "Voxon",
+    statusBarStyle: "black-translucent",
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
+  referrer: "origin-when-cross-origin",
+  other: {
+    "geo.region": "SA-01",
+    "geo.placename": "Riyadh",
+    "geo.position": "24.7136;46.6753",
+    ICBM: "24.7136, 46.6753",
+    "google-site-verification": "YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
   },
 };
 
