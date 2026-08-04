@@ -1,0 +1,569 @@
+export type SeoLandingPage = {
+  slug: string;
+  kind: "service" | "city";
+  title: string;
+  description: string;
+  keywords: string[];
+  h1: string;
+  subtitle: string;
+  intro: string[];
+  features: { title: string; text: string }[];
+  faqs: { q: string; a: string }[];
+  related: string[];
+  cityRegion?: string;
+  geo?: { latitude: string; longitude: string; placename: string; region: string };
+};
+
+export const SEO_PAGES: SeoLandingPage[] = [
+  // ============ SERVICES ============
+  {
+    slug: "web-design-company-saudi-arabia",
+    kind: "service",
+    title: "Web Design Company in Saudi Arabia",
+    description:
+      "Premium web design company in Saudi Arabia. Voxon Digital builds fast, bilingual Arabic-English, SEO-ready websites for businesses across Riyadh, Jeddah, Dammam and the Kingdom. Get your free consultation.",
+    keywords: [
+      "web design company in Saudi Arabia",
+      "web design Saudi Arabia",
+      "website design company Riyadh",
+      "best web design company KSA",
+      "Arabic website design",
+      "bilingual web design Saudi",
+      "تصميم مواقع السعودية",
+    ],
+    h1: "Web Design Company in Saudi Arabia",
+    subtitle:
+      "We build fast, bilingual, conversion-focused websites that rank on Google Saudi Arabia — trusted by 300+ businesses across Riyadh, Jeddah, Dammam and the Kingdom.",
+    intro: [
+      "Your website is the first impression Saudi customers get of your brand. Voxon Digital designs and builds high-performing websites tailored to the Saudi market — bilingual Arabic-English by default, mobile-first, and engineered to convert visitors into customers.",
+      "From corporate websites and landing pages to e-commerce platforms, every build combines modern design with the local insight Saudi businesses need to stand out online.",
+    ],
+    features: [
+      { title: "Bilingual Arabic-English", text: "Native RTL Arabic layout with correct typography and Arabic SEO, plus a full English version — both optimized for Google.com.sa." },
+      { title: "SEO-Ready from Day One", text: "Clean code, schema markup, fast Core Web Vitals, and keyword-targeted content so your website is built to rank, not fixed later." },
+      { title: "Mobile-First & Fast", text: "Every website loads in under 2 seconds on Saudi mobile networks, with performance baked into the build." },
+      { title: "Conversion Focused", text: "Clear calls-to-action, WhatsApp integration, lead forms, and Saudi payment rails (Mada, STC Pay, Tamara) that actually work in-Kingdom." },
+      { title: "Custom, No Templates", text: "100% custom design crafted for your brand — never a reskinned template, so you look as premium as you are." },
+      { title: "24/7 Support", text: "Post-launch maintenance, security monitoring, and a support team that answers in Arabic and English." },
+    ],
+    faqs: [
+      { q: "How much does web design cost in Saudi Arabia?", a: "A professional bilingual corporate website from Voxon Digital typically starts around SAR 3,000–6,000 depending on scope. E-commerce stores and larger platforms are quoted after a free discovery call." },
+      { q: "Do you build Arabic and English websites?", a: "Yes. Every website we build is bilingual Arabic-English with proper RTL support, Arabic-optimized fonts, and full SEO for both languages targeting Saudi users." },
+      { q: "How long does it take to build a website?", a: "A corporate website is usually delivered in 2–4 weeks from discovery to launch. E-commerce and complex platforms take 6–8 weeks depending on requirements." },
+      { q: "Will my website rank on Google Saudi Arabia?", a: "Yes. Every build includes on-page SEO, structured data, Core Web Vitals optimization, and local SEO targeting your Saudi city — so you're set up to rank from launch day." },
+      { q: "Can you redesign my existing website?", a: "Absolutely. We audit your current site, protect your SEO assets and backlinks, set up proper 301 redirects, and rebuild it modern, fast, and conversion-focused." },
+      { q: "Do you offer website maintenance?", a: "Yes, we offer ongoing maintenance plans covering updates, security monitoring, backups, and technical support with 24/7 availability." },
+    ],
+    related: ["web-development-company-saudi", "ecommerce-website-development-saudi", "web-design-riyadh", "web-design-jeddah"],
+  },
+  {
+    slug: "web-development-company-saudi",
+    kind: "service",
+    title: "Web Development Company in Saudi Arabia",
+    description:
+      "Leading web development company in Saudi Arabia. Voxon Digital builds custom React, Next.js and headless websites, web applications and portals with Arabic-English RTL support across KSA.",
+    keywords: [
+      "web development company in Saudi Arabia",
+      "web development Saudi Arabia",
+      "web developer Riyadh",
+      "React development KSA",
+      "Next.js development Saudi",
+      "custom web application Saudi Arabia",
+      "تطوير مواقع",
+    ],
+    h1: "Web Development Company in Saudi Arabia",
+    subtitle:
+      "Custom web development on a modern stack — React, Next.js, Node.js — built bilingual, secure, and scalable for Saudi businesses and government-adjacent projects.",
+    intro: [
+      "Beyond beautiful design, your platform needs to be fast, secure, and able to scale. Voxon Digital builds custom websites, web applications, portals, and headless commerce platforms on modern technology.",
+      "With a strong engineering culture and bilingual delivery, we ship products that perform under real Saudi traffic and integrate with local payment, delivery, and ERP systems.",
+    ],
+    features: [
+      { title: "Modern Stack (React / Next.js)", text: "Lightning-fast server-rendered applications with excellent Core Web Vitals and SEO performance." },
+      { title: "Custom Web Applications", text: "Dashboards, booking systems, CRMs, and B2B portals tailored to your exact business logic." },
+      { title: "Bilingual & RTL-Ready", text: "Full Arabic-English support with correct RTL rendering, Arabic typography, and dual-language architecture from the start." },
+      { title: "Secure & Compliant", text: "Security best practices, HTTPS, and architecture aligned with Saudi data protection expectations." },
+      { title: "API & System Integration", text: "Connect Mada, STC Pay, Tamara, payment gateways, SMS, ERP, and third-party services." },
+      { title: "Scalable Architecture", text: "Built to grow with your business — from a startup MVP to enterprise-grade platforms." },
+    ],
+    faqs: [
+      { q: "What technologies do you use?", a: "We build on React, Next.js, Node.js, and headless CMS options, with MongoDB or PostgreSQL databases depending on the project." },
+      { q: "Do you build custom web applications?", a: "Yes. We develop custom dashboards, booking systems, portals, and B2B platforms with features tailored to your workflows." },
+      { q: "Can you integrate Saudi payment methods?", a: "Yes. We integrate Mada, STC Pay, Apple Pay, Tamara, Tabby, and gateways like HyperPay and PayTabs for seamless Saudi checkouts." },
+      { q: "Is the website bilingual Arabic-English?", a: "Always. Our development includes native RTL Arabic support and a fully translated English experience." },
+      { q: "Do you support ongoing development?", a: "Yes, we offer retainers and maintenance contracts for continuous feature development, monitoring, and support." },
+    ],
+    related: ["web-design-company-saudi-arabia", "ecommerce-website-development-saudi", "web-design-dammam", "web-design-khobar"],
+  },
+  {
+    slug: "seo-company-saudi",
+    kind: "service",
+    title: "SEO Company in Saudi Arabia",
+    description:
+      "Top SEO company in Saudi Arabia. Voxon Digital delivers Arabic-English SEO, local SEO, technical audits, and authority link building that ranks your business on Google.com.sa.",
+    keywords: [
+      "SEO company in Saudi Arabia",
+      "SEO services Saudi Arabia",
+      "SEO company Riyadh",
+      "Arabic SEO",
+      "local SEO Saudi Arabia",
+      "link building Saudi Arabia",
+      "Google.com.sa ranking",
+      "تحسين محركات البحث",
+    ],
+    h1: "SEO Company in Saudi Arabia",
+    subtitle:
+      "Rank on Google Saudi Arabia with bilingual Arabic-English SEO. Technical audits, local SEO, content, and authority link building that drive qualified Saudi customers.",
+    intro: [
+      "If Saudi customers can't find you on Google, your competitors win the click. Voxon Digital's SEO team builds sustainable organic growth for Saudi businesses — in both Arabic and English.",
+      "From technical audits and keyword research to local SEO and editorial link building, we do SEO the white-hat way that compounds over time.",
+    ],
+    features: [
+      { title: "Bilingual Keyword Research", text: "Native Arabic and English keyword research capturing how Saudi users actually search — including colloquial and voice-search phrasing." },
+      { title: "Technical SEO Audits", text: "Crawl budget, Core Web Vitals, schema markup, hreflang for Arabic-English, redirects, and mobile-first fixes." },
+      { title: "Local SEO & Google Business Profile", text: "Optimized GBP, Saudi citations (SaudiaYP, Eye of Riyadh, and more), and local landing pages for your cities." },
+      { title: "Authority Link Building", text: "White-hat editorial backlinks from Saudi and regional publications like Arab News, Saudi Gazette, and Zawya." },
+      { title: "Content Strategy", text: "E-E-A-T driven content, FAQs, and topic clusters that capture Saudi search intent at every stage." },
+      { title: "Transparent Reporting", text: "Monthly rankings, traffic, and conversion reports — no vanity metrics, just business impact." },
+    ],
+    faqs: [
+      { q: "How long does SEO take to show results?", a: "Most clients see first-page rankings for lower-competition keywords within 60–90 days, and primary commercial keywords within 4–8 months." },
+      { q: "Do you do Arabic SEO?", a: "Yes. We perform native Arabic keyword research, optimize Arabic meta tags and content, and handle RTL technical SEO properly." },
+      { q: "How much does SEO cost in Saudi Arabia?", a: "Local SEO packages start from around SAR 3,000 per month. Multi-city and enterprise campaigns are quoted based on scope." },
+      { q: "Do you build backlinks?", a: "Yes, through white-hat editorial link building from relevant Saudi and regional publications — never paid link networks." },
+      { q: "Can you fix my existing website's SEO?", a: "We start with a full technical audit, then prioritize fixes by impact — crawl, speed, schema, content, and authority." },
+      { q: "Do you work with Google Business Profile?", a: "Yes, we manage GBP optimization, review response strategies, and local citations to dominate the Saudi Local Pack." },
+    ],
+    related: ["digital-marketing-agency-saudi", "web-design-company-saudi-arabia", "web-design-riyadh", "web-design-mecca"],
+  },
+  {
+    slug: "digital-marketing-agency-saudi",
+    kind: "service",
+    title: "Digital Marketing Agency in Saudi Arabia",
+    description:
+      "Results-driven digital marketing agency in Saudi Arabia. PPC, Google Ads, social media (Snapchat, TikTok, Instagram), and lead generation campaigns for Saudi brands across KSA.",
+    keywords: [
+      "digital marketing agency in Saudi Arabia",
+      "digital marketing Saudi Arabia",
+      "Google Ads agency Riyadh",
+      "Snapchat marketing Saudi",
+      "social media agency Jeddah",
+      "lead generation KSA",
+      "PPC Saudi Arabia",
+      "التسويق الرقمي",
+    ],
+    h1: "Digital Marketing Agency in Saudi Arabia",
+    subtitle:
+      "Full-funnel digital marketing for the Saudi market — Google Ads, Snapchat, TikTok, Instagram, and lead generation campaigns built for measurable ROI.",
+    intro: [
+      "Saudi Arabia's digital economy is booming. Voxon Digital helps brands capture it with performance-driven marketing across Google, Snapchat, TikTok, and Instagram — in Arabic and English.",
+      "We build campaigns around Saudi consumer behavior, payment habits, and cultural nuance, then optimize relentlessly against revenue, not vanity metrics.",
+    ],
+    features: [
+      { title: "Google Ads & PPC", text: "Search, display, YouTube, and Shopping campaigns with intent-matched Arabic and English ad copy." },
+      { title: "Snapchat, TikTok & Instagram", text: "Arabic-first creative and influencer-style content that resonates with Saudi audiences on their platforms of choice." },
+      { title: "Lead Generation", text: "WhatsApp-first funnel, landing pages, and conversion tracking (calls, forms, WhatsApp) that drive real inquiries." },
+      { title: "Performance Marketing", text: "CRO, A/B testing, and ROAS reporting — every riyal tracked to a business outcome." },
+      { title: "Content Marketing", text: "Bilingual content that builds trust and supports both SEO and paid campaigns." },
+      { title: "Marketing Automation", text: "Email, WhatsApp, and CRM automation that nurtures leads into loyal Saudi customers." },
+    ],
+    faqs: [
+      { q: "What digital marketing services do you offer?", a: "Google Ads, social media advertising (Snapchat, TikTok, Instagram), SEO, content marketing, lead generation, and marketing automation." },
+      { q: "Do you manage Google Ads in Saudi Arabia?", a: "Yes, we run certified Google Ads campaigns targeting Saudi audiences with Arabic and English copy and full conversion tracking." },
+      { q: "Which platforms work best in Saudi Arabia?", a: "Snapchat, TikTok, and Instagram are hugely popular in KSA. We build campaigns across all three plus Google for full coverage." },
+      { q: "How do you measure ROI?", a: "We track conversions — calls, form submissions, WhatsApp messages, and sales — and report monthly on what each campaign actually returns." },
+      { q: "Can you handle both Arabic and English campaigns?", a: "Yes, our bilingual team runs campaigns in both languages with creative tailored to each audience." },
+    ],
+    related: ["seo-company-saudi", "web-design-company-saudi-arabia", "web-design-jeddah", "web-design-dammam"],
+  },
+  {
+    slug: "wordpress-development-company-saudi",
+    kind: "service",
+    title: "WordPress Development Company in Saudi Arabia",
+    description:
+      "Professional WordPress development in Saudi Arabia. Custom themes, WooCommerce stores, and bilingual Arabic-English WordPress sites for Riyadh, Jeddah, Dammam and beyond.",
+    keywords: [
+      "WordPress development company in Saudi Arabia",
+      "WordPress developer Riyadh",
+      "WooCommerce Saudi Arabia",
+      "WordPress development Jeddah",
+      "custom WordPress theme KSA",
+      "Arabic WordPress website",
+    ],
+    h1: "WordPress Development Company in Saudi Arabia",
+    subtitle:
+      "Custom WordPress websites and WooCommerce stores built bilingual, fast, and SEO-ready for Saudi businesses in Riyadh, Jeddah, Dammam, and across the Kingdom.",
+    intro: [
+      "WordPress powers over 40% of the web — and with the right team, it's the highest-ROI platform for most Saudi businesses. Voxon Digital builds custom WordPress sites your team can manage with ease.",
+      "From corporate sites to full WooCommerce stores with Mada, STC Pay, and Tamara integrated, we make WordPress fast, secure, and bilingual.",
+    ],
+    features: [
+      { title: "Custom WordPress Themes", text: "No templates — bespoke designs built on clean, fast, maintainable code." },
+      { title: "WooCommerce Stores", text: "Saudi e-commerce ready with Mada, STC Pay, Tamara, Tabby, and local shipping carriers integrated." },
+      { title: "Bilingual Arabic-English", text: "Native RTL themes with Arabic-optimized fonts and full bilingual content management." },
+      { title: "SEO-Friendly Architecture", text: "Clean permalinks, schema markup, and metadata for strong Google.com.sa rankings." },
+      { title: "Fast & Secure", text: "Performance tuning and security hardening to protect your business and visitors." },
+      { title: "Training & Support", text: "We train your team to update content, then support you long after launch." },
+    ],
+    faqs: [
+      { q: "Do you build custom WordPress themes?", a: "Yes, every site is custom-built from scratch — no reskinned templates, so your brand stands out." },
+      { q: "Can WordPress handle Arabic RTL?", a: "Yes, we build fully RTL-ready bilingual WordPress sites with proper Arabic typography." },
+      { q: "Do you build WooCommerce stores?", a: "Yes, with Saudi payment gateways (Mada, STC Pay, Tamara), VAT-compliant invoicing, and local shipping integrations." },
+      { q: "Is WordPress good for SEO?", a: "When built properly, WordPress is excellent for SEO. We configure schema, metadata, and site speed for rankings." },
+      { q: "Can you migrate my existing WordPress site?", a: "Yes, we handle migration, redesigns, and security hardening for existing WordPress sites." },
+    ],
+    related: ["ecommerce-website-development-saudi", "web-design-company-saudi-arabia", "web-design-jeddah", "web-design-khobar"],
+  },
+  {
+    slug: "ecommerce-website-development-saudi",
+    kind: "service",
+    title: "E-commerce Website Development in Saudi Arabia",
+    description:
+      "E-commerce website development in Saudi Arabia. Build high-converting online stores with Mada, STC Pay, Tamara, and Tabby — bilingual, fast, and built to sell in KSA.",
+    keywords: [
+      "e-commerce website development Saudi Arabia",
+      "online store Saudi Arabia",
+      "e-commerce Riyadh",
+      "Mada payment integration",
+      "STC Pay ecommerce",
+      "online shopping website KSA",
+      "متجر إلكتروني",
+    ],
+    h1: "E-commerce Website Development in Saudi Arabia",
+    subtitle:
+      "High-converting online stores for Saudi shoppers — with Mada, STC Pay, Tamara, and Tabby integrated, bilingual UX, and performance that wins sales.",
+    intro: [
+      "Saudi e-commerce is one of the fastest-growing markets in the world. Voxon Digital builds online stores designed specifically for Saudi shoppers — from payment preferences to delivery expectations.",
+      "Whether on WooCommerce, Shopify, or a custom Next.js storefront, we build e-commerce that converts visitors into repeat customers.",
+    ],
+    features: [
+      { title: "Saudi Payment Rails", text: "Mada, STC Pay, Apple Pay, Tamara, Tabby, and gateways like HyperPay and PayTabs integrated out of the box." },
+      { title: "Bilingual Storefront", text: "Arabic-first UX with English, RTL layout, Hijri-compatible formatting, and VAT (ZATCA) compliant invoicing." },
+      { title: "Conversion-Optimized", text: "Product pages, checkout flow, and abandoned-cart recovery engineered to maximize sales." },
+      { title: "Fast Performance", text: "Sub-2-second load times on Saudi networks with CDN edge nodes across the region." },
+      { title: "SEO & Product Schema", text: "Structured data for rich results, Arabic e-commerce keywords, and category pages built to rank." },
+      { title: "Inventory & ERP Integration", text: "Connect inventory, shipping (Aramex, SMSA, Saudi Post), and ERP systems." },
+    ],
+    faqs: [
+      { q: "Which platform do you recommend for e-commerce in Saudi Arabia?", a: "WooCommerce suits most small-to-mid businesses; Shopify is great for speed-to-market; custom Next.js is best for complex or high-volume stores." },
+      { q: "Can you integrate Mada and STC Pay?", a: "Yes, we integrate Mada, STC Pay, Apple Pay, and BNPL options like Tamara and Tabby." },
+      { q: "Do you handle Arabic product content?", a: "Yes, we create Arabic product descriptions and category pages optimized for Arabic e-commerce keywords." },
+      { q: "How long does an e-commerce store take to build?", a: "Typically 6–8 weeks for a fully integrated bilingual store, depending on catalog size and features." },
+      { q: "Do you provide post-launch support?", a: "Yes, including maintenance, updates, and ongoing optimization plans." },
+    ],
+    related: ["wordpress-development-company-saudi", "digital-marketing-agency-saudi", "web-design-dammam", "web-design-riyadh"],
+  },
+
+  // ============ CITIES ============
+  {
+    slug: "web-design-riyadh",
+    kind: "city",
+    title: "Web Design Company in Riyadh",
+    description:
+      "Web design company in Riyadh. Voxon Digital builds fast, bilingual Arabic-English websites for Riyadh businesses — corporate sites, e-commerce, and landing pages that rank and convert.",
+    keywords: [
+      "web design company in Riyadh",
+      "web design Riyadh",
+      "website design Riyadh",
+      "Riyadh digital agency",
+      "website designer Riyadh",
+      "تصميم مواقع الرياض",
+    ],
+    h1: "Web Design Company in Riyadh",
+    subtitle:
+      "Riyadh is Saudi Arabia's business capital — your website needs to match. Voxon Digital builds bilingual, high-converting websites for Riyadh companies.",
+    intro: [
+      "Riyadh companies face intense online competition. A professionally designed, SEO-ready website is the difference between winning leads and losing them to competitors.",
+      "Voxon Digital is a Riyadh-based digital agency building websites, e-commerce stores, and marketing systems for the capital's most ambitious businesses.",
+    ],
+    features: [
+      { title: "Riyadh-Focused Local SEO", text: "Rank for 'web design Riyadh' and your Riyadh keywords with on-page SEO, schema, and GBP optimization." },
+      { title: "Bilingual Arabic-English", text: "Corporate and government-adjacent projects need flawless Arabic and English — we deliver both." },
+      { title: "Corporate & Enterprise Sites", text: "Credible, polished websites built for Riyadh's corporate and B2B sectors." },
+      { title: "Fast & Secure", text: "Performance and security built in — essential for Riyadh businesses competing at scale." },
+      { title: "E-commerce Ready", text: "Mada, STC Pay, and Tamara integrated for Riyadh's booming online retail market." },
+      { title: "Local Team, Fast Response", text: "Based in Riyadh, available for in-person meetings and same-day support." },
+    ],
+    faqs: [
+      { q: "How much does a website cost in Riyadh?", a: "Bilingual corporate websites from Voxon Digital typically start around SAR 3,000–6,000 depending on scope." },
+      { q: "Can you build both Arabic and English versions?", a: "Yes, every Riyadh website we build is fully bilingual with proper RTL support and SEO for both languages." },
+      { q: "Do you meet clients in Riyadh?", a: "Yes, we're based in Riyadh and welcome in-person meetings alongside online collaboration." },
+      { q: "How long does a Riyadh website take?", a: "Corporate sites in 2–4 weeks; e-commerce and custom platforms in 6–8 weeks." },
+    ],
+    related: ["web-design-company-saudi-arabia", "seo-company-saudi", "web-design-jeddah", "web-design-mecca"],
+    cityRegion: "Riyadh Province",
+    geo: { latitude: "24.7136", longitude: "46.6753", placename: "Riyadh", region: "SA-01" },
+  },
+  {
+    slug: "web-design-jeddah",
+    kind: "city",
+    title: "Web Design Company in Jeddah",
+    description:
+      "Web design company in Jeddah. Voxon Digital builds modern, bilingual websites for Jeddah businesses — retail, hospitality, and service brands that stand out online.",
+    keywords: [
+      "web design company in Jeddah",
+      "web design Jeddah",
+      "website design Jeddah",
+      "Jeddah digital agency",
+      "website designer Jeddah",
+      "تصميم مواقع جدة",
+    ],
+    h1: "Web Design Company in Jeddah",
+    subtitle:
+      "Jeddah is the Kingdom's creative and commercial gateway to the Red Sea. Build a website that matches its energy — bilingual, modern, and built to convert.",
+    intro: [
+      "Jeddah's retail, hospitality, and lifestyle sectors demand websites that look world-class. Voxon Digital designs and builds bilingual websites for Jeddah businesses of every size.",
+      "From restaurants and hotels to fashion brands and service companies, we craft digital experiences that win customers and support growth.",
+    ],
+    features: [
+      { title: "Retail & Hospitality Design", text: "Visually stunning websites built for Jeddah's retail, F&B, and hospitality scene." },
+      { title: "Bilingual Arabic-English", text: "Perfect Arabic RTL and English versions — essential for Jeddah's international audience." },
+      { title: "Jeddah Local SEO", text: "Target 'web design Jeddah' and local keywords with on-page SEO and local citations." },
+      { title: "Booking & E-commerce Ready", text: "Restaurant booking, online stores, and reservation systems integrated with Saudi payments." },
+      { title: "Social-Media Connected", text: "Instagram, Snapchat, and TikTok-ready designs that reflect your brand across platforms." },
+      { title: "Fast & Mobile-First", text: "Sites that load instantly on mobile — where most Jeddah customers browse." },
+    ],
+    faqs: [
+      { q: "Do you build websites for restaurants and hotels in Jeddah?", a: "Yes, we specialize in hospitality websites with online booking, menus, and bilingual content." },
+      { q: "Is Arabic RTL supported?", a: "Yes, all Jeddah projects are built fully bilingual with native RTL Arabic." },
+      { q: "Can you help rank my Jeddah business on Google?", a: "Yes, every build includes on-page SEO and local SEO targeting Jeddah searches." },
+      { q: "How fast can you deliver?", a: "Corporate sites in 2–4 weeks; stores and custom platforms in 6–8 weeks." },
+    ],
+    related: ["web-design-company-saudi-arabia", "digital-marketing-agency-saudi", "web-design-riyadh", "web-design-dammam"],
+    cityRegion: "Makkah Province",
+    geo: { latitude: "21.4858", longitude: "39.1925", placename: "Jeddah", region: "SA-02" },
+  },
+  {
+    slug: "web-design-dammam",
+    kind: "city",
+    title: "Web Design Company in Dammam",
+    description:
+      "Web design company in Dammam. Voxon Digital builds bilingual, SEO-ready websites for Dammam and Eastern Province businesses — corporate, industrial, and B2B focused.",
+    keywords: [
+      "web design company in Dammam",
+      "web design Dammam",
+      "website design Dammam",
+      "Dammam digital agency",
+      "Eastern Province web design",
+      "تصميم مواقع الدمام",
+    ],
+    h1: "Web Design Company in Dammam",
+    subtitle:
+      "Dammam is the capital of the Eastern Province — home to industry and enterprise. Voxon Digital builds professional, bilingual websites that communicate credibility.",
+    intro: [
+      "Eastern Province businesses — from energy and manufacturing to B2B services — need websites that communicate competence and organize complex information clearly.",
+      "Voxon Digital builds professional, bilingual, mobile-friendly websites and B2B portals tailored for Dammam, Al Khobar, and Dhahran companies.",
+    ],
+    features: [
+      { title: "Corporate & Industrial Design", text: "Credible, clean websites built for Dammam's corporate, industrial, and B2B sectors." },
+      { title: "B2B Portals & Applications", text: "Complex platforms with secure access, documentation, and business-critical functionality." },
+      { title: "Bilingual Arabic-English", text: "Flawless Arabic RTL and English — essential for Eastern Province's diverse workforce." },
+      { title: "Dammam Local SEO", text: "Rank for 'web design Dammam' and local Eastern Province keywords." },
+      { title: "Security & Performance", text: "Built for business-critical reliability with enterprise-grade security." },
+      { title: "E-commerce Ready", text: "B2B ordering and consumer stores with Mada, STC Pay, and Tamara." },
+    ],
+    faqs: [
+      { q: "Do you build B2B and industrial websites?", a: "Yes, we specialize in corporate and B2B platforms for Dammam's energy, manufacturing, and service companies." },
+      { q: "Can you build bilingual websites?", a: "Yes, with native RTL Arabic and English — important for Eastern Province's international workforce." },
+      { q: "Do you work with Eastern Province clients remotely?", a: "Yes, we deliver projects across Dammam, Al Khobar, Dhahran, and Jubail with online collaboration." },
+      { q: "How long does a Dammam website take?", a: "Corporate sites in 2–4 weeks; complex B2B portals in 6–10 weeks." },
+    ],
+    related: ["web-design-company-saudi-arabia", "web-development-company-saudi", "web-design-khobar", "web-design-riyadh"],
+    cityRegion: "Eastern Province",
+    geo: { latitude: "26.4207", longitude: "50.0888", placename: "Dammam", region: "SA-04" },
+  },
+  {
+    slug: "web-design-khobar",
+    kind: "city",
+    title: "Web Design Company in Al Khobar",
+    description:
+      "Web design company in Al Khobar. Voxon Digital builds bilingual websites for Al Khobar and Dhahran businesses, reaching both Saudi and expatriate audiences.",
+    keywords: [
+      "web design company in Al Khobar",
+      "web design Al Khobar",
+      "website design Khobar",
+      "Al Khobar digital agency",
+      "Khobar web designer",
+      "تصميم مواقع الخبر",
+    ],
+    h1: "Web Design Company in Al Khobar",
+    subtitle:
+      "Al Khobar is Saudi Arabia's most bilingual city — where Saudi and expatriate customers search in both Arabic and English. Build a website that reaches both.",
+    intro: [
+      "The Dhahran Compound, KFUPM, and an international business community make Al Khobar uniquely bilingual. Arabic-only or English-only websites systematically miss 20–30% of the audience.",
+      "Voxon Digital builds co-equal Arabic-English websites for Al Khobar businesses — designed to capture every customer, Saudi and expat alike.",
+    ],
+    features: [
+      { title: "Co-Equal Bilingual Design", text: "Arabic and English treated as equals — not one translated from the other — reaching both audiences." },
+      { title: "Expat-Audience Ready", text: "English-first content for the international community while keeping Arabic-first Saudi customers engaged." },
+      { title: "Al Khobar Local SEO", text: "Target 'web design Al Khobar' plus bilingual keyword strategies for the Eastern Province." },
+      { title: "Premium Brand Positioning", text: "World-class design benchmarked against international agencies — right for Khobar's sophisticated audience." },
+      { title: "Retail & F&B Focus", text: "Built for Khobar Corniche, Marina Mall, and Al-Rashid Mall businesses that compete on quality." },
+      { title: "Fast & Mobile-First", text: "Performance built in for a premium browsing experience." },
+    ],
+    faqs: [
+      { q: "Why is bilingual design so important in Al Khobar?", a: "Al Khobar's Dhahran Compound and international business community mean a large share of customers search in English. Co-equal bilingual design captures both audiences." },
+      { q: "Can you build both Arabic and English websites?", a: "Yes, we build co-equal bilingual sites with native RTL Arabic and polished English." },
+      { q: "Do you serve Dhahran and the Eastern Province?", a: "Yes, we work with clients across Al Khobar, Dhahran, Dammam, and Jubail." },
+      { q: "How fast can you deliver?", a: "Corporate sites in 2–4 weeks; e-commerce and custom platforms in 6–8 weeks." },
+    ],
+    related: ["web-design-dammam", "web-design-company-saudi-arabia", "wordpress-development-company-saudi", "web-design-riyadh"],
+    cityRegion: "Eastern Province",
+    geo: { latitude: "26.2172", longitude: "50.1971", placename: "Al Khobar", region: "SA-04" },
+  },
+  {
+    slug: "web-design-mecca",
+    kind: "city",
+    title: "Web Design Company in Mecca",
+    description:
+      "Web design company in Mecca. Voxon Digital builds bilingual websites for Mecca businesses — hospitality, retail, and services serving pilgrims and residents.",
+    keywords: [
+      "web design company in Mecca",
+      "web design Mecca",
+      "website design Mecca",
+      "Makkah digital agency",
+      "تصميم مواقع مكة",
+    ],
+    h1: "Web Design Company in Mecca",
+    subtitle:
+      "Mecca's hospitality, retail, and service businesses serve millions of visitors. Voxon Digital builds fast, bilingual websites that work at that scale.",
+    intro: [
+      "Mecca's unique mix of residents, Umrah and Hajj visitors, and growing retail scene demands websites that are fast, reliable, and multilingual.",
+      "Voxon Digital builds bilingual Arabic-English websites for Mecca businesses — from hotels and tour operators to retail brands and local services.",
+    ],
+    features: [
+      { title: "Hospitality & Tourism Design", text: "Websites built for hotels, tour operators, and Umrah service providers." },
+      { title: "Bilingual Arabic-English", text: "Native Arabic with English for international pilgrims and visitors." },
+      { title: "Mecca Local SEO", text: "Rank for 'web design Mecca' and local keywords with on-page SEO and citations." },
+      { title: "High-Traffic Ready", text: "Fast, reliable sites that handle peak seasonal traffic." },
+      { title: "Booking & Reservation Systems", text: "Online booking for hotels, transport, and services." },
+      { title: "Mobile-First", text: "Optimized for the mobile-first Saudi browsing experience." },
+    ],
+    faqs: [
+      { q: "Can you build websites for hotels and tour operators?", a: "Yes, we specialize in hospitality websites with booking systems and multilingual content." },
+      { q: "Is Arabic RTL supported?", a: "Yes, all Mecca projects are fully bilingual with native RTL Arabic." },
+      { q: "Can you handle seasonal traffic spikes?", a: "Yes, we build fast, scalable sites that perform during peak seasons." },
+      { q: "Do you serve the whole Makkah Province?", a: "Yes, including Jeddah and surrounding areas." },
+    ],
+    related: ["web-design-company-saudi-arabia", "seo-company-saudi", "web-design-jeddah", "web-design-medina"],
+    cityRegion: "Makkah Province",
+    geo: { latitude: "21.3891", longitude: "39.8579", placename: "Mecca", region: "SA-02" },
+  },
+  {
+    slug: "web-design-medina",
+    kind: "city",
+    title: "Web Design Company in Medina",
+    description:
+      "Web design company in Medina. Voxon Digital builds professional bilingual websites for Medina businesses serving residents and visitors.",
+    keywords: [
+      "web design company in Medina",
+      "web design Medina",
+      "website design Medina",
+      "Madinah digital agency",
+      "تصميم مواقع المدينة المنورة",
+    ],
+    h1: "Web Design Company in Medina",
+    subtitle:
+      "Build a professional bilingual website for your Medina business — fast, mobile-friendly, and built to rank on Google.",
+    intro: [
+      "Medina's growing economy spans hospitality, retail, and services. A professional bilingual website helps your business stand out and capture customers online.",
+      "Voxon Digital builds modern, SEO-ready websites for Medina businesses, with native Arabic and English versions.",
+    ],
+    features: [
+      { title: "Professional Corporate Design", text: "Clean, credible websites for service businesses and retailers." },
+      { title: "Bilingual Arabic-English", text: "Native RTL Arabic plus English for international visitors." },
+      { title: "Medina Local SEO", text: "On-page SEO and citations targeting Medina and Al Madinah Province searches." },
+      { title: "Fast & Mobile-First", text: "Quick-loading, mobile-optimized websites." },
+      { title: "Hospitality Ready", text: "Booking systems for hotels and services." },
+      { title: "Ongoing Support", text: "Maintenance and support plans in Arabic and English." },
+    ],
+    faqs: [
+      { q: "Do you build bilingual websites in Medina?", a: "Yes, with native Arabic RTL and full English versions." },
+      { q: "Can you help my Medina business rank on Google?", a: "Yes, every build includes on-page and local SEO targeting Medina." },
+      { q: "Do you support hospitality businesses?", a: "Yes, including hotels and services with booking functionality." },
+    ],
+    related: ["web-design-mecca", "web-design-company-saudi-arabia", "digital-marketing-agency-saudi"],
+    cityRegion: "Al Madinah Province",
+    geo: { latitude: "24.5247", longitude: "39.5692", placename: "Medina", region: "SA-03" },
+  },
+  {
+    slug: "web-design-abha",
+    kind: "city",
+    title: "Web Design Company in Abha",
+    description:
+      "Web design company in Abha. Voxon Digital builds bilingual websites for Asir businesses — tourism, retail, and services that stand out online.",
+    keywords: [
+      "web design company in Abha",
+      "web design Abha",
+      "website design Asir",
+      "Abha digital agency",
+      "تصميم مواقع أبها",
+    ],
+    h1: "Web Design Company in Abha",
+    subtitle:
+      "Abha's tourism boom is bringing new customers online. Voxon Digital builds bilingual, SEO-ready websites for Asir businesses ready to capture them.",
+    intro: [
+      "As Abha grows as a tourism destination, its businesses need websites that match its momentum. Voxon Digital builds professional, bilingual websites for Abha and the Asir region.",
+      "From hospitality and retail to local services, we craft digital experiences that win customers and support growth.",
+    ],
+    features: [
+      { title: "Tourism & Hospitality Design", text: "Websites built for Abha's growing tourism and hospitality sector." },
+      { title: "Bilingual Arabic-English", text: "Native Arabic with English for regional and international visitors." },
+      { title: "Abha Local SEO", text: "Target 'web design Abha' and Asir keywords with on-page SEO and citations." },
+      { title: "Mobile-First", text: "Fast, mobile-optimized sites for Saudi browsing habits." },
+      { title: "E-commerce Ready", text: "Online stores with Mada, STC Pay, and Tamara." },
+      { title: "Ongoing Support", text: "Maintenance and support in Arabic and English." },
+    ],
+    faqs: [
+      { q: "Do you build websites for tourism businesses in Abha?", a: "Yes, we specialize in hospitality and tourism websites with booking functionality." },
+      { q: "Is Arabic RTL supported?", a: "Yes, all Abha projects are fully bilingual." },
+      { q: "Do you serve the whole Asir region?", a: "Yes, including Khamis Mushait and surrounding areas." },
+    ],
+    related: ["web-design-company-saudi-arabia", "web-design-jeddah", "web-design-riyadh"],
+    cityRegion: "Asir Province",
+    geo: { latitude: "18.2164", longitude: "42.5053", placename: "Abha", region: "SA-14" },
+  },
+  {
+    slug: "web-design-jubail",
+    kind: "city",
+    title: "Web Design Company in Jubail",
+    description:
+      "Web design company in Jubail. Voxon Digital builds bilingual websites for Jubail and Eastern Province industrial and B2B businesses.",
+    keywords: [
+      "web design company in Jubail",
+      "web design Jubail",
+      "website design Jubail",
+      "Jubail industrial web design",
+      "تصميم مواقع الجبيل",
+    ],
+    h1: "Web Design Company in Jubail",
+    subtitle:
+      "Jubail's industrial economy runs on B2B. Voxon Digital builds professional, bilingual websites that communicate capability and win contracts.",
+    intro: [
+      "Jubail is home to one of the world's largest petrochemical complexes — and the businesses that support it. These companies need websites that project competence and clarity.",
+      "Voxon Digital builds professional, bilingual, mobile-friendly websites and B2B portals for Jubail and Eastern Province businesses.",
+    ],
+    features: [
+      { title: "Industrial & B2B Design", text: "Websites built for Jubail's energy, manufacturing, and service sectors." },
+      { title: "Bilingual Arabic-English", text: "Native Arabic and English for a diverse industrial workforce." },
+      { title: "Jubail Local SEO", text: "Target 'web design Jubail' and Eastern Province keywords." },
+      { title: "B2B Portals", text: "Secure portals, documentation, and business-critical functionality." },
+      { title: "Security & Reliability", text: "Enterprise-grade security and performance for business-critical sites." },
+      { title: "Ongoing Support", text: "Maintenance and technical support in Arabic and English." },
+    ],
+    faqs: [
+      { q: "Do you build industrial B2B websites?", a: "Yes, we specialize in corporate and B2B platforms for Jubail's industrial sector." },
+      { q: "Is Arabic RTL supported?", a: "Yes, all Jubail projects are fully bilingual." },
+      { q: "Can you build secure B2B portals?", a: "Yes, with access control, documentation, and enterprise-grade security." },
+    ],
+    related: ["web-design-dammam", "web-design-khobar", "web-development-company-saudi"],
+    cityRegion: "Eastern Province",
+    geo: { latitude: "27.0046", longitude: "49.6461", placename: "Jubail", region: "SA-04" },
+  },
+];
+
+export const SEO_PAGE_SLUGS = SEO_PAGES.map((p) => p.slug);
+
+export function getSeoPage(slug: string) {
+  return SEO_PAGES.find((p) => p.slug === slug);
+}

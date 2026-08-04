@@ -2470,12 +2470,12 @@ function Footer() {
               {label:t("nav.contact"),href:"#contact"},
             ]},
             {title:t("footer.services"), items:[
-              {label:"Website Design",href:"#services"},
-              {label:"E-Commerce",href:"#services"},
-              {label:"Web Development",href:"#services"},
-              {label:"SEO & Marketing",href:"#services"},
-              {label:"Brand Identity",href:"#services"},
-              {label:"Support",href:"#contact"},
+              {label:"Web Design",href:"/web-design-company-saudi-arabia"},
+              {label:"Web Development",href:"/web-development-company-saudi"},
+              {label:"E-Commerce",href:"/ecommerce-website-development-saudi"},
+              {label:"SEO & Marketing",href:"/seo-company-saudi"},
+              {label:"WordPress",href:"/wordpress-development-company-saudi"},
+              {label:"Brand Identity",href:"/digital-marketing-agency-saudi"},
             ]},
             {title:t("footer.industries"), items:[
               {label:"Construction",href:"#portfolio"},

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SEO_PAGES } from "@/lib/seo-pages";
 
 const BASE = "https://voxon.sa";
 
@@ -18,6 +19,13 @@ const PORTFOLIO_IMAGES = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const landingPages = SEO_PAGES.map((p) => ({
+    url: `${BASE}/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: p.kind === "service" ? 0.8 : 0.6,
+  }));
+
   return [
     {
       url: BASE,
@@ -26,5 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
       images: PORTFOLIO_IMAGES.map((p) => `${BASE}${p}`),
     },
+    ...landingPages,
   ];
 }
