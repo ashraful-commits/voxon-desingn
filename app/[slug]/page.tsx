@@ -120,6 +120,18 @@ function jsonLd(page: SeoLandingPage) {
             }
           : undefined,
         areaServed: { "@type": "Country", name: "Saudi Arabia" },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          opens: "09:00",
+          closes: "18:00",
+        },
+        sameAs: [
+          "https://www.facebook.com/voxondigital",
+          "https://www.instagram.com/voxondigital",
+          "https://www.linkedin.com/company/voxon-digital",
+          "https://twitter.com/voxondigital",
+        ],
       }
     : {
         "@context": "https://schema.org",
