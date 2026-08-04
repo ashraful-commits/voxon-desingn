@@ -126,7 +126,11 @@ function useTheme() {
 const NAV_LINKS_EN = [
   { href: "#home" },
   { href: "#services" },
-  { href: "#portfolio" },
+  { href: "#portfolio", children: [
+    { href: "#portfolio-website", id: "portfolio.website" },
+    { href: "#portfolio-graphic", id: "portfolio.graphic" },
+    { href: "#portfolio-shopify", id: "portfolio.shopify" },
+  ]},
   { href: "#process" },
   { href: "#testimonials" },
   { href: "#contact" },
@@ -149,48 +153,61 @@ const STATS_DATA = [
 ];
 
 const PORTFOLIO = [
-  { name: "Seba Bazar", cat: "E-Commerce Marketplace", image: "/images/sebabazar.png", url: "https://sebabazar.vercel.app" },
-  { name: "SalesFarm", cat: "Sales Platform", image: "/images/salesfarm.png", url: "https://salesfam.com" },
-  { name: "Nenosoft Agency", cat: "Digital Agency", image: "/images/nenosoft agency.png", url: "" },
-  { name: "Nanosoft", cat: "Technology", image: "/images/nanosoft.png", url: "https://www.nanosoft.agency" },
-  { name: "Voxon", cat: "Digital Agency", image: "/images/voxon.png", url: "https://voxon.sa" },
-  { name: "Movix", cat: "Entertainment", image: "/images/Movix.png", url: "https://movixproject01.netlify.app" },
-  { name: "Course Mater", cat: "Education Platform", image: "/images/coursemater.png", url: "https://coursemester.vercel.app" },
-  { name: "After We", cat: "Social Platform", image: "/images/afterwe.png", url: "https://afterwe.xyz/en" },
-  { name: "Make Mini Me", cat: "E-Commerce", image: "/images/facepillow.png", url: "https://makeminime-seven.vercel.app" },
-  { name: "Bright Smile", cat: "Healthcare", image: "/images/brightsimile.png", url: "https://brightsmile-iota.vercel.app" },
-  { name: "Fam Clinic", cat: "Medical & Health", image: "/images/famclinic.png", url: "https://clinic-application-design-five.vercel.app" },
-  { name: "Al Bina Construction", cat: "Corporate Website", image: "/images/portfolio-construction.png", url: "" },
-  { name: "Thouq Restaurant", cat: "Restaurant & Booking", image: "/images/portfolio-restaurant.png", url: "" },
-  { name: "Al Salam Clinics", cat: "Medical & Health", image: "/images/portfolio-medical.png", url: "" },
-  { name: "Al Aqariyah", cat: "Real Estate", image: "/images/portfolio-realestate.png", url: "" },
-  { name: "NurLight Academy", cat: "Education Platform", image: "/images/portfolio-academy.png", url: "" },
-  { name: "Barakat Pharma", cat: "Pharmaceutical", image: "/images/portfolio-medical.png", url: "" },
-  { name: "AutoWorld Motors", cat: "Automotive", image: "/images/portfolio-automotive.png", url: "" },
-  { name: "Gulf National Bank", cat: "Banking & Finance", image: "/images/portfolio-bank.png", url: "" },
-  { name: "Al Noor Clinic", cat: "Healthcare", image: "/images/portfolio-clinic.png", url: "" },
-  { name: "Qahwa Cafe", cat: "Coffee Shop", image: "/images/portfolio-coffe.png", url: "" },
-  { name: "Dar Al-Khibra", cat: "Consulting", image: "/images/portfolio-consulting.png", url: "" },
-  { name: "Saudi Drive", cat: "Transport & Logistics", image: "/images/portfolio-drive.png", url: "" },
-  { name: "Najd E-Commerce", cat: "E-Commerce", image: "/images/portfolio-ecommerce.png", url: "" },
-  { name: "Al Manar Academy", cat: "Education Portal", image: "/images/portfolio-education.png", url: "" },
-  { name: "Riyadh Events", cat: "Event Management", image: "/images/portfolio-events.png", url: "" },
-  { name: "GreenFields Farm", cat: "Agriculture", image: "/images/portfolio-farm.png", url: "" },
-  { name: "Mirage Fashion", cat: "Fashion & Retail", image: "/images/portfolio-fashion.png", url: "" },
-  { name: "PaySaudi Fintech", cat: "Financial Tech", image: "/images/portfolio-fintech.png", url: "" },
-  { name: "FitZone KSA", cat: "Fitness Center", image: "/images/portfolio-fitness.png", url: "" },
-  { name: "Elite Fitness", cat: "Premium Fitness", image: "/images/portfolio-fitness2.png", url: "" },
-  { name: "Arabian Hospitality", cat: "Hotel & Resort", image: "/images/portfolio-hotel.png", url: "" },
-  { name: "Al Durrat Resort", cat: "Luxury Hotel", image: "/images/portfolio-hotel2.png", url: "" },
-  { name: "Saudi Industries", cat: "Industrial", image: "/images/portfolio-industrial.png", url: "" },
-  { name: "Al Adl Legal", cat: "Legal Services", image: "/images/portfolio-legal.png", url: "" },
-  { name: "Haqouq Law", cat: "Law Firm", image: "/images/portfolio-legal2.png", url: "" },
-  { name: "ShipFast Logistics", cat: "Logistics", image: "/images/portfolio-logistics.png", url: "" },
-  { name: "Saudi Petroleum", cat: "Oil & Gas", image: "/images/portfolio-petroleu.png", url: "" },
-  { name: "TechVanguard", cat: "Technology", image: "/images/portfolio-tech.png", url: "" },
-  { name: "Salam Telecom", cat: "Telecommunications", image: "/images/portfolio-telecom.png", url: "" },
-  { name: "Wanderlust Travel", cat: "Travel Agency", image: "/images/portfolio-travel.png", url: "" },
-  { name: "Al Safar Tourism", cat: "Travel & Tourism", image: "/images/portfolio-travel2.png", url: "" },
+  { name: "Seba Bazar", cat: "E-Commerce Marketplace", type: "website" as const, image: "/images/sebabazar.png", url: "https://sebabazar.vercel.app" },
+  { name: "SalesFarm", cat: "Sales Platform", type: "website" as const, image: "/images/salesfarm.png", url: "https://salesfam.com" },
+  { name: "Nenosoft Agency", cat: "Digital Agency", type: "website" as const, image: "/images/nenosoft agency.png", url: "" },
+  { name: "Nanosoft", cat: "Technology", type: "website" as const, image: "/images/nanosoft.png", url: "https://www.nanosoft.agency" },
+  { name: "Voxon", cat: "Digital Agency", type: "website" as const, image: "/images/voxon.png", url: "https://voxon.sa" },
+  { name: "Movix", cat: "Entertainment", type: "website" as const, image: "/images/Movix.png", url: "https://movixproject01.netlify.app" },
+  { name: "Course Mater", cat: "Education Platform", type: "website" as const, image: "/images/coursemater.png", url: "https://coursemester.vercel.app" },
+  { name: "After We", cat: "Social Platform", type: "website" as const, image: "/images/afterwe.png", url: "https://afterwe.xyz/en" },
+  { name: "Make Mini Me", cat: "E-Commerce", type: "website" as const, image: "/images/facepillow.png", url: "https://makeminime-seven.vercel.app" },
+  { name: "Bright Smile", cat: "Healthcare", type: "website" as const, image: "/images/brightsimile.png", url: "https://brightsmile-iota.vercel.app" },
+  { name: "Fam Clinic", cat: "Medical & Health", type: "website" as const, image: "/images/famclinic.png", url: "https://clinic-application-design-five.vercel.app" },
+  { name: "Al Bina Construction", cat: "Corporate Website", type: "website" as const, image: "/images/portfolio-construction.png", url: "" },
+  { name: "Thouq Restaurant", cat: "Restaurant & Booking", type: "website" as const, image: "/images/portfolio-restaurant.png", url: "" },
+  { name: "Al Salam Clinics", cat: "Medical & Health", type: "website" as const, image: "/images/portfolio-medical.png", url: "" },
+  { name: "Al Aqariyah", cat: "Real Estate", type: "website" as const, image: "/images/portfolio-realestate.png", url: "" },
+  { name: "NurLight Academy", cat: "Education Platform", type: "website" as const, image: "/images/portfolio-academy.png", url: "" },
+  { name: "Barakat Pharma", cat: "Pharmaceutical", type: "website" as const, image: "/images/portfolio-medical.png", url: "" },
+  { name: "AutoWorld Motors", cat: "Automotive", type: "website" as const, image: "/images/portfolio-automotive.png", url: "" },
+  { name: "Gulf National Bank", cat: "Banking & Finance", type: "website" as const, image: "/images/portfolio-bank.png", url: "" },
+  { name: "Al Noor Clinic", cat: "Healthcare", type: "website" as const, image: "/images/portfolio-clinic.png", url: "" },
+  { name: "Qahwa Cafe", cat: "Coffee Shop", type: "website" as const, image: "/images/portfolio-coffe.png", url: "" },
+  { name: "Dar Al-Khibra", cat: "Consulting", type: "website" as const, image: "/images/portfolio-consulting.png", url: "" },
+  { name: "Saudi Drive", cat: "Transport & Logistics", type: "website" as const, image: "/images/portfolio-drive.png", url: "" },
+  { name: "Najd E-Commerce", cat: "E-Commerce", type: "website" as const, image: "/images/portfolio-ecommerce.png", url: "" },
+  { name: "Al Manar Academy", cat: "Education Portal", type: "website" as const, image: "/images/portfolio-education.png", url: "" },
+  { name: "Riyadh Events", cat: "Event Management", type: "website" as const, image: "/images/portfolio-events.png", url: "" },
+  { name: "GreenFields Farm", cat: "Agriculture", type: "website" as const, image: "/images/portfolio-farm.png", url: "" },
+  { name: "Mirage Fashion", cat: "Fashion & Retail", type: "website" as const, image: "/images/portfolio-fashion.png", url: "" },
+  { name: "PaySaudi Fintech", cat: "Financial Tech", type: "website" as const, image: "/images/portfolio-fintech.png", url: "" },
+  { name: "FitZone KSA", cat: "Fitness Center", type: "website" as const, image: "/images/portfolio-fitness.png", url: "" },
+  { name: "Elite Fitness", cat: "Premium Fitness", type: "website" as const, image: "/images/portfolio-fitness2.png", url: "" },
+  { name: "Arabian Hospitality", cat: "Hotel & Resort", type: "website" as const, image: "/images/portfolio-hotel.png", url: "" },
+  { name: "Al Durrat Resort", cat: "Luxury Hotel", type: "website" as const, image: "/images/portfolio-hotel2.png", url: "" },
+  { name: "Saudi Industries", cat: "Industrial", type: "website" as const, image: "/images/portfolio-industrial.png", url: "" },
+  { name: "Al Adl Legal", cat: "Legal Services", type: "website" as const, image: "/images/portfolio-legal.png", url: "" },
+  { name: "Haqouq Law", cat: "Law Firm", type: "website" as const, image: "/images/portfolio-legal2.png", url: "" },
+  { name: "ShipFast Logistics", cat: "Logistics", type: "website" as const, image: "/images/portfolio-logistics.png", url: "" },
+  { name: "Saudi Petroleum", cat: "Oil & Gas", type: "website" as const, image: "/images/portfolio-petroleu.png", url: "" },
+  { name: "TechVanguard", cat: "Technology", type: "website" as const, image: "/images/portfolio-tech.png", url: "" },
+  { name: "Salam Telecom", cat: "Telecommunications", type: "website" as const, image: "/images/portfolio-telecom.png", url: "" },
+  { name: "Wanderlust Travel", cat: "Travel Agency", type: "website" as const, image: "/images/portfolio-travel.png", url: "" },
+  { name: "Al Safar Tourism", cat: "Travel & Tourism", type: "website" as const, image: "/images/portfolio-travel2.png", url: "" },
+  { name: "Ris", cat: "Brand Identity", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1783864987/design-vault/ris-06.png", url: "" },
+  { name: "SkillPo", cat: "Brand Identity", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1784351919/design-vault/skillpo-05.png", url: "" },
+  { name: "Freel to Frly", cat: "Graphic Design", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1784352305/design-vault/freel%20to%20frly%20%5BRecovered%5D.png", url: "" },
+  { name: "Untitled 1", cat: "Logo Design", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1784352314/design-vault/Untitled-1.png", url: "" },
+  { name: "Modi Na", cat: "Brand Identity", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1784352679/design-vault/modi%20na%20a-01.png", url: "" },
+  { name: "Qimame", cat: "Brand Identity", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1784353535/design-vault/qimaammeee-09.png", url: "" },
+  { name: "Brand Mockup", cat: "Mockup Design", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1784446102/design-vault/Replace_logo_in_mockup_2K_202607191136.jpg", url: "" },
+  { name: "Untitled 1-02", cat: "Logo Design", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1784298353/design-vault/Untitled-1-02.png", url: "" },
+  { name: "Logo Presentation", cat: "Brand Identity", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1785808680/design-vault/Logo%20presentation-02.png", url: "" },
+  { name: "Chocolate", cat: "Social Media Design", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1785808696/design-vault/Dreaming%20of%20a%20sweet%20escape_%20Discover%20the%20Chocolate%E2%80%A6.png", url: "" },
+  { name: "Asasas", cat: "Graphic Design", type: "graphic" as const, image: "https://res.cloudinary.com/drqahdbzz/image/upload/v1785808701/design-vault/asasas.png", url: "" },
+  { name: "BundleZA", cat: "Shopify App", type: "shopify" as const, image: "https://cdn.shopify.com/app-store/listing_images/bf8af6f16b83e38784531f24abdcb186/promotional_image/CPDFm7KosI4DEAE=.png?height=720&width=1280", url: "https://apps.shopify.com/bundleza" },
+  { name: "Checkout Nexus", cat: "Shopify App", type: "shopify" as const, image: "https://cdn.shopify.com/app-store/listing_images/eee8d11026cd2d217eb51824d2df6f1a/promotional_image/CPKu3d6S_JADEAE=.png?height=720&width=1280", url: "https://apps.shopify.com/checkout-nexus" },
 ];
 
 
@@ -278,7 +295,9 @@ function Navbar() {
   const [animOpen, setAnimOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [portfolioOpen, setPortfolioOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
+  const portfolioTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (open) setAnimOpen(true);
@@ -349,9 +368,12 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between w-full" dir={isAr ? "rtl" : "ltr"}>
         {/* Logo mark */}
         <a href="#home" className="flex items-center gap-3 group">
-          <img
+          <Image
             src={isGreen ? "/voxon-green-transparent%20logo.png" : isLight ? "/voxon-dark-transparent%20logo.png" : "/voxon-white-transparent%20logo.png"}
             alt="Voxon"
+            width={3904}
+            height={1406}
+            priority
             className="h-8 w-auto object-contain"
           />
         </a>
@@ -361,6 +383,51 @@ function Navbar() {
           {NAV_LINKS_EN.map((l) => {
             const id = l.href.slice(1);
             const isActive = activeSection === id;
+            const hasChildren = l.children && l.children.length > 0;
+
+            if (hasChildren) {
+              return (
+                <div key={l.href} className="relative"
+                  onMouseEnter={() => { if (portfolioTimerRef.current) clearTimeout(portfolioTimerRef.current); setPortfolioOpen(true); }}
+                  onMouseLeave={() => { portfolioTimerRef.current = setTimeout(() => setPortfolioOpen(false), 150); }}
+                >
+                  <a href={l.href}
+                    className="relative px-4 py-2 text-[11px] font-semibold tracking-[0.12em] uppercase transition-colors font-outfit inline-flex items-center gap-1"
+                    style={{ color: isActive ? activeColor : navTextBase }}
+                    onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextHover; }}
+                    onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextBase; }}
+                  >
+                    {t(`nav.${id}`)}
+                    <svg className={`w-3 h-3 transition-transform duration-200 ${portfolioOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    {isActive && <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#C9A84C]"/>}
+                  </a>
+                  {portfolioOpen && (
+                    <div className="absolute top-full left-0 mt-1 min-w-[180px] rounded-xl border py-1.5 z-50"
+                      style={{
+                        background: isLight ? "rgba(248,246,240,0.97)" : "rgba(7,9,15,0.97)",
+                        backdropFilter: "blur(16px)",
+                        borderColor: isLight ? "rgba(10,14,26,0.08)" : "rgba(255,255,255,0.08)",
+                        boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+                      }}>
+                      {l.children!.map((child) => (
+                        <a key={child.href} href={child.href}
+                          className="block px-4 py-2.5 text-[11px] font-semibold tracking-[0.10em] uppercase transition-colors font-outfit"
+                          style={{ color: isLight ? "rgba(10,14,26,0.6)" : "rgba(255,255,255,0.6)" }}
+                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = navTextHover; (e.currentTarget as HTMLElement).style.background = isLight ? "rgba(10,14,26,0.04)" : "rgba(255,255,255,0.04)"; }}
+                          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = isLight ? "rgba(10,14,26,0.6)" : "rgba(255,255,255,0.6)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
+                          onClick={() => setPortfolioOpen(false)}
+                        >
+                          {t(`nav.${child.id}`)}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             return (
               <a key={l.href} href={l.href}
                 className="relative px-4 py-2 text-[11px] font-semibold tracking-[0.12em] uppercase transition-colors font-outfit"
@@ -412,14 +479,45 @@ function Navbar() {
         <div className={`lg:hidden absolute top-full left-0 right-0 border-t px-6 py-8 space-y-1 z-50 transition-all duration-300 ${open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}
           style={{ background: isLight ? "rgba(248,246,240,0.98)" : "rgba(7,9,15,0.98)", backdropFilter: "blur(24px)", borderColor: isLight ? "rgba(10,14,26,0.06)" : "rgba(255,255,255,0.05)" }}
           dir={isAr ? "rtl" : "ltr"}>
-          {NAV_LINKS_EN.map((l, i) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}
-              className={`flex items-center gap-3 py-3 text-sm font-outfit tracking-wide border-b last:border-0 transition-all duration-300 ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
-              style={{ transitionDelay: open ? `${100 + i * 60}ms` : "0ms", color: isLight ? "rgba(10,14,26,0.6)" : "rgba(255,255,255,0.6)" }}>
-              <span className={`w-1 h-1 rounded-full bg-[#C9A84C] opacity-50`}/>
-              {t(`nav.${l.href.slice(1)}`)}
-            </a>
-          ))}
+          {NAV_LINKS_EN.map((l, i) => {
+            const hasChildren = l.children && l.children.length > 0;
+            if (hasChildren) {
+              return (
+                <div key={l.href}>
+                  <div
+                    onClick={() => setPortfolioOpen(!portfolioOpen)}
+                    className={`flex items-center justify-between gap-3 py-3 text-sm font-outfit tracking-wide border-b last:border-0 transition-all duration-300 cursor-pointer ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
+                    style={{ transitionDelay: open ? `${100 + i * 60}ms` : "0ms", color: isLight ? "rgba(10,14,26,0.6)" : "rgba(255,255,255,0.6)" }}>
+                    <span className="flex items-center gap-3">
+                      <span className={`w-1 h-1 rounded-full bg-[#C9A84C] opacity-50`}/>
+                      {t(`nav.${l.href.slice(1)}`)}
+                    </span>
+                    <svg className={`w-4 h-4 transition-transform duration-200 ${portfolioOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  <div className={`overflow-hidden transition-all duration-200 ${portfolioOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}>
+                    {l.children!.map((child) => (
+                      <a key={child.href} href={child.href} onClick={() => setOpen(false)}
+                        className="flex items-center gap-6 py-2.5 pl-6 text-xs font-outfit tracking-wide transition-all duration-300"
+                        style={{ color: isLight ? "rgba(10,14,26,0.45)" : "rgba(255,255,255,0.45)" }}>
+                        <span className={`w-1 h-1 rounded-full bg-[#C9A84C] opacity-30`}/>
+                        {t(`nav.${child.id}`)}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <a key={l.href} href={l.href} onClick={() => setOpen(false)}
+                className={`flex items-center gap-3 py-3 text-sm font-outfit tracking-wide border-b last:border-0 transition-all duration-300 ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
+                style={{ transitionDelay: open ? `${100 + i * 60}ms` : "0ms", color: isLight ? "rgba(10,14,26,0.6)" : "rgba(255,255,255,0.6)" }}>
+                <span className={`w-1 h-1 rounded-full bg-[#C9A84C] opacity-50`}/>
+                {t(`nav.${l.href.slice(1)}`)}
+              </a>
+            );
+          })}
           <div className="flex items-center gap-3 pt-4">
             <button onClick={toggleTheme}
               className="text-xs font-medium cursor-pointer transition-colors px-3 py-1.5 border rounded-full font-outfit"
@@ -937,7 +1035,7 @@ function HeroSection() {
                     {slides.map((item) => (
                       <SwiperSlide key={item.name} className="rounded-xl overflow-hidden">
                         <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
-                          <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                          <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" />
                             <div className="card-overlay" />
                             <div className="card-content">
                               <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
@@ -965,7 +1063,7 @@ function HeroSection() {
                       {slides.map((item) => (
                         <div key={item.name} className="min-w-full h-full shrink-0 overflow-hidden">
                           <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
-                            <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                            <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" />
                               <div className="card-overlay" />
                               <div className="card-content">
                                 <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
@@ -1554,6 +1652,17 @@ function PortfolioSection() {
   const { locale, t } = useLocale();
   const isAr = locale === "ar";
   const sectionRef = useRef<HTMLElement | null>(null);
+  const [filter, setFilter] = useState<"all" | "website" | "graphic" | "shopify">("all");
+
+  const filteredPortfolio = filter === "all" ? PORTFOLIO : PORTFOLIO.filter(p => p.type === filter);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#portfolio-website") setFilter("website");
+    else if (hash === "#portfolio-graphic") setFilter("graphic");
+    else if (hash === "#portfolio-shopify") setFilter("shopify");
+    else setFilter("all");
+  }, []);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -1618,6 +1727,9 @@ function PortfolioSection() {
 
   return (
     <section ref={sectionRef} id="portfolio" className="py-24 bg-ivory relative overflow-hidden" dir={isAr ? "rtl" : "ltr"}>
+      <div id="portfolio-website" className="absolute -top-20" />
+      <div id="portfolio-graphic" className="absolute -top-20" />
+      <div id="portfolio-shopify" className="absolute -top-20" />
       <SectionDesert speed={0.5} variant={4} />
       <div className="ksa-dunes-top" style={{ opacity: 0.12, height: "100px" }} />
       <div className="absolute top-0 left-0 right-0 h-16 pointer-events-none z-[1]"
@@ -1645,8 +1757,20 @@ function PortfolioSection() {
             {t("portfolio.view_all")} <ExternalLink size={14}/>
           </a>
         </div>
+        <div className="flex items-center gap-2 mb-8" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+          {(["all", "website", "graphic", "shopify"] as const).map((f) => (
+            <button key={f} onClick={() => setFilter(f)}
+              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 font-outfit border cursor-pointer ${
+                filter === f
+                  ? "bg-[#C9A84C] text-white border-[#C9A84C]"
+                  : "border-ink-6 text-ink-soft2 hover:border-[#C9A84C] hover:text-[#C9A84C]"
+              }`}>
+              {t(`portfolio.filter_${f}`)}
+            </button>
+          ))}
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {PORTFOLIO.map((p) => (
+          {filteredPortfolio.map((p) => (
             <a
               key={p.name}
               href={p.url || undefined}
@@ -1656,7 +1780,7 @@ function PortfolioSection() {
               className="group bg-white rounded-lg overflow-hidden border transition-all duration-300 hover:shadow-xl cursor-pointer border-ink-6 portfolio-card glow-card card-circle relative block"
               onMouseMove={handleCardMouseMove}
             >
-              <div className="relative h-52 overflow-hidden bg-[#0A0E1A] pt-3">
+              <div className={`relative h-52 overflow-hidden pt-3 ${p.type === "graphic" ? "bg-white" : "bg-[#0A0E1A]"}`}>
                 <Image
                   src={p.image}
                   alt={p.name}
@@ -1664,16 +1788,12 @@ function PortfolioSection() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-contain parallax-img"
                 />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,14,26,0.4),transparent)] z-10"/>
+                  <div className={`absolute inset-0 z-10 ${p.type === "graphic" ? "bg-[linear-gradient(to_top,rgba(10,14,26,0.1),transparent)]" : "bg-[linear-gradient(to_top,rgba(10,14,26,0.4),transparent)]"}`}/>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-[rgba(10,14,26,0.5)] backdrop-blur-[1px] z-20">
                   <span className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)]">
                     {t("portfolio.view_project")} <ExternalLink size={12}/>
                   </span>
                 </div>
-              </div>
-              <div className="p-5 relative z-20">
-                <div className={`text-xs font-medium mb-1 text-ink-soft2 ${isAr ? "font-arabic" : ""}`}>{p.cat}</div>
-                <div className={`font-semibold text-[#0A0E1A] text-sm ${isAr ? "font-arabic-display" : ""}`}>{p.name}</div>
               </div>
             </a>
           ))}
@@ -2262,9 +2382,11 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
           <div className="footer-col">
             <div className="flex items-center gap-2.5 mb-4" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
-              <img
+              <Image
                 src={isGreen ? "/voxon-green-transparent%20logo.png" : isLight ? "/voxon-dark-transparent%20logo.png" : "/voxon-white-transparent%20logo.png"}
                 alt="Voxon"
+                width={3904}
+                height={1406}
                 className="h-7 w-auto object-contain"
               />
             </div>
@@ -2273,15 +2395,34 @@ function Footer() {
           </div>
           {[
             {title:t("footer.quick_links"), items:[
-              t("nav.home"),t("nav.services"),t("nav.portfolio"),t("nav.process"),t("nav.testimonials"),t("nav.contact")
+              {label:t("nav.home"),href:"#home"},
+              {label:t("nav.services"),href:"#services"},
+              {label:t("nav.portfolio"),href:"#portfolio"},
+              {label:t("nav.process"),href:"#process"},
+              {label:t("nav.testimonials"),href:"#testimonials"},
+              {label:t("nav.contact"),href:"#contact"},
             ]},
-            {title:t("footer.services"), items:["Website Design","E-Commerce","Web Development","SEO & Marketing","Brand Identity","Support"]},
-            {title:t("footer.industries"), items:["Construction","Restaurants","Medical","E-Commerce","Real Estate","Education"]},
+            {title:t("footer.services"), items:[
+              {label:"Website Design",href:"#services"},
+              {label:"E-Commerce",href:"#services"},
+              {label:"Web Development",href:"#services"},
+              {label:"SEO & Marketing",href:"#services"},
+              {label:"Brand Identity",href:"#services"},
+              {label:"Support",href:"#contact"},
+            ]},
+            {title:t("footer.industries"), items:[
+              {label:"Construction",href:"#portfolio"},
+              {label:"Restaurants",href:"#portfolio"},
+              {label:"Medical",href:"#portfolio"},
+              {label:"E-Commerce",href:"#portfolio"},
+              {label:"Real Estate",href:"#portfolio"},
+              {label:"Education",href:"#portfolio"},
+            ]},
           ].map((col) => (
             <div key={col.title} className="footer-col">
               <h4 className={`text-white text-xs font-bold uppercase tracking-wider mb-4 ${isAr ? "font-arabic-display" : ""}`}>{col.title}</h4>
               <ul className="space-y-2.5">
-                {col.items.map((item) => <li key={item}><a href="#" className={`text-xs hover:text-white/70 transition-colors text-white-faint ${isAr ? "font-arabic" : ""}`}>{item}</a></li>)}
+                {col.items.map((item) => <li key={item.label}><a href={item.href} className={`text-xs hover:text-white/70 transition-colors text-white-faint ${isAr ? "font-arabic" : ""}`}>{item.label}</a></li>)}
               </ul>
             </div>
           ))}
@@ -2294,7 +2435,7 @@ function Footer() {
             <span className="font-arabic">{t("footer.location_arabic")}</span>
           </div>
           <div className="flex gap-5" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
-            {["Privacy","Terms","Sitemap"].map((l) => <a key={l} href="#" className="hover:text-white/50 transition-colors">{l}</a>)}
+            {[{label:"Privacy",href:"#contact"},{label:"Terms",href:"#contact"},{label:"Sitemap",href:"/sitemap.xml"}].map((l) => <a key={l.label} href={l.href} className="hover:text-white/50 transition-colors">{l.label}</a>)}
           </div>
         </div>
       </div>
@@ -2532,7 +2673,7 @@ export default function Home() {
               longitude: 46.6753,
             },
             telephone: "+966542288828",
-            email: "hello@voxon.sa",
+            email: "info@voxon.sa",
             areaServed: "SA",
             priceRange: "$$",
             openingHours: "Mo-Fr 09:00-18:00",

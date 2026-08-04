@@ -61,10 +61,6 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://voxon.sa",
-    languages: {
-      "en-SA": "https://voxon.sa",
-      "ar-SA": "https://voxon.sa/ar",
-    },
   },
   applicationName: "Voxon",
   authors: [{ name: "Voxon Digital Agency", url: "https://voxon.sa" }],
@@ -79,9 +75,9 @@ export const metadata: Metadata = {
     "max-snippet": -1,
     "max-video-preview": -1,
   },
-  verification: {
-    google: "YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
-  },
+  // verification: {
+  //   // Add your real Search Console verification code here, e.g. google: "xxxxx"
+  // },
   openGraph: {
     type: "website",
     locale: "en_SA",
@@ -125,7 +121,6 @@ export const metadata: Metadata = {
     "geo.placename": "Riyadh",
     "geo.position": "24.7136;46.6753",
     ICBM: "24.7136, 46.6753",
-    "google-site-verification": "YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
   },
 };
 
