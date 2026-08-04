@@ -157,7 +157,7 @@ const PORTFOLIO = [
   { name: "SalesFarm", cat: "Sales Platform", type: "website" as const, image: "/images/salesfarm.png", url: "https://salesfam.com" },
   { name: "Nenosoft Agency", cat: "Digital Agency", type: "website" as const, image: "/images/nenosoft agency.png", url: "" },
   { name: "Nanosoft", cat: "Technology", type: "website" as const, image: "/images/nanosoft.png", url: "https://www.nanosoft.agency" },
-  { name: "Voxon", cat: "Digital Agency", type: "website" as const, image: "/images/voxon.png", url: "https://voxon.sa" },
+  { name: "Voxon Digital", cat: "Digital Agency", type: "website" as const, image: "/images/voxon.png", url: "https://voxon.sa" },
   { name: "Movix", cat: "Entertainment", type: "website" as const, image: "/images/Movix.png", url: "https://movixproject01.netlify.app" },
   { name: "Course Mater", cat: "Education Platform", type: "website" as const, image: "/images/coursemater.png", url: "https://coursemester.vercel.app" },
   { name: "After We", cat: "Social Platform", type: "website" as const, image: "/images/afterwe.png", url: "https://afterwe.xyz/en" },
@@ -367,15 +367,19 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between w-full" dir={isAr ? "rtl" : "ltr"}>
         {/* Logo mark */}
-        <a href="#home" className="flex items-center gap-3 group">
+        <a href="#home" className="flex items-end gap-1 group">
           <Image
             src={isGreen ? "/voxon-green-transparent%20logo.png" : isLight ? "/voxon-dark-transparent%20logo.png" : "/voxon-white-transparent%20logo.png"}
-            alt="Voxon"
+            alt="Voxon Digital"
             width={3904}
             height={1406}
             priority
             className="h-8 w-auto object-contain"
           />
+          <span className="text-[8px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5"
+            style={{ color: "#fff", background: isGreen ? "#1A6B3C" : "#C9A84C" }}>
+            digital
+          </span>
         </a>
 
         {/* Desktop nav */}
@@ -1653,8 +1657,23 @@ function PortfolioSection() {
   const isAr = locale === "ar";
   const sectionRef = useRef<HTMLElement | null>(null);
   const [filter, setFilter] = useState<"all" | "website" | "graphic" | "shopify">("all");
+  const [lightbox, setLightbox] = useState<string | null>(null);
 
-  const filteredPortfolio = filter === "all" ? PORTFOLIO : PORTFOLIO.filter(p => p.type === filter);
+  const filteredPortfolio = (() => {
+    if (filter === "all") {
+      const groups: Record<string, typeof PORTFOLIO> = { website: [], graphic: [], shopify: [] };
+      PORTFOLIO.forEach(p => groups[p.type].push(p));
+      const mixed: typeof PORTFOLIO = [];
+      const max = Math.max(...Object.values(groups).map(g => g.length));
+      for (let i = 0; i < max; i++) {
+        for (const type of ["website", "graphic", "shopify"] as const) {
+          if (groups[type][i]) mixed.push(groups[type][i]);
+        }
+      }
+      return mixed;
+    }
+    return PORTFOLIO.filter(p => p.type === filter);
+  })();
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -1663,6 +1682,17 @@ function PortfolioSection() {
     else if (hash === "#portfolio-shopify") setFilter("shopify");
     else setFilter("all");
   }, []);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightbox(null); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -1790,14 +1820,47 @@ function PortfolioSection() {
                 />
                   <div className={`absolute inset-0 z-10 ${p.type === "graphic" ? "bg-[linear-gradient(to_top,rgba(10,14,26,0.1),transparent)]" : "bg-[linear-gradient(to_top,rgba(10,14,26,0.4),transparent)]"}`}/>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-[rgba(10,14,26,0.5)] backdrop-blur-[1px] z-20">
-                  <span className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)]">
-                    {t("portfolio.view_project")} <ExternalLink size={12}/>
-                  </span>
+                    <div className="flex flex-col items-center gap-3">
+                      <button
+                        type="button"
+                        aria-label={t("portfolio.view_image")}
+                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLightbox(p.image); }}
+                        className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)] hover:bg-white hover:text-[#0A0E1A] transition-colors cursor-pointer"
+                      >
+                        {t("portfolio.view_image")}
+                      </button>
+                      {p.url ? (
+                        <span className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)]">
+                          {t("portfolio.view_project")} <ExternalLink size={12}/>
+                        </span>
+                      ) : null}
+                  </div>
                 </div>
               </div>
             </a>
           ))}
         </div>
+        {lightbox && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-[rgba(10,14,26,0.9)] backdrop-blur-md" onClick={() => setLightbox(null)}>
+            <button
+              type="button"
+              aria-label="Close"
+              onClick={() => setLightbox(null)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white p-2 rounded-full border border-white/30 hover:bg-white/10 transition-colors cursor-pointer z-10"
+            >
+              <X size={20}/>
+            </button>
+            <div className="relative w-full max-w-5xl h-full max-h-[80vh] rounded-xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={lightbox}
+                alt={filteredPortfolio.find(f => f.image === lightbox)?.name ?? ""}
+                fill
+                sizes="100vw"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -2381,14 +2444,18 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
           <div className="footer-col">
-            <div className="flex items-center gap-2.5 mb-4" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+            <div className="flex items-end gap-1 mb-4" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
               <Image
                 src={isGreen ? "/voxon-green-transparent%20logo.png" : isLight ? "/voxon-dark-transparent%20logo.png" : "/voxon-white-transparent%20logo.png"}
-                alt="Voxon"
+                alt="Voxon Digital"
                 width={3904}
                 height={1406}
                 className="h-7 w-auto object-contain"
               />
+              <span className="text-[8px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5"
+                style={{ color: "#fff", background: isGreen ? "#1A6B3C" : "#C9A84C" }}>
+                digital
+              </span>
             </div>
             <p className={`text-xs leading-relaxed mb-5 text-white-muted ${isAr ? "font-arabic" : ""}`}>{t("footer.description")}</p>
             <p className="text-right text-sm font-arabic text-[rgba(201,168,76,0.4)]">{t("footer.arabic_tagline")}</p>
@@ -2869,31 +2936,31 @@ export default function Home() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "What services does Voxon offer?",
+                name: "What services does Voxon Digital offer?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Voxon offers comprehensive digital services including website design, web development (Next.js/modern stack), SEO & growth (Arabic and English), brand identity, e-commerce solutions, and ongoing 24/7 technical support for Saudi businesses.",
+                  text: "Voxon Digital offers comprehensive digital services including website design, web development (Next.js/modern stack), SEO & growth (Arabic and English), brand identity, e-commerce solutions, and ongoing 24/7 technical support for Saudi businesses.",
                 },
               },
               {
                 "@type": "Question",
-                name: "Does Voxon build bilingual Arabic-English websites?",
+                name: "Does Voxon Digital build bilingual Arabic-English websites?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes, Voxon specializes in bilingual Arabic-English websites with proper RTL support, cultural aesthetics, and full SEO optimization for both languages targeting the Saudi market.",
+                  text: "Yes, Voxon Digital specializes in bilingual Arabic-English websites with proper RTL support, cultural aesthetics, and full SEO optimization for both languages targeting the Saudi market.",
                 },
               },
               {
                 "@type": "Question",
-                name: "Where is Voxon based?",
+                name: "Where is Voxon Digital based?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Voxon is a Saudi digital agency based in Riyadh, serving clients across the Kingdom including Jeddah, Dammam, and other major cities.",
+                  text: "Voxon Digital is a Saudi digital agency based in Riyadh, serving clients across the Kingdom including Jeddah, Dammam, and other major cities.",
                 },
               },
               {
                 "@type": "Question",
-                name: "How long does it take to build a website with Voxon?",
+                name: "How long does it take to build a website with Voxon Digital?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Typical delivery for a corporate website is 2-4 weeks from discovery to launch. E-commerce and complex platforms may take 6-8 weeks depending on requirements.",

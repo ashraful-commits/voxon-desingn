@@ -38,10 +38,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://voxon.sa"),
   title: {
-    default: "Voxon | Premium Web Design & Development in Saudi Arabia",
-    template: "%s | Voxon",
+    default: "Voxon Digital | Premium Web Design & Development in Saudi Arabia",
+    template: "%s | Voxon Digital",
   },
-  description: "Voxon is a premium Saudi digital agency building high-converting Arabic-English websites, e-commerce stores, SEO strategies, branding, and digital growth systems for businesses across Riyadh, Jeddah, and Dammam.",
+  description: "Voxon Digital is a premium Saudi digital agency building high-converting Arabic-English websites, e-commerce stores, SEO strategies, branding, and digital growth systems for businesses across Riyadh, Jeddah, and Dammam.",
   keywords: [
     "web design Saudi Arabia",
     "digital agency Riyadh",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://voxon.sa",
   },
-  applicationName: "Voxon",
+  applicationName: "Voxon Digital",
   authors: [{ name: "Voxon Digital Agency", url: "https://voxon.sa" }],
   creator: "Voxon Digital Agency",
   publisher: "Voxon Digital Agency",
@@ -83,8 +83,8 @@ export const metadata: Metadata = {
     locale: "en_SA",
     alternateLocale: "ar_SA",
     url: "https://voxon.sa",
-    siteName: "Voxon",
-    title: "Voxon | Premium Web Design & Development in Saudi Arabia",
+    siteName: "Voxon Digital",
+    title: "Voxon Digital | Premium Web Design & Development in Saudi Arabia",
     description: "World-class digital experiences for Saudi companies — web design, e-commerce, SEO, branding, and digital growth. Built with performance and conversion in mind.",
     images: [
       {
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Voxon | Premium Web Design & Development in Saudi Arabia",
+    title: "Voxon Digital | Premium Web Design & Development in Saudi Arabia",
     description: "World-class digital experiences for Saudi companies — web design, e-commerce, SEO, branding, and digital growth.",
     creator: "@voxon_sa",
     site: "@voxon_sa",
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    title: "Voxon",
+    title: "Voxon Digital",
     statusBarStyle: "black-translucent",
   },
   formatDetection: {

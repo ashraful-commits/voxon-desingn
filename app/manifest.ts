@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Voxon | Premium Web Design & Development in Saudi Arabia",
-    short_name: "Voxon",
+    name: "Voxon Digital | Premium Web Design & Development in Saudi Arabia",
+    short_name: "Voxon Digital",
     description:
-      "Voxon builds high-converting Arabic-English websites, e-commerce, SEO, branding, and digital growth systems for Saudi businesses.",
+      "Voxon Digital builds high-converting Arabic-English websites, e-commerce, SEO, branding, and digital growth systems for Saudi businesses.",
     start_url: "/",
     display: "standalone",
     background_color: "#0A0E1A",
