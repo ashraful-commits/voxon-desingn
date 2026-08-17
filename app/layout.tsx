@@ -36,7 +36,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://voxon.sa"),
+  metadataBase: new URL("https://voxondigital.net"),
   title: {
     default: "Voxon Digital | Premium Web Design & Development in Saudi Arabia",
     template: "%s | Voxon Digital",
@@ -60,10 +60,10 @@ export const metadata: Metadata = {
     "mobile app development Saudi Arabia",
   ],
   alternates: {
-    canonical: "https://voxon.sa",
+    canonical: "https://voxondigital.net",
   },
   applicationName: "Voxon Digital",
-  authors: [{ name: "Voxon Digital Agency", url: "https://voxon.sa" }],
+  authors: [{ name: "Voxon Digital Agency", url: "https://voxondigital.net" }],
   creator: "Voxon Digital Agency",
   publisher: "Voxon Digital Agency",
   category: "technology",
@@ -75,14 +75,14 @@ export const metadata: Metadata = {
     "max-snippet": -1,
     "max-video-preview": -1,
   },
-  // verification: {
-  //   // Add your real Search Console verification code here, e.g. google: "xxxxx"
-  // },
+  verification: {
+    google: "7DFypz2--zSS4u3vmuJIDF_Xc00JCfM3Bpmov46RmI8",
+  },
   openGraph: {
     type: "website",
-    locale: "en_SA",
-    alternateLocale: "ar_SA",
-    url: "https://voxon.sa",
+    locale: "ar_SA",
+    alternateLocale: "en_SA",
+    url: "https://voxondigital.net",
     siteName: "Voxon Digital",
     title: "Voxon Digital | Premium Web Design & Development in Saudi Arabia",
     description: "World-class digital experiences for Saudi companies — web design, e-commerce, SEO, branding, and digital growth. Built with performance and conversion in mind.",
@@ -128,7 +128,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${amiri.variable} ${reemKufi.variable} ${plusJakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
+    <html lang="ar" className={`${playfair.variable} ${amiri.variable} ${reemKufi.variable} ${plusJakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );

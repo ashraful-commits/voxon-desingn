@@ -8,7 +8,7 @@ export function generateStaticParams() {
   return SEO_PAGES.map((p) => ({ slug: p.slug }));
 }
 
-const BASE = "https://voxon.sa";
+const BASE = "https://voxondigital.net";
 
 export async function generateMetadata({
   params,
@@ -28,8 +28,8 @@ export async function generateMetadata({
     alternates: { canonical: url },
     openGraph: {
       type: "website",
-      locale: "en_SA",
-      alternateLocale: "ar_SA",
+      locale: "ar_SA",
+      alternateLocale: "en_SA",
       url,
       siteName: "Voxon Digital",
       title: page.title,
@@ -100,10 +100,10 @@ function jsonLd(page: SeoLandingPage) {
         "@id": `${url}#localbusiness`,
         name: `Voxon Digital — ${page.h1}`,
         url,
-        image: "https://voxon.sa/og-image.svg",
-        logo: "https://voxon.sa/og-image.svg",
+        image: "https://voxondigital.net/og-image.svg",
+        logo: "https://voxondigital.net/og-image.svg",
         telephone: "+966542288828",
-        email: "info@voxon.sa",
+        email: "info@voxondigital.net",
         priceRange: "$$",
         description: page.description,
         address: {
@@ -141,7 +141,7 @@ function jsonLd(page: SeoLandingPage) {
         serviceType: page.h1,
         description: page.description,
         url,
-        provider: { "@id": "https://voxon.sa/#organization" },
+        provider: { "@id": "https://voxondigital.net/#organization" },
         areaServed: { "@type": "Country", name: "Saudi Arabia" },
       };
 

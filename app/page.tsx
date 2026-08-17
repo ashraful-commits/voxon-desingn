@@ -157,7 +157,7 @@ const PORTFOLIO = [
   { name: "SalesFarm", cat: "Sales Platform", type: "website" as const, image: "/images/salesfarm.png", url: "https://salesfam.com" },
   { name: "Nenosoft Agency", cat: "Digital Agency", type: "website" as const, image: "/images/nenosoft agency.png", url: "" },
   { name: "Nanosoft", cat: "Technology", type: "website" as const, image: "/images/nanosoft.png", url: "https://www.nanosoft.agency" },
-  { name: "Voxon Digital", cat: "Digital Agency", type: "website" as const, image: "/images/voxon.png", url: "https://voxon.sa" },
+  { name: "Voxon Digital", cat: "Digital Agency", type: "website" as const, image: "/images/voxon.png", url: "https://voxondigital.net" },
   { name: "Movix", cat: "Entertainment", type: "website" as const, image: "/images/Movix.png", url: "https://movixproject01.netlify.app" },
   { name: "Course Mater", cat: "Education Platform", type: "website" as const, image: "/images/coursemater.png", url: "https://coursemester.vercel.app" },
   { name: "After We", cat: "Social Platform", type: "website" as const, image: "/images/afterwe.png", url: "https://afterwe.xyz/en" },
@@ -2511,10 +2511,10 @@ function Footer() {
 }
 
 export default function Home() {
-  const [locale, setLocale] = useState<Locale>("en");
+  const [locale, setLocale] = useState<Locale>("ar");
   const [progress, setProgress] = useState(0);
   const [preloaderDone, setPreloaderDone] = useState(false);
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("green");
 
   const updateHtml = useCallback((l: Locale) => {
     document.documentElement.lang = l;
@@ -2527,7 +2527,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    let initial: Theme = "dark";
+    let initial: Theme = "green";
     try {
       const stored = localStorage.getItem("voxon-theme");
       if (stored === "light" || stored === "green") initial = stored;
@@ -2721,11 +2721,11 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": ["Organization", "LocalBusiness"],
-            "@id": "https://voxon.sa/#organization",
+            "@id": "https://voxondigital.net/#organization",
             name: "Voxon Digital Agency",
-            url: "https://voxon.sa",
-            logo: "https://voxon.sa/og-image.svg",
-            image: "https://voxon.sa/og-image.svg",
+            url: "https://voxondigital.net",
+            logo: "https://voxondigital.net/og-image.svg",
+            image: "https://voxondigital.net/og-image.svg",
             description: "Premium web design, development, SEO, and branding services for Saudi businesses.",
             foundingDate: "2020",
             address: {
@@ -2740,7 +2740,7 @@ export default function Home() {
               longitude: 46.6753,
             },
             telephone: "+966542288828",
-            email: "info@voxon.sa",
+            email: "info@voxondigital.net",
             areaServed: "SA",
             priceRange: "$$",
             openingHours: "Mo-Fr 09:00-18:00",
@@ -2780,17 +2780,17 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "@id": "https://voxon.sa/#website",
+            "@id": "https://voxondigital.net/#website",
             name: "Voxon Digital Agency",
-            url: "https://voxon.sa",
+            url: "https://voxondigital.net",
             description: "Premium web design, development, SEO, and branding services for Saudi businesses.",
             inLanguage: ["en", "ar"],
-            publisher: { "@id": "https://voxon.sa/#organization" },
+            publisher: { "@id": "https://voxondigital.net/#organization" },
             potentialAction: {
               "@type": "SearchAction",
               target: {
                 "@type": "EntryPoint",
-                urlTemplate: "https://voxon.sa/?q={search_term_string}",
+                urlTemplate: "https://voxondigital.net/?q={search_term_string}",
               },
               "query-input": "required name=search_term_string",
             },
@@ -2804,12 +2804,12 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
-            "@id": "https://voxon.sa/#breadcrumb",
+            "@id": "https://voxondigital.net/#breadcrumb",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://voxon.sa" },
-              { "@type": "ListItem", position: 2, name: "Services", item: "https://voxon.sa/#services" },
-              { "@type": "ListItem", position: 3, name: "Portfolio", item: "https://voxon.sa/#portfolio" },
-              { "@type": "ListItem", position: 4, name: "Contact", item: "https://voxon.sa/#contact" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://voxondigital.net" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://voxondigital.net/#services" },
+              { "@type": "ListItem", position: 3, name: "Portfolio", item: "https://voxondigital.net/#portfolio" },
+              { "@type": "ListItem", position: 4, name: "Contact", item: "https://voxondigital.net/#contact" },
             ],
           }),
         }}
@@ -2821,7 +2821,7 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            "@id": "https://voxon.sa/#services",
+            "@id": "https://voxondigital.net/#services",
             name: "Voxon Digital Services",
             description: "End-to-end digital services for Saudi businesses",
             numberOfItems: 6,
@@ -2831,10 +2831,10 @@ export default function Home() {
                 position: 1,
                 item: {
                   "@type": "Service",
-                  "@id": "https://voxon.sa/#service-web-design",
+                  "@id": "https://voxondigital.net/#service-web-design",
                   name: "Website Design",
                   description: "Custom corporate sites, landing pages, and bilingual web experiences built to convert Saudi audiences.",
-                  provider: { "@id": "https://voxon.sa/#organization" },
+                  provider: { "@id": "https://voxondigital.net/#organization" },
                   areaServed: "SA",
                   serviceType: "Web Design",
                 },
@@ -2844,10 +2844,10 @@ export default function Home() {
                 position: 2,
                 item: {
                   "@type": "Service",
-                  "@id": "https://voxon.sa/#service-web-dev",
+                  "@id": "https://voxondigital.net/#service-web-dev",
                   name: "Web Development",
                   description: "Next.js and modern stack development — fast, scalable, and SEO-ready from day one.",
-                  provider: { "@id": "https://voxon.sa/#organization" },
+                  provider: { "@id": "https://voxondigital.net/#organization" },
                   areaServed: "SA",
                   serviceType: "Web Development",
                 },
@@ -2857,10 +2857,10 @@ export default function Home() {
                 position: 3,
                 item: {
                   "@type": "Service",
-                  "@id": "https://voxon.sa/#service-seo",
+                  "@id": "https://voxondigital.net/#service-seo",
                   name: "SEO & Growth",
                   description: "Arabic and English SEO, Google Ads, and analytics to keep your business visible and growing.",
-                  provider: { "@id": "https://voxon.sa/#organization" },
+                  provider: { "@id": "https://voxondigital.net/#organization" },
                   areaServed: "SA",
                   serviceType: "SEO",
                 },
@@ -2870,10 +2870,10 @@ export default function Home() {
                 position: 4,
                 item: {
                   "@type": "Service",
-                  "@id": "https://voxon.sa/#service-branding",
+                  "@id": "https://voxondigital.net/#service-branding",
                   name: "Brand Identity",
                   description: "Logo, visual identity, and brand guidelines designed with Saudi cultural aesthetics in mind.",
-                  provider: { "@id": "https://voxon.sa/#organization" },
+                  provider: { "@id": "https://voxondigital.net/#organization" },
                   areaServed: "SA",
                   serviceType: "Branding",
                 },
@@ -2883,10 +2883,10 @@ export default function Home() {
                 position: 5,
                 item: {
                   "@type": "Service",
-                  "@id": "https://voxon.sa/#service-ecommerce",
+                  "@id": "https://voxondigital.net/#service-ecommerce",
                   name: "E-Commerce",
                   description: "Full-featured online stores with Arabic payment gateways, inventory, and order management.",
-                  provider: { "@id": "https://voxon.sa/#organization" },
+                  provider: { "@id": "https://voxondigital.net/#organization" },
                   areaServed: "SA",
                   serviceType: "E-Commerce",
                 },
@@ -2896,10 +2896,10 @@ export default function Home() {
                 position: 6,
                 item: {
                   "@type": "Service",
-                  "@id": "https://voxon.sa/#service-support",
+                  "@id": "https://voxondigital.net/#service-support",
                   name: "Ongoing Support",
                   description: "Dedicated 24/7 maintenance, speed optimization, and technical support.",
-                  provider: { "@id": "https://voxon.sa/#organization" },
+                  provider: { "@id": "https://voxondigital.net/#organization" },
                   areaServed: "SA",
                   serviceType: "Technical Support",
                 },
@@ -2915,8 +2915,8 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "AggregateRating",
-            "@id": "https://voxon.sa/#rating",
-            itemReviewed: { "@id": "https://voxon.sa/#organization" },
+            "@id": "https://voxondigital.net/#rating",
+            itemReviewed: { "@id": "https://voxondigital.net/#organization" },
             ratingValue: "5",
             bestRating: "5",
             worstRating: "1",
@@ -2932,7 +2932,7 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "@id": "https://voxon.sa/#faq",
+            "@id": "https://voxondigital.net/#faq",
             mainEntity: [
               {
                 "@type": "Question",

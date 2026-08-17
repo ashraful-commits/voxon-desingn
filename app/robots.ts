@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://voxon.sa/sitemap.xml",
+    sitemap: "https://voxondigital.net/sitemap.xml",
   };
 }

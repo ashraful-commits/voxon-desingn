@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SEO_PAGES } from "@/lib/seo-pages";
 
-const BASE = "https://voxon.sa";
+const BASE = "https://voxondigital.net";
 
 const PORTFOLIO_IMAGES = [
   "/images/sebabazar.png",

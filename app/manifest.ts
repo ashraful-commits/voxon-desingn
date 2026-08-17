@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/",
     display: "standalone",
     background_color: "#0A0E1A",
-    theme_color: "#C9A84C",
+    theme_color: "#1A6B3C",
     icons: [
       {
         src: "/voxon-dark-icon.png",
