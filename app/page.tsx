@@ -1013,8 +1013,8 @@ function HeroSection() {
             </div>
 
             {/* CAROUSEL — right column on desktop, above CTAs on mobile */}
-            <div className="lg:col-start-2 lg:row-span-2 self-start mb-6 lg:mb-0 lg:px-4 xl:px-8">
-              <div className="relative w-full h-[300px] sm:h-[320px] md:h-[360px] lg:h-[420px]">
+            <div className="lg:col-start-2 lg:row-span-2 self-start mb-6 lg:mb-0 lg:px-4 xl:px-8 w-full">
+              <div className="relative w-full h-[50vh] sm:h-[55vh] md:h-[400px] lg:h-[420px]">
                 <div className="absolute inset-0 rounded-2xl pointer-events-none overflow-hidden"
                   style={{ background: "radial-gradient(circle at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%)", filter: "blur(30px)" }} />
                 <div className="absolute -inset-3 rounded-2xl pointer-events-none opacity-25" style={{
