@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { SEO_PAGES, getSeoPage, type SeoLandingPage } from "@/lib/seo-pages";
 
 export const dynamicParams = false;
@@ -169,7 +170,7 @@ export default async function SeoLandingPage({
         {/* Top bar */}
         <header className="sticky top-0 z-50 border-b border-white/5 bg-midnight/90 backdrop-blur-lg">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
-            <a href="/" className="flex items-end gap-1">
+            <Link href="/" className="flex items-end gap-1">
               <Image
                 src="/voxon-white-transparent%20logo.png"
                 alt="Voxon Digital"
@@ -181,24 +182,24 @@ export default async function SeoLandingPage({
               <span className="text-[8px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5" style={{ color: "#fff", background: "#C9A84C" }}>
                 digital
               </span>
-            </a>
+            </Link>
             <nav className="hidden md:flex items-center gap-6 text-xs font-semibold tracking-wider uppercase text-white/50">
-              <a href="/#services" className="hover:text-white/90 transition-colors">Services</a>
-              <a href="/#portfolio" className="hover:text-white/90 transition-colors">Portfolio</a>
-              <a href="/#contact" className="hover:text-white/90 transition-colors">Contact</a>
+              <Link href="/#services" className="hover:text-white/90 transition-colors">Services</Link>
+              <Link href="/#portfolio" className="hover:text-white/90 transition-colors">Portfolio</Link>
+              <Link href="/#contact" className="hover:text-white/90 transition-colors">Contact</Link>
             </nav>
-            <a href="/#contact" className="text-[11px] font-semibold tracking-wider uppercase px-4 py-2 rounded-full border border-[#C9A84C]/50 text-[#C9A84C] hover:bg-[#C9A84C] hover:text-white transition-colors">
+            <Link href="/#contact" className="text-[11px] font-semibold tracking-wider uppercase px-4 py-2 rounded-full border border-[#C9A84C]/50 text-[#C9A84C] hover:bg-[#C9A84C] hover:text-white transition-colors">
               Free Consultation
-            </a>
+            </Link>
           </div>
         </header>
 
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 lg:px-10 pt-8 text-xs text-white/40">
           <ol className="flex flex-wrap items-center gap-2">
-            <li><a href="/" className="hover:text-[#C9A84C] transition-colors">Home</a></li>
+            <li><Link href="/" className="hover:text-[#C9A84C] transition-colors">Home</Link></li>
             <li aria-hidden="true">/</li>
-            <li><a href="/#services" className="hover:text-[#C9A84C] transition-colors">{page.kind === "city" ? "Cities" : "Services"}</a></li>
+            <li><Link href="/#services" className="hover:text-[#C9A84C] transition-colors">{page.kind === "city" ? "Cities" : "Services"}</Link></li>
             <li aria-hidden="true">/</li>
             <li aria-current="page" className="text-white/70">{page.h1}</li>
           </ol>
@@ -214,12 +215,12 @@ export default async function SeoLandingPage({
           </h1>
           <p className="text-lg text-white/70 max-w-3xl mb-8">{page.subtitle}</p>
           <div className="flex flex-wrap gap-4">
-            <a href="/#contact" className="px-6 py-3 rounded-full bg-[#C9A84C] text-white text-sm font-semibold hover:bg-[#b8953d] transition-colors">
+            <Link href="/#contact" className="px-6 py-3 rounded-full bg-[#C9A84C] text-white text-sm font-semibold hover:bg-[#b8953d] transition-colors">
               Get Free Consultation
-            </a>
-            <a href="/#portfolio" className="px-6 py-3 rounded-full border border-white/20 text-white/80 text-sm font-semibold hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors">
+            </Link>
+            <Link href="/#portfolio" className="px-6 py-3 rounded-full border border-white/20 text-white/80 text-sm font-semibold hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors">
               View Our Work
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -278,12 +279,12 @@ export default async function SeoLandingPage({
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {related.map((r) => (
-                  <a key={r.slug} href={`/${r.slug}`} className="rounded-xl border border-white/10 bg-white/[0.03] p-5 hover:border-[#C9A84C]/40 hover:bg-white/[0.06] transition-all">
+                  <Link key={r.slug} href={`/${r.slug}`} className="rounded-xl border border-white/10 bg-white/[0.03] p-5 hover:border-[#C9A84C]/40 hover:bg-white/[0.06] transition-all">
                     <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#C9A84C] mb-2 block">
                       {r.kind === "city" ? "City" : "Service"}
                     </span>
                     <span className="text-sm font-semibold leading-snug">{r.h1}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -298,16 +299,16 @@ export default async function SeoLandingPage({
               Ready to Build Something Great?
             </h2>
             <p className="text-white/70 mb-8">
-              Get a free consultation with our Riyadh-based team. We'll audit your needs and show you how a professional website grows your business.
+              Get a free consultation with our Riyadh-based team. We&apos;ll audit your needs and show you how a professional website grows your business.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="/#contact" className="px-6 py-3 rounded-full bg-[#C9A84C] text-white text-sm font-semibold hover:bg-[#b8953d] transition-colors">
+              <Link href="/#contact" className="px-6 py-3 rounded-full bg-[#C9A84C] text-white text-sm font-semibold hover:bg-[#b8953d] transition-colors">
                 Start Your Project
-              </a>
+              </Link>
               <a href="https://wa.me/966542288828" className="px-6 py-3 rounded-full border border-white/20 text-white/80 text-sm font-semibold hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors">
                 WhatsApp Us
               </a>
-            </div>
+          </div>
           </div>
         </section>
 
@@ -328,8 +329,8 @@ export default async function SeoLandingPage({
             </div>
             <p>© 2026 Voxon Digital Agency · Riyadh · Serving All of Saudi Arabia</p>
             <div className="flex gap-5">
-              <a href="/#contact" className="hover:text-white/70 transition-colors">Contact</a>
-              <a href="/sitemap.xml" className="hover:text-white/70 transition-colors">Sitemap</a>
+              <Link href="/#contact" className="hover:text-white/70 transition-colors">Contact</Link>
+              <Link href="/sitemap.xml" className="hover:text-white/70 transition-colors">Sitemap</Link>
             </div>
           </div>
         </footer>

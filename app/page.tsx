@@ -1,8 +1,7 @@
 "use client";
-import { useState, useEffect, useRef, createContext, useContext, useCallback, useMemo } from "react";
+import { useState, useEffect, useLayoutEffect, useRef, createContext, useContext, useCallback, useMemo, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Script from "next/script";
-import styled from "@emotion/styled";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -17,65 +16,9 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 }
 
-// Text-scramble hook: reveals text character-by-character with a random char shuffle
-function useTextScramble(finalText: string, startDelay = 300) {
-  const [displayText, setDisplayText] = useState(finalText);
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&";
 
-  useEffect(() => {
-    let frame = 0;
-    let raf: number;
-    const totalFrames = finalText.length * 4;
 
-    const timeout = setTimeout(() => {
-      const tick = () => {
-        const progress = frame / totalFrames;
-        const revealedCount = Math.floor(progress * finalText.length);
-        const scrambled = finalText
-          .split("")
-          .map((ch, i) => {
-            if (ch === " " || ch === "\n") return ch;
-            if (i < revealedCount) return ch;
-            return chars[Math.floor(Math.random() * chars.length)];
-          })
-          .join("");
-        setDisplayText(scrambled);
-        frame++;
-        if (frame <= totalFrames) raf = requestAnimationFrame(tick);
-        else setDisplayText(finalText);
-      };
-      raf = requestAnimationFrame(tick);
-    }, startDelay);
 
-    return () => {
-      clearTimeout(timeout);
-      cancelAnimationFrame(raf);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [finalText]);
-
-  return displayText;
-}
-
-// Animated count-up hook — counts from 0 to value when in view
-function useCountUp(target: number, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let startTime: number | null = null;
-    const step = (ts: number) => {
-      if (!startTime) startTime = ts;
-      const elapsed = ts - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease-out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
 
 
 
@@ -234,46 +177,7 @@ const WHY_CHOOSE_DATA = [
   { icon: <BarChart3 size={18}/>, titleKey: "why.roi_focused", descKey: "why.roi_focused_desc" },
 ];
 
-const HeroOrb = styled.div`
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(80px);
-  opacity: 0.35;
-`;
 
-const GlassPanel = styled.div`
-  background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 18px 40px rgba(8, 15, 30, 0.35);
-  backdrop-filter: blur(18px);
-  border-radius: 24px;
-`;
-
-const ThreeDCard = styled.div`
-  transform-style: preserve-3d;
-  transform: rotateX(10deg) rotateY(-12deg);
-  transition: transform 0.35s ease;
-  &:hover { transform: rotateX(0deg) rotateY(0deg) scale(1.02); }
-`;
-
-const QUICK_BADGES = [
-  { icon: <MapPin size={14}/>, labelKey: "hero.badge_team" },
-  { icon: <Zap size={14}/>, labelKey: "hero.badge_delivery" },
-  { icon: <Globe size={14}/>, labelKey: "hero.badge_bilingual" },
-  { icon: <ShieldCheck size={14}/>, labelKey: "hero.badge_support" },
-  { icon: <Award size={14}/>, labelKey: "hero.badge_vision" },
-];
-
-const MARQUEE_ITEMS = [
-  { icon: <Zap size={14}/>, text: "Bilingual Arabic & English" },
-  { icon: <ShieldCheck size={14}/>, text: "99.9% Uptime SLA" },
-  { icon: <Award size={14}/>, text: "300+ Projects Delivered" },
-  { icon: <Globe size={14}/>, text: "Digital Growth Partners" },
-  { icon: <TrendingUp size={14}/>, text: "Top-Ranked SEO" },
-  { icon: <Users size={14}/>, text: "Dedicated Expert Team" },
-  { icon: <MapPin size={14}/>, text: "Based in Riyadh" },
-  { icon: <Code2 size={14}/>, text: "Next.js & Modern Stack" },
-];
 
 const CONTACT_INFO = [
   { icon: <MapPin size={16}/>, labelKey: "contact.location_label", valueKey: "contact.location" },
@@ -288,6 +192,18 @@ const INCLUSION_LIST = [
   "contact.included_4",
 ];
 
+function useMediaQuery(query: string, serverValue = false): boolean {
+  return useSyncExternalStore(
+    (cb) => {
+      const mq = window.matchMedia(query);
+      mq.addEventListener("change", cb);
+      return () => mq.removeEventListener("change", cb);
+    },
+    () => window.matchMedia(query).matches,
+    () => serverValue,
+  );
+}
+
 function Navbar() {
   const { locale, setLocale, t } = useLocale();
   const { theme, toggleTheme } = useTheme();
@@ -299,13 +215,14 @@ function Navbar() {
   const navRef = useRef<HTMLElement | null>(null);
   const portfolioTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    if (open) setAnimOpen(true);
-    else {
+  useLayoutEffect(() => {
+    if (open) {
+      const id = requestAnimationFrame(() => setAnimOpen(true));
+      return () => cancelAnimationFrame(id);
+    } else {
       const t = setTimeout(() => setAnimOpen(false), 300);
       return () => clearTimeout(t);
     }
-  // eslint-disable-next-line react-hooks/set-state-in-effect
   }, [open]);
 
   useEffect(() => {
@@ -675,7 +592,7 @@ function SectionDesert({ speed = 1, heavy = false, variant = 0 }: { speed?: numb
   const isAr = locale === "ar";
   const isLight = theme === "light";
   const isGreen = theme === "green";
-  const desertColor = (op: number) => isLight ? `rgba(201,168,76,${op * 0.5})` : isGreen ? `rgba(26,107,60,${op * 0.9})` : `rgba(201,168,76,${op})`;
+  const desertColor = useCallback((op: number) => isLight ? `rgba(201,168,76,${op * 0.5})` : isGreen ? `rgba(26,107,60,${op * 0.9})` : `rgba(201,168,76,${op})`, [isLight, isGreen]);
 
   function initCfg() {
     const rand = rng(variant + 1);
@@ -804,7 +721,7 @@ function SectionDesert({ speed = 1, heavy = false, variant = 0 }: { speed?: numb
       obs.disconnect();
       window.removeEventListener("resize", resize);
     };
-  }, [locale, theme, isAr, isLight, speed, heavy]);
+  }, [locale, theme, isAr, isLight, speed, heavy, desertColor]);
 
   return (
     <div ref={containerRef} className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
@@ -827,14 +744,7 @@ function HeroSection() {
   const [slideIdx, setSlideIdx] = useState(0);
   const touchX = useRef(0);
   const slides = useMemo(() => PORTFOLIO, []);
-  const [isDesktop, setIsDesktop] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
-    setIsDesktop(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     touchX.current = e.touches[0].clientX;
@@ -1239,6 +1149,8 @@ function GoToTop() {
   );
 }
 
+const SECTION_IDS = ["home", "why-choose", "services", "portfolio", "process", "testimonials", "cta", "contact"];
+
 function SectionIndicator() {
   const { locale } = useLocale();
   const { theme } = useTheme();
@@ -1247,14 +1159,12 @@ function SectionIndicator() {
   const isGreen = theme === "green";
   const [active, setActive] = useState(0);
 
-  const sections = ["home", "why-choose", "services", "portfolio", "process", "testimonials", "cta", "contact"];
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            const idx = sections.indexOf(entry.target.id);
+            const idx = SECTION_IDS.indexOf(entry.target.id);
             if (idx >= 0) setActive(idx);
           }
         }
@@ -1262,7 +1172,7 @@ function SectionIndicator() {
       { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
     );
 
-    sections.forEach((id) => {
+    SECTION_IDS.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -1295,16 +1205,16 @@ function SectionIndicator() {
         }}
       />
 
-      {sections.map((_, i) => {
+      {SECTION_IDS.map((_, i) => {
         const isActive = active === i;
         return (
           <div
             key={i}
             className="flex items-center cursor-pointer pointer-events-auto"
             onClick={() => {
-              const el = document.getElementById(sections[i]);
+              const el = document.getElementById(SECTION_IDS[i]);
               if (el) {
-                try { ScrollSmoother.get()?.scrollTo(`#${sections[i]}`); } catch { el.scrollIntoView({ behavior: "smooth" }); }
+                try { ScrollSmoother.get()?.scrollTo(`#${SECTION_IDS[i]}`); } catch { el.scrollIntoView({ behavior: "smooth" }); }
               }
             }}
             style={{
@@ -1656,7 +1566,14 @@ function PortfolioSection() {
   const { locale, t } = useLocale();
   const isAr = locale === "ar";
   const sectionRef = useRef<HTMLElement | null>(null);
-  const [filter, setFilter] = useState<"all" | "website" | "graphic" | "shopify">("all");
+  const [filter, setFilter] = useState<"all" | "website" | "graphic" | "shopify">(() => {
+    if (typeof window === "undefined") return "all";
+    const hash = window.location.hash;
+    if (hash === "#portfolio-website") return "website";
+    if (hash === "#portfolio-graphic") return "graphic";
+    if (hash === "#portfolio-shopify") return "shopify";
+    return "all";
+  });
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   const filteredPortfolio = (() => {
@@ -1674,14 +1591,6 @@ function PortfolioSection() {
     }
     return PORTFOLIO.filter(p => p.type === filter);
   })();
-
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash === "#portfolio-website") setFilter("website");
-    else if (hash === "#portfolio-graphic") setFilter("graphic");
-    else if (hash === "#portfolio-shopify") setFilter("shopify");
-    else setFilter("all");
-  }, []);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -1872,15 +1781,7 @@ function ProcessSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const [pinWrapWidth, setPinWrapWidth] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(window.matchMedia("(max-width: 1024px)").matches);
-    const mq = window.matchMedia("(max-width: 1024px)");
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   useEffect(() => {
     function refresh() {
@@ -2514,7 +2415,14 @@ export default function Home() {
   const [locale, setLocale] = useState<Locale>("ar");
   const [progress, setProgress] = useState(0);
   const [preloaderDone, setPreloaderDone] = useState(false);
-  const [theme, setTheme] = useState<Theme>("green");
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "green";
+    try {
+      const stored = localStorage.getItem("voxon-theme");
+      if (stored === "light" || stored === "green") return stored;
+    } catch {}
+    return "green";
+  });
 
   const updateHtml = useCallback((l: Locale) => {
     document.documentElement.lang = l;
@@ -2527,14 +2435,8 @@ export default function Home() {
   };
 
   useEffect(() => {
-    let initial: Theme = "green";
-    try {
-      const stored = localStorage.getItem("voxon-theme");
-      if (stored === "light" || stored === "green") initial = stored;
-    } catch {}
-    setTheme(initial);
-    applyTheme(initial);
-  }, []);
+    applyTheme(theme);
+  }, [theme]);
 
   const toggleTheme = useCallback(() => {
     setTheme(prev => {
