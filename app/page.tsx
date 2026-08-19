@@ -98,7 +98,7 @@ const STATS_DATA = [
 const PORTFOLIO = [
   { name: "Seba Bazar", cat: "E-Commerce Marketplace", type: "website" as const, image: "/images/sebabazar.png", url: "https://sebabazar.vercel.app" },
   { name: "SalesFarm", cat: "Sales Platform", type: "website" as const, image: "/images/salesfarm.png", url: "https://salesfam.com" },
-  { name: "Nenosoft Agency", cat: "Digital Agency", type: "website" as const, image: "/images/nenosoft agency.png", url: "" },
+  { name: "Nenosoft Agency", cat: "Digital Agency", type: "website" as const, image: "/images/nanosoft.png", url: "" },
   { name: "Nanosoft", cat: "Technology", type: "website" as const, image: "/images/nanosoft.png", url: "https://www.nanosoft.agency" },
   { name: "Voxon Digital", cat: "Digital Agency", type: "website" as const, image: "/images/voxon.png", url: "https://voxondigital.net" },
   { name: "Movix", cat: "Entertainment", type: "website" as const, image: "/images/Movix.png", url: "https://movixproject01.netlify.app" },
@@ -110,7 +110,7 @@ const PORTFOLIO = [
   { name: "Al Bina Construction", cat: "Corporate Website", type: "website" as const, image: "/images/portfolio-construction.png", url: "" },
   { name: "Thouq Restaurant", cat: "Restaurant & Booking", type: "website" as const, image: "/images/portfolio-restaurant.png", url: "" },
   { name: "Al Salam Clinics", cat: "Medical & Health", type: "website" as const, image: "/images/portfolio-medical.png", url: "" },
-  { name: "Al Aqariyah", cat: "Real Estate", type: "website" as const, image: "/images/portfolio-realestate.png", url: "" },
+  { name: "Al Aqariyah", cat: "Real Estate", type: "website" as const, image: "/images/portfolio-construction.png", url: "" },
   { name: "NurLight Academy", cat: "Education Platform", type: "website" as const, image: "/images/portfolio-academy.png", url: "" },
   { name: "Barakat Pharma", cat: "Pharmaceutical", type: "website" as const, image: "/images/portfolio-medical.png", url: "" },
   { name: "AutoWorld Motors", cat: "Automotive", type: "website" as const, image: "/images/portfolio-automotive.png", url: "" },
@@ -291,6 +291,7 @@ function Navbar() {
             width={3904}
             height={1406}
             priority
+            sizes="120px"
             className="h-8 w-auto object-contain"
           />
           <span className="text-[8px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5"
@@ -390,7 +391,7 @@ function Navbar() {
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className={`lg:hidden transition-colors p-1 ${isLight ? "text-[#0A0E1A]/60 hover:text-[#0A0E1A]" : "text-white/60 hover:text-white"}`}>
+        <button onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} className={`lg:hidden transition-colors p-1 ${isLight ? "text-[#0A0E1A]/60 hover:text-[#0A0E1A]" : "text-white/60 hover:text-white"}`}>
           {open ? <X size={20}/> : <Menu size={20}/>}
         </button>
       </div>
@@ -946,10 +947,10 @@ function HeroSection() {
                     grabCursor
                     cardsEffect={{ perSlideOffset: 4, perSlideRotate: 2, slideShadows: false }}
                   >
-                    {slides.map((item) => (
+                    {slides.map((item, idx) => (
                       <SwiperSlide key={item.name} className="rounded-xl overflow-hidden">
                         <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
-                          <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" />
+                          <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" loading={idx === 0 ? "eager" : "lazy"} />
                             <div className="card-overlay" />
                             <div className="card-content">
                               <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
@@ -974,10 +975,10 @@ function HeroSection() {
                     onTouchEnd={handleTouchEnd}>
                     <div className="flex h-full transition-transform duration-300 ease-out cursor-grab active:cursor-grabbing"
                       style={{ transform: isAr ? `translateX(${slideIdx * 100}%)` : `translateX(-${slideIdx * 100}%)` }}>
-                      {slides.map((item) => (
+                      {slides.map((item, idx) => (
                         <div key={item.name} className="min-w-full h-full shrink-0 overflow-hidden">
                           <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
-                            <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" />
+                            <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" loading={idx === 0 ? "eager" : "lazy"} />
                               <div className="card-overlay" />
                               <div className="card-content">
                                 <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
@@ -998,8 +999,10 @@ function HeroSection() {
                     </div>
                     <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
                       {slides.map((_, i) => (
-                        <button key={i} onClick={() => setSlideIdx(i)}
-                          className={`rounded-full transition-all ${i === slideIdx ? 'bg-[#C9A84C] w-2.5 h-2.5' : 'bg-white/30 w-1.5 h-1.5'}`} />
+                        <button key={i} onClick={() => setSlideIdx(i)} aria-label={`Go to slide ${i + 1}`}
+                          className={`rounded-full transition-all flex items-center justify-center ${i === slideIdx ? 'w-6 h-6' : 'w-4 h-4'}`}>
+                          <span className={`block rounded-full transition-all ${i === slideIdx ? 'bg-[#C9A84C] w-2.5 h-2.5' : 'bg-white/30 w-1.5 h-1.5'}`} />
+                        </button>
                       ))}
                     </div>
                   </div>
@@ -1709,21 +1712,16 @@ function PortfolioSection() {
           ))}
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filteredPortfolio.map((p) => (
-            <a
-              key={p.name}
-              href={p.url || undefined}
-              target={p.url ? "_blank" : undefined}
-              rel={p.url ? "noopener noreferrer" : undefined}
-              data-cursor-label="VIEW"
-              className="group bg-white rounded-lg overflow-hidden border transition-all duration-300 hover:shadow-xl cursor-pointer border-ink-6 portfolio-card glow-card card-circle relative block"
-              onMouseMove={handleCardMouseMove}
-            >
+          {filteredPortfolio.map((p) => {
+            const cardClass = "group bg-white rounded-lg overflow-hidden border transition-all duration-300 hover:shadow-xl cursor-pointer border-ink-6 portfolio-card glow-card card-circle relative block";
+            const cardContent = (
+              <>
               <div className={`relative h-52 overflow-hidden pt-3 ${p.type === "graphic" ? "bg-white" : "bg-[#0A0E1A]"}`}>
                 <Image
                   src={p.image}
                   alt={p.name}
                   fill
+                  loading="lazy"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-contain parallax-img"
                 />
@@ -1746,8 +1744,31 @@ function PortfolioSection() {
                   </div>
                 </div>
               </div>
-            </a>
-          ))}
+              </>
+            );
+            return p.url ? (
+              <a
+                key={p.name}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor-label="VIEW"
+                className={cardClass}
+                onMouseMove={handleCardMouseMove}
+              >
+                {cardContent}
+              </a>
+            ) : (
+              <div
+                key={p.name}
+                data-cursor-label="VIEW"
+                className={cardClass}
+                onMouseMove={handleCardMouseMove}
+              >
+                {cardContent}
+              </div>
+            );
+          })}
         </div>
         {lightbox && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-[rgba(10,14,26,0.9)] backdrop-blur-md" onClick={() => setLightbox(null)}>
@@ -1958,8 +1979,10 @@ function TestimonialsSection() {
                   type="button"
                   onClick={() => setActive(i)}
                   aria-label={`Show testimonial ${i + 1}`}
-                  className={`rounded-full transition-all duration-300 ${i === active ? "h-2 w-6 bg-emerald" : "h-2 w-2 bg-[rgba(10,14,26,0.2)]"}`}
-                />
+                  className={`rounded-full transition-all duration-300 flex items-center justify-center ${i === active ? "w-7 h-6" : "w-4 h-6"}`}
+                >
+                  <span className={`block rounded-full ${i === active ? "h-2 w-5 bg-emerald" : "h-2 w-2 bg-[rgba(10,14,26,0.2)]"}`} />
+                </button>
               ))}
             </div>
           </div>
@@ -2351,6 +2374,7 @@ function Footer() {
                 alt="Voxon Digital"
                 width={3904}
                 height={1406}
+                sizes="100px"
                 className="h-7 w-auto object-contain"
               />
               <span className="text-[8px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5"

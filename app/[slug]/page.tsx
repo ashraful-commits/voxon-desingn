@@ -177,6 +177,7 @@ export default async function SeoLandingPage({
                 width={3904}
                 height={1406}
                 priority
+                sizes="120px"
                 className="h-8 w-auto object-contain"
               />
               <span className="text-[8px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5" style={{ color: "#fff", background: "#C9A84C" }}>
@@ -321,6 +322,7 @@ export default async function SeoLandingPage({
                 alt="Voxon Digital"
                 width={3904}
                 height={1406}
+                sizes="100px"
                 className="h-6 w-auto object-contain"
               />
               <span className="text-[7px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5" style={{ color: "#fff", background: "#C9A84C" }}>
