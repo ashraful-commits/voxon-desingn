@@ -890,7 +890,7 @@ function HeroSection() {
                 {isAr ? (
                   <>
                     <span className="hero-line block mb-3" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
-                    <span className="hero-line block text-gradient-gold italic" style={{ fontStyle: "italic" }}>{t("hero.heading_accent")}</span>
+                    <span className="hero-line block text-gradient-gold" style={{ fontStyle: "normal" }}>{t("hero.heading_accent")}</span>
                   </>
                 ) : (
                   <>
