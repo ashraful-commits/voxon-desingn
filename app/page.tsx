@@ -1891,7 +1891,7 @@ function PortfolioSection() {
           >
             {filteredPortfolio.map((p) => {
               const slideContent = (
-                <div className="portfolio-card relative group overflow-hidden rounded-2xl bg-white border border-ink-6 cursor-pointer">
+                <div className="portfolio-card relative group overflow-hidden bg-white border border-ink-6 cursor-pointer">
                   <div className={`relative h-64 sm:h-72 md:h-80 overflow-hidden ${p.type === "graphic" ? "bg-white" : "bg-[#0A0E1A]"}`}>
                     <div className="skeleton-shimmer absolute inset-0" />
                     <Image
