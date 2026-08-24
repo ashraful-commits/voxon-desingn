@@ -1864,14 +1864,15 @@ function PortfolioSection() {
             </button>
           ))}
         </div>
-        <div className="portfolio-carousel-wrapper pb-16 pt-4 relative px-12 lg:px-16">
+        <div className="portfolio-carousel-wrapper pb-8 sm:pb-16 pt-4 relative px-2 sm:px-12 lg:px-16">
           <Swiper
             effect="coverflow"
             grabCursor
             centeredSlides
-            slidesPerView={1}
-            spaceBetween={16}
+            slidesPerView={1.2}
+            spaceBetween={12}
             breakpoints={{
+              480: { slidesPerView: 1.5, spaceBetween: 14 },
               640: { slidesPerView: 2, spaceBetween: 14 },
               1024: { slidesPerView: 3, spaceBetween: 16 },
             }}
@@ -1892,7 +1893,7 @@ function PortfolioSection() {
             {filteredPortfolio.map((p) => {
               const slideContent = (
                 <div className="portfolio-card relative group overflow-hidden bg-white border border-ink-6 cursor-pointer">
-                  <div className={`relative h-64 sm:h-72 md:h-80 overflow-hidden ${p.type === "graphic" ? "bg-white" : "bg-[#0A0E1A]"}`}>
+                  <div className={`relative h-48 sm:h-64 md:h-80 overflow-hidden ${p.type === "graphic" ? "bg-white" : "bg-[#0A0E1A]"}`}>
                     <div className="skeleton-shimmer absolute inset-0" />
                     <Image
                       src={p.image}
@@ -1938,11 +1939,11 @@ function PortfolioSection() {
             })}
           </Swiper>
           {/* External navigation buttons */}
-          <button type="button" aria-label="Previous" className="portfolio-nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full flex items-center justify-center text-[#C9A84C] transition-all duration-300 cursor-pointer"
+          <button type="button" aria-label="Previous" className="portfolio-nav-prev hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full items-center justify-center text-[#C9A84C] transition-all duration-300 cursor-pointer"
             style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)", boxShadow: "0 4px 16px rgba(0,0,0,0.06)", backdropFilter: "blur(12px)" }}>
             <ChevronLeft size={20}/>
           </button>
-          <button type="button" aria-label="Next" className="portfolio-nav-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full flex items-center justify-center text-[#C9A84C] transition-all duration-300 cursor-pointer"
+          <button type="button" aria-label="Next" className="portfolio-nav-next hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full items-center justify-center text-[#C9A84C] transition-all duration-300 cursor-pointer"
             style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)", boxShadow: "0 4px 16px rgba(0,0,0,0.06)", backdropFilter: "blur(12px)" }}>
             <ChevronRight size={20}/>
           </button>
