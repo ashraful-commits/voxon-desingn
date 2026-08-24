@@ -273,9 +273,24 @@ function Navbar() {
   const pillBorderHover = isLight ? "rgba(26,107,60,0.35)" : isGreen ? "rgba(52,168,83,0.4)" : "rgba(201,168,76,0.4)";
 
   return (
+    <>
+      {/* Discount Marquee Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[60] h-8 flex items-center overflow-hidden"
+        style={{ background: "linear-gradient(90deg, #1A6B3C, #0d4025, #1A6B3C)" }}>
+        <div className="marquee-track">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <span key={i} className="marquee-item text-[11px] font-bold tracking-wider uppercase text-white/90">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E8C96A] flex-shrink-0" />
+              {t("discount.marquee")}
+            </span>
+          ))}
+        </div>
+      </div>
+
     <nav ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 h-[72px] flex items-center transition-all duration-700"
+      className="fixed left-0 right-0 z-50 h-[72px] flex items-center transition-all duration-700"
       style={{
+        top: "32px",
         background: navBg,
         backdropFilter: navBlur,
         borderBottom: navBorder,
@@ -460,6 +475,7 @@ function Navbar() {
         </div>
       )}
     </nav>
+    </>
   );
 }
 
@@ -811,11 +827,11 @@ function HeroSection() {
       id="home"
       className="relative flex flex-col overflow-hidden"
       style={{
-        minHeight: "100svh",
+        minHeight: "calc(100svh - 32px)",
         background: isLight
           ? "linear-gradient(160deg, #F8F6F0 0%, #EDE9E0 50%, #F8F6F0 100%)"
           : "linear-gradient(160deg, #07090F 0%, #0D1117 50%, #07090F 100%)",
-        paddingTop: "var(--nav-height, 72px)",
+        paddingTop: "calc(var(--nav-height, 72px) + 32px)",
       }}
       dir={isAr ? "rtl" : "ltr"}
     >

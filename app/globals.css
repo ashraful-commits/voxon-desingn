@@ -107,8 +107,8 @@ body {
 }
 
 /* Arabic calligraphy fonts */
-.font-arabic { font-family: var(--font-amiri, 'Traditional Arabic', serif); }
-.font-arabic-display { font-family: var(--font-reem-kufi, 'Traditional Arabic', serif); }
+.font-arabic { font-family: var(--font-almarai, 'Almarai', sans-serif); }
+.font-arabic-display { font-family: var(--font-almarai, 'Almarai', sans-serif); }
 
 /* Calligraphy flourishes */
 .flourish-gold::before {
@@ -135,7 +135,7 @@ html[dir="rtl"] body {
 
 /* Arabic headings */
 html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 {
-  font-family: var(--font-reem-kufi), 'Traditional Arabic', serif;
+  font-family: var(--font-almarai), 'Almarai', sans-serif;
 }
 
 /* Calligraphy ornament divider */
@@ -155,14 +155,14 @@ html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 {
   background: linear-gradient(90deg, transparent, #C9A84C, transparent);
 }
 .divider-flourish .ornament {
-  font-family: var(--font-amiri), serif;
+  font-family: var(--font-almarai), sans-serif;
   font-size: 1.2rem;
   line-height: 1;
 }
 
 /* Arabic calligraphy decorative text */
 .calligraphy-deco {
-  font-family: var(--font-amiri), serif;
+  font-family: var(--font-almarai), sans-serif;
   font-style: italic;
   letter-spacing: 0.02em;
 }
@@ -219,7 +219,7 @@ html[dir="rtl"] .section-label {
 
 /* Arabic pull quote decoration */
 .pull-quote-arabic {
-  font-family: var(--font-amiri), serif;
+  font-family: var(--font-almarai), sans-serif;
   line-height: 1.6;
   text-align: right;
   direction: rtl;
