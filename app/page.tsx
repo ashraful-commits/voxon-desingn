@@ -7,10 +7,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCards, Pagination, Autoplay } from "swiper/modules";
+import { EffectCards, EffectCoverflow, Pagination, Autoplay, Navigation, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -1577,12 +1579,12 @@ function PricingSection() {
     },
     {
       key: "business",
-      features: [1,2,3,4,5,6,7,8,9].map(n => t(`pricing.business.f${n}`)),
+      features: [1,2,3,4,5,6,7,8,9,10].map(n => t(`pricing.business.f${n}`)),
       popular: true,
     },
     {
       key: "ecommerce",
-      features: [1,2,3,4,5,6,7,8,9].map(n => t(`pricing.ecommerce.f${n}`)),
+      features: [1,2,3,4,5,6,7,8,9,10].map(n => t(`pricing.ecommerce.f${n}`)),
       popular: false,
     },
     {
@@ -1682,6 +1684,37 @@ function PricingSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function LightboxModal({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 sm:p-8 bg-[rgba(10,14,26,0.92)] backdrop-blur-md" onClick={onClose}>
+      <button
+        type="button"
+        aria-label="Close"
+        onClick={onClose}
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-white p-2.5 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/10 transition-all duration-300 cursor-pointer z-[9999]"
+      >
+        <X size={20}/>
+      </button>
+      <div className="relative w-full max-w-3xl h-full max-h-[70vh] rounded-xl overflow-hidden flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+        {!loaded && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="lightbox-spinner" />
+          </div>
+        )}
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="100vw"
+          className={`object-contain transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
+          onLoad={() => setLoaded(true)}
+        />
+      </div>
+    </div>
   );
 }
 
@@ -1815,7 +1848,7 @@ function PortfolioSection() {
               )}
             </h2>
           </div>
-          <a href="#contact" className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors text-ink-mid hover:text-ink-soft2`} style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+          <a href="#contact" className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors text-gold hover:text-[#C9A84C]`} style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
             {t("portfolio.view_all")} <ExternalLink size={14}/>
           </a>
         </div>
@@ -1831,85 +1864,91 @@ function PortfolioSection() {
             </button>
           ))}
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {filteredPortfolio.map((p) => {
-            const cardClass = "group bg-white rounded-lg overflow-hidden border transition-all duration-300 hover:shadow-xl cursor-pointer border-ink-6 portfolio-card glow-card card-circle relative block";
-            const cardContent = (
-              <>
-              <div className={`relative h-52 overflow-hidden pt-3 ${p.type === "graphic" ? "bg-white" : "bg-[#0A0E1A]"}`}>
-                <Image
-                  src={p.image}
-                  alt={p.name}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-contain parallax-img"
-                />
-                  <div className={`absolute inset-0 z-10 ${p.type === "graphic" ? "bg-[linear-gradient(to_top,rgba(10,14,26,0.1),transparent)]" : "bg-[linear-gradient(to_top,rgba(10,14,26,0.4),transparent)]"}`}/>
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-[rgba(10,14,26,0.5)] backdrop-blur-[1px] z-20">
-                    <div className="flex flex-col items-center gap-3">
-                      <button
-                        type="button"
-                        aria-label={t("portfolio.view_image")}
-                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLightbox(p.image); }}
-                        className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)] hover:bg-white hover:text-[#0A0E1A] transition-colors cursor-pointer"
-                      >
-                        {t("portfolio.view_image")}
-                      </button>
-                      {p.url ? (
-                        <span className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)]">
-                          {t("portfolio.view_project")} <ExternalLink size={12}/>
-                        </span>
-                      ) : null}
+        <div className="portfolio-carousel-wrapper pb-16 pt-4 relative px-12 lg:px-16">
+          <Swiper
+            effect="coverflow"
+            grabCursor
+            centeredSlides
+            slidesPerView={1}
+            spaceBetween={16}
+            breakpoints={{
+              640: { slidesPerView: 2, spaceBetween: 14 },
+              1024: { slidesPerView: 3, spaceBetween: 16 },
+            }}
+            coverflowEffect={{
+              rotate: 15,
+              stretch: 0,
+              depth: 120,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            navigation={{ nextEl: ".portfolio-nav-next", prevEl: ".portfolio-nav-prev" }}
+            mousewheel={{ forceToAxis: true, sensitivity: 1, releaseOnEdges: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: true }}
+            modules={[EffectCoverflow, Autoplay, Navigation, Mousewheel]}
+            dir={isAr ? "rtl" : "ltr"}
+            className="portfolio-coverflow"
+          >
+            {filteredPortfolio.map((p) => {
+              const slideContent = (
+                <div className="portfolio-card relative group overflow-hidden rounded-2xl bg-white border border-ink-6 cursor-pointer">
+                  <div className={`relative h-64 sm:h-72 md:h-80 overflow-hidden ${p.type === "graphic" ? "bg-white" : "bg-[#0A0E1A]"}`}>
+                    <div className="skeleton-shimmer absolute inset-0" />
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      fill
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      className="object-contain relative z-[1]"
+                      onLoad={(e) => { (e.target as HTMLImageElement).previousElementSibling?.classList.add("hidden"); }}
+                    />
+                    <div className={`absolute inset-0 z-10 ${p.type === "graphic" ? "bg-[linear-gradient(to_top,rgba(10,14,26,0.1),transparent)]" : "bg-[linear-gradient(to_top,rgba(10,14,26,0.4),transparent)]"}`}/>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-[rgba(10,14,26,0.5)] backdrop-blur-[1px] z-20">
+                      <div className="flex flex-col items-center gap-3">
+                        <button
+                          type="button"
+                          aria-label={t("portfolio.view_image")}
+                          onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLightbox(p.image); }}
+                          className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)] hover:bg-white hover:text-[#0A0E1A] transition-colors cursor-pointer"
+                        >
+                          {t("portfolio.view_image")}
+                        </button>
+                        {p.url ? (
+                          <span className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)]">
+                            {t("portfolio.view_project")} <ExternalLink size={12}/>
+                          </span>
+                        ) : null}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              </>
-            );
-            return p.url ? (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor-label="VIEW"
-                className={cardClass}
-                onMouseMove={handleCardMouseMove}
-              >
-                {cardContent}
-              </a>
-            ) : (
-              <div
-                key={p.name}
-                data-cursor-label="VIEW"
-                className={cardClass}
-                onMouseMove={handleCardMouseMove}
-              >
-                {cardContent}
-              </div>
-            );
-          })}
+              );
+              return (
+                <SwiperSlide key={p.name} style={{ width: "auto" }}>
+                  {p.url ? (
+                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="block">
+                      {slideContent}
+                    </a>
+                  ) : (
+                    slideContent
+                  )}
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+          {/* External navigation buttons */}
+          <button type="button" aria-label="Previous" className="portfolio-nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full flex items-center justify-center text-[#C9A84C] transition-all duration-300 cursor-pointer"
+            style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)", boxShadow: "0 4px 16px rgba(0,0,0,0.06)", backdropFilter: "blur(12px)" }}>
+            <ChevronLeft size={20}/>
+          </button>
+          <button type="button" aria-label="Next" className="portfolio-nav-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full flex items-center justify-center text-[#C9A84C] transition-all duration-300 cursor-pointer"
+            style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)", boxShadow: "0 4px 16px rgba(0,0,0,0.06)", backdropFilter: "blur(12px)" }}>
+            <ChevronRight size={20}/>
+          </button>
         </div>
         {lightbox && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-[rgba(10,14,26,0.9)] backdrop-blur-md" onClick={() => setLightbox(null)}>
-            <button
-              type="button"
-              aria-label="Close"
-              onClick={() => setLightbox(null)}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white p-2 rounded-full border border-white/30 hover:bg-white/10 transition-colors cursor-pointer z-10"
-            >
-              <X size={20}/>
-            </button>
-            <div className="relative w-full max-w-5xl h-full max-h-[80vh] rounded-xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
-              <Image
-                src={lightbox}
-                alt={filteredPortfolio.find(f => f.image === lightbox)?.name ?? ""}
-                fill
-                sizes="100vw"
-                className="object-contain"
-              />
-            </div>
-          </div>
+          <LightboxModal src={lightbox} alt={filteredPortfolio.find(f => f.image === lightbox)?.name ?? ""} onClose={() => setLightbox(null)} />
         )}
       </div>
     </section>
@@ -1919,50 +1958,14 @@ function PortfolioSection() {
 function ProcessSection() {
   const { locale, t } = useLocale();
   const isAr = locale === "ar";
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const cardsRef = useRef<HTMLDivElement | null>(null);
-  const [pinWrapWidth, setPinWrapWidth] = useState(0);
-  const isMobile = useMediaQuery("(max-width: 1024px)");
-
-  useEffect(() => {
-    function refresh() {
-      const el = cardsRef.current;
-      if (!el) return;
-      setPinWrapWidth(el.scrollWidth);
-    }
-    refresh();
-    ScrollTrigger.addEventListener("refreshInit", refresh);
-    return () => ScrollTrigger.removeEventListener("refreshInit", refresh);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile) return;
-    if (!sectionRef.current || !cardsRef.current || pinWrapWidth <= 0) return;
-    const ctx = gsap.context(() => {
-      const scrollDistance = pinWrapWidth - window.innerWidth;
-      gsap.to(cardsRef.current, {
-        x: isAr ? scrollDistance : -scrollDistance,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          start: "center center",
-          end: () => `+=${pinWrapWidth}`,
-          scrub: 1,
-          invalidateOnRefresh: true,
-        }
-      });
-    }, sectionRef);
-    return () => ctx.revert();
-  }, [isAr, pinWrapWidth, isMobile]);
 
   return (
-    <section ref={sectionRef} id="process" className="relative bg-[#0A0E1A] overflow-hidden py-32 min-h-screen" dir={isAr ? "rtl" : "ltr"}>
+    <section id="process" className="relative bg-[#0A0E1A] py-20 overflow-hidden" dir={isAr ? "rtl" : "ltr"}>
       <SectionDesert speed={0.9} heavy variant={5} />
-      <div className="ksa-dunes-top" style={{ opacity: 0.25, height: "140px" }} />
+      <div className="absolute top-0 left-0 right-0 ksa-dunes-top" style={{ opacity: 0.25, height: "140px" }} />
       <div className="absolute top-0 left-0 right-0 h-24 pointer-events-none z-[1]"
         style={{ background: "linear-gradient(to bottom, rgba(201,168,76,0.06) 0%, transparent 100%)" }} />
-      <div className="ksa-dunes-bottom" style={{ opacity: 0.25, height: "140px" }} />
+      <div className="absolute bottom-0 left-0 right-0 ksa-dunes-bottom" style={{ opacity: 0.25, height: "140px" }} />
       <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none z-[1]"
         style={{ background: "linear-gradient(to top, rgba(201,168,76,0.06) 0%, transparent 100%)" }} />
       <div className="absolute top-0 left-0 right-0 h-px bg-[linear-gradient(90deg,transparent,#C9A84C,transparent)]"/>
@@ -1981,31 +1984,28 @@ function ProcessSection() {
           </h2>
         </div>
 
-        <div className="overflow-hidden">
-          <div ref={cardsRef} className="flex gap-6 lg:flex-nowrap flex-wrap justify-center" style={{ width: isMobile ? "100%" : "max-content" }}>
-            {PROCESS.map((p, i) => (
-              <div
-                key={p.step}
-                className="glow-card rounded-2xl p-8 bg-white/4 border border-white/8 flex flex-col justify-between min-h-[300px] group relative card-circle"
-                style={{ width: isMobile ? "100%" : "320px", maxWidth: "400px" }}
-              >
-                <div>
-                  <div className="text-4xl font-bold font-playfair text-gold/20 group-hover:text-gold transition-colors duration-300 mb-6">{p.step}</div>
-                  <h3 className={`text-white font-bold text-lg mb-4 relative z-10 ${isAr ? "font-arabic-display" : ""}`}>{isAr ? p.titleAr : p.title}</h3>
-                  <p className={`text-sm leading-relaxed text-white-faint relative z-10 ${isAr ? "font-arabic" : ""}`}>{isAr ? p.descAr : p.desc}</p>
-                </div>
-                <div className="mt-8 flex justify-end relative z-10">
-                  {i < PROCESS.length - 1 && (
-                    <span className="text-gold/40 group-hover:translate-x-2 transition-transform duration-300" style={{ transform: isAr ? "scaleX(-1)" : "none" }}>
-                      <ArrowRight size={20}/>
-                    </span>
-                  )}
-                </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+          {PROCESS.map((p, i) => (
+            <div
+              key={p.step}
+              className="glow-card rounded-2xl p-6 bg-white/4 border border-white/8 flex flex-col justify-between min-h-[280px] group relative card-circle"
+            >
+              <div>
+                <div className="text-3xl font-bold font-playfair text-gold/20 group-hover:text-gold transition-colors duration-300 mb-4">{p.step}</div>
+                <h3 className={`text-white font-bold text-base mb-3 relative z-10 ${isAr ? "font-arabic-display" : ""}`}>{isAr ? p.titleAr : p.title}</h3>
+                <p className={`text-xs leading-relaxed text-white-faint relative z-10 ${isAr ? "font-arabic" : ""}`}>{isAr ? p.descAr : p.desc}</p>
               </div>
-            ))}
-          </div>
-          </div>
+              <div className="mt-6 flex justify-end relative z-10">
+                {i < PROCESS.length - 1 && (
+                  <span className="text-gold/40 group-hover:translate-x-2 transition-transform duration-300" style={{ transform: isAr ? "scaleX(-1)" : "none" }}>
+                    <ArrowRight size={16}/>
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
     </section>
   );
 }
