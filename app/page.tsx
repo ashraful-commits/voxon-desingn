@@ -34,7 +34,7 @@ const handleCardMouseMove = (e: React.MouseEvent<HTMLElement>) => {
 
 import {
   ArrowRight, Menu, X, Globe, TrendingUp,
-  Palette, ShieldCheck, HeadphonesIcon, ChevronLeft,
+  Palette, ShieldCheck, ChevronLeft,
   ChevronRight, Star, MapPin, Phone, Mail, ExternalLink,
   Play, Check, Zap, Users, Award, BarChart3, Sun, Moon, Leaf,
   ShoppingCart, Server, FileText, ImageIcon
@@ -70,6 +70,7 @@ function useTheme() {
 const NAV_LINKS_EN = [
   { href: "#home" },
   { href: "#services" },
+  { href: "#pricing" },
   { href: "#portfolio", children: [
     { href: "#portfolio-website", id: "portfolio.website" },
     { href: "#portfolio-graphic", id: "portfolio.graphic" },
@@ -1585,17 +1586,17 @@ function PricingSection() {
   const packages = [
     {
       key: "starter",
-      features: [1,2,3,4,5,6,7].map(n => t(`pricing.starter.f${n}`)),
+      features: [1,2,3,4,5,6,7,8].map(n => t(`pricing.starter.f${n}`)),
       popular: false,
     },
     {
       key: "business",
-      features: [1,2,3,4,5,6,7,8].map(n => t(`pricing.business.f${n}`)),
+      features: [1,2,3,4,5,6,7,8,9].map(n => t(`pricing.business.f${n}`)),
       popular: true,
     },
     {
       key: "ecommerce",
-      features: [1,2,3,4,5,6,7,8].map(n => t(`pricing.ecommerce.f${n}`)),
+      features: [1,2,3,4,5,6,7,8,9].map(n => t(`pricing.ecommerce.f${n}`)),
       popular: false,
     },
     {
@@ -1631,11 +1632,18 @@ function PricingSection() {
                   {t("pricing.popular")}
                 </div>
               )}
+              <div className="absolute top-4 right-4 bg-[#C9A84C]/20 border border-[#C9A84C]/40 text-[#C9A84C] text-[10px] font-bold px-2 py-0.5 rounded-full">
+                50% OFF
+              </div>
               <h3 className={`text-lg font-bold mb-2 ${isAr ? "font-arabic" : ""} ${pkg.popular ? "text-[#1A6B3C]" : "text-white"}`}>{t(`pricing.${pkg.key}.name`)}</h3>
               <p className={`text-sm text-white-soft mb-5 min-h-[40px] ${isAr ? "font-arabic" : ""}`}>{t(`pricing.${pkg.key}.desc`)}</p>
-              <div className="mb-6">
+              <div className="mb-6 flex items-baseline gap-2">
                 <span className={`text-4xl font-extrabold ${pkg.popular ? "text-[#1A6B3C]" : "text-gradient-gold"}`}>{t(`pricing.${pkg.key}.price`)}</span>
-                <span className={`text-sm ml-1 ${isAr ? "font-arabic mr-1 ml-0" : ""} text-white-soft`}>{t(`pricing.${pkg.key}.period`)}</span>
+                <span className={`text-sm ${isAr ? "font-arabic" : ""} text-white-soft`}>{t(`pricing.${pkg.key}.period`)}</span>
+              </div>
+              <div className="flex items-center gap-2 mb-6 -mt-4">
+                <span className="text-sm text-white/30 line-through">{t(`pricing.${pkg.key}.original_price`)}</span>
+                <span className={`text-[10px] font-bold text-[#C9A84C] bg-[#C9A84C]/10 px-1.5 py-0.5 rounded`}>50% OFF</span>
               </div>
               <ul className="space-y-3 mb-8 flex-1">
                 {pkg.features.map((f, i) => (
