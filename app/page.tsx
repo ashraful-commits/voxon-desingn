@@ -2475,7 +2475,7 @@ function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
-          <div className="footer-col">
+          <div className="footer-col col-span-2 md:col-span-1">
             <div className="flex items-end gap-1 mb-4" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
               <Image
                 src={isGreen ? "/voxon-green-transparent%20logo.png" : isLight ? "/voxon-dark-transparent%20logo.png" : "/voxon-white-transparent%20logo.png"}
@@ -2497,18 +2497,22 @@ function Footer() {
             {title:t("footer.quick_links"), items:[
               {label:t("nav.home"),href:"#home"},
               {label:t("nav.services"),href:"#services"},
+              {label:t("nav.pricing"),href:"#pricing"},
               {label:t("nav.portfolio"),href:"#portfolio"},
               {label:t("nav.process"),href:"#process"},
               {label:t("nav.testimonials"),href:"#testimonials"},
               {label:t("nav.contact"),href:"#contact"},
             ]},
             {title:t("footer.services"), items:[
-              {label:"Web Design",href:"/web-design-company-saudi-arabia"},
-              {label:"Web Development",href:"/web-development-company-saudi"},
-              {label:"E-Commerce",href:"/ecommerce-website-development-saudi"},
-              {label:"SEO & Marketing",href:"/seo-company-saudi"},
-              {label:"WordPress",href:"/wordpress-development-company-saudi"},
-              {label:"Brand Identity",href:"/digital-marketing-agency-saudi"},
+              {label:"Websites",href:"/web-design-company-saudi-arabia"},
+              {label:"Salla Stores",href:"/ecommerce-website-development-saudi"},
+              {label:"Domain",href:"#services"},
+              {label:"Business Email",href:"#services"},
+              {label:"Hosting",href:"#services"},
+              {label:"Logo & Branding",href:"/digital-marketing-agency-saudi"},
+              {label:"Banner Design",href:"#services"},
+              {label:"Company Profile",href:"#services"},
+              {label:"SEO",href:"/seo-company-saudi"},
             ]},
             {title:t("footer.industries"), items:[
               {label:"Construction",href:"#portfolio"},
