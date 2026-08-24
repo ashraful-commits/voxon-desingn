@@ -324,7 +324,7 @@ function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-1" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+        <div className="hidden lg:flex items-center justify-center gap-1" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
           {NAV_LINKS_EN.map((l) => {
             const id = l.href.slice(1);
             const isActive = activeSection === id;
@@ -388,7 +388,7 @@ function Navbar() {
         </div>
 
         {/* Right actions */}
-        <div className="hidden lg:flex items-center gap-3" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+        <div className="hidden lg:flex items-center gap-3 justify-end" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
           <button onClick={toggleTheme}
             className="text-[11px] font-semibold tracking-[0.1em] uppercase cursor-pointer transition-all font-outfit px-3 py-1.5 rounded-full border"
             style={{ color: pillTextBase, borderColor: pillBorder }}
