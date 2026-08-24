@@ -2139,7 +2139,7 @@ button:hover .icon-spin-hover {
 /* Hero desktop padding */
 @media (min-width: 1024px) {
   #home {
-    padding-top: calc(var(--nav-height, 72px) + 32px + 7rem) !important;
-    padding-bottom: 7rem !important;
+    padding-top: calc(var(--nav-height, 72px) + 2rem) !important;
+    padding-bottom: 5rem !important;
   }
 }
