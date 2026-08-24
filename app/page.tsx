@@ -33,10 +33,11 @@ const handleCardMouseMove = (e: React.MouseEvent<HTMLElement>) => {
 };
 
 import {
-  ArrowRight, Menu, X, Globe, Code2, TrendingUp,
+  ArrowRight, Menu, X, Globe, TrendingUp,
   Palette, ShieldCheck, HeadphonesIcon, ChevronLeft,
   ChevronRight, Star, MapPin, Phone, Mail, ExternalLink,
-  Play, Check, Zap, Users, Award, BarChart3, Sun, Moon, Leaf
+  Play, Check, Zap, Users, Award, BarChart3, Sun, Moon, Leaf,
+  ShoppingCart, Server, FileText, ImageIcon
 } from "lucide-react";
 import { translations, type Locale } from "@/lib/translations";
 
@@ -80,12 +81,15 @@ const NAV_LINKS_EN = [
 ];
 
 const SERVICES = [
-  { icon: <Globe size={22}/>, title: "Website Design", titleAr: "تصميم المواقع", ar: "service.website_design", desc: "Custom corporate sites, landing pages, and bilingual web experiences built to convert Saudi audiences.", descAr: "مواقع شركات مخصصة وصفحات هبوط وتجارب ويب ثنائية اللغة مصممة خصيصاً لتحويل الجمهور السعودي.", tags: ["Corporate","Landing Pages","Bilingual"], tagsAr: ["شركات", "صفحات هبوط", "ثنائي اللغة"] },
-  { icon: <Code2 size={22}/>, title: "Web Development", titleAr: "تطوير الويب", ar: "service.web_dev", desc: "Next.js and modern stack development — fast, scalable, and SEO-ready from day one.", descAr: "تطوير باستخدام Next.js والمكتبات الحديثة — سريع وقابل للتوسع وجاهز لمحركات البحث من اليوم الأول.", tags: ["Next.js","MongoDB","API"], tagsAr: ["Next.js", "MongoDB", "API"] },
-  { icon: <TrendingUp size={22}/>, title: "SEO & Growth", titleAr: "تحسين محركات البحث", ar: "service.seo", desc: "Arabic and English SEO, Google Ads, and analytics to keep your business visible and growing.", descAr: "تحسين محركات البحث بالعربية والإنجليزية، إعلانات Google، وتحليلات لإبقاء نشاطك التجاري مرئياً ومتنامياً.", tags: ["Arabic SEO","Google Ads","Analytics"], tagsAr: ["SEO عربي", "Google Ads", "تحليلات"] },
-  { icon: <Palette size={22}/>, title: "Brand Identity", titleAr: "هوية العلامة التجارية", ar: "service.branding", desc: "Logo, visual identity, and brand guidelines designed with Saudi cultural aesthetics in mind.", descAr: "شعار، هوية بصرية، ودليل علامة تجارية مصممة وفقاً للجماليات الثقافية السعودية.", tags: ["Logo","Visual Identity","Guidelines"], tagsAr: ["شعار", "هوية بصرية", "إرشادات"] },
-  { icon: <ShieldCheck size={22}/>, title: "E-Commerce", titleAr: "التجارة الإلكترونية", ar: "service.ecommerce", desc: "Full-featured online stores with Arabic payment gateways, inventory, and order management.", descAr: "متاجر إلكترونية متكاملة مع بوابات دفع عربية وإدارة المخزون والطلبات.", tags: ["Online Store","Payments","Inventory"], tagsAr: ["متجر إلكتروني", "مدفوعات", "مخزون"] },
-  { icon: <HeadphonesIcon size={22}/>, title: "Ongoing Support", titleAr: "دعم مستمر", ar: "service.support", desc: "Dedicated 24/7 maintenance, speed optimization, and technical support whenever you need it.", descAr: "صيانة مخصصة على مدار الساعة، تحسين سرعة، ودعم فني عندما تحتاجه.", tags: ["24/7","Maintenance","Speed"], tagsAr: ["24/7", "صيانة", "سرعة"] },
+  { icon: <Globe size={22}/>, title: "Websites", titleAr: "المواقع الإلكترونية", ar: "service.websites", desc: "Professional corporate websites, landing pages, and bilingual web experiences built to convert Saudi audiences.", descAr: "مواقع شركات احترافية وصفحات هبوط وتجارب ويب ثنائية اللغة مصممة لتحويل الجمهور السعودي.", tags: ["Corporate","Landing Pages","Bilingual"], tagsAr: ["شركات", "صفحات هبوط", "ثنائي اللغة"] },
+  { icon: <ShoppingCart size={22}/>, title: "Salla Stores", titleAr: "متاجر سلة", ar: "service.salla", desc: "Full-featured Salla e-commerce stores with Arabic payment gateways, inventory, and order management.", descAr: "متاجر سلة إلكترونية متكاملة مع بوابات دفع عربية وإدارة المخزون والطلبات.", tags: ["Salla","Payments","Inventory"], tagsAr: ["سلة", "مدفوعات", "مخزون"] },
+  { icon: <Globe size={22}/>, title: "Domain", titleAr: "النطاقات", ar: "service.domain", desc: "Domain registration and management for .sa, .com, and all major extensions to secure your brand online.", descAr: "تسجيل وإدارة النطاقات `.sa` و`.com` وجميع الامتدادات الرئيسية لتأمين علامتك التجارية.", tags: [".sa",".com","Registration"], tagsAr: [".sa", ".com", "تسجيل"] },
+  { icon: <Mail size={22}/>, title: "Business Email", titleAr: "البريد الإلكتروني", ar: "service.email", desc: "Professional business email setup with your domain name for a credible, branded communication.", descAr: "إعداد بريد إلكتروني احترافي باسم نطاقك لتواصل موثوق وهوية موحدة.", tags: ["Custom Domain","Secure","Professional"], tagsAr: ["نطاق مخصص", "آمن", "احترافي"] },
+  { icon: <Server size={22}/>, title: "Hosting", titleAr: "الاستضافة", ar: "service.hosting", desc: "Fast, reliable hosting with SSL, daily backups, and 99.9% uptime to keep your site running 24/7.", descAr: "استضافة سريعة وموثوقة مع شهادة SSL ونسخ احتياطي يومي ووقت تشغيل 99.9%.", tags: ["SSL","Backups","99.9% Uptime"], tagsAr: ["SSL", "نسخ احتياطي", "وقت تشغيل"] },
+  { icon: <Palette size={22}/>, title: "Logo & Branding", titleAr: "الشعار والهوية البصرية", ar: "service.branding", desc: "Logo, visual identity, and brand guidelines designed with Saudi cultural aesthetics in mind.", descAr: "شعار، هوية بصرية، ودليل علامة تجارية مصممة وفقاً للجماليات الثقافية السعودية.", tags: ["Logo","Visual Identity","Guidelines"], tagsAr: ["شعار", "هوية بصرية", "إرشادات"] },
+  { icon: <ImageIcon size={22}/>, title: "Banner Design", titleAr: "تصميم البانرات", ar: "service.banner", desc: "Eye-catching banners for social media, ads, and websites designed to drive engagement and clicks.", descAr: "بانرات جذابة لوسائل التواصل والإعلانات والمواقع مصممة لزيادة التفاعل والنقرات.", tags: ["Social Media","Ads","Websites"], tagsAr: ["وسائل التواصل", "إعلانات", "مواقع"] },
+  { icon: <FileText size={22}/>, title: "Company Profile", titleAr: "بروفايل الشركة", ar: "service.profile", desc: "Professional company profiles and pitch decks that present your business with credibility and impact.", descAr: "بروفايلات وعروض تقديمية احترافية تعرض نشاطك التجاري بثقة واحترافية.", tags: ["PDF","Presentation","Corporate"], tagsAr: ["PDF", "عرض تقديمي", "شركات"] },
+  { icon: <TrendingUp size={22}/>, title: "SEO", titleAr: "تحسين محركات البحث", ar: "service.seo", desc: "Arabic and English SEO to rank higher on Google and attract more organic traffic to your business.", descAr: "تحسين محركات البحث بالعربية والإنجليزية للحصول على مرتبة أعلى على Google وزيادة الزيارات.", tags: ["Arabic SEO","Google","Ranking"], tagsAr: ["SEO عربي", "Google", "ترتيب"] },
 ];
 
 const STATS_DATA = [
@@ -1561,6 +1565,106 @@ function ServicesSection() {
   );
 }
 
+function PricingSection() {
+  const { locale, t } = useLocale();
+  const isAr = locale === "ar";
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const ctx = gsap.context(() => {
+      gsap.from(".pricing-card", {
+        y: 60, opacity: 0, duration: 0.8, stagger: 0.15,
+        ease: "expo.out",
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
+      });
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
+  const packages = [
+    {
+      key: "starter",
+      features: [1,2,3,4,5,6,7].map(n => t(`pricing.starter.f${n}`)),
+      popular: false,
+    },
+    {
+      key: "business",
+      features: [1,2,3,4,5,6,7,8].map(n => t(`pricing.business.f${n}`)),
+      popular: true,
+    },
+    {
+      key: "ecommerce",
+      features: [1,2,3,4,5,6,7,8].map(n => t(`pricing.ecommerce.f${n}`)),
+      popular: false,
+    },
+    {
+      key: "premium",
+      features: [1,2,3,4,5,6,7,8,9].map(n => t(`pricing.premium.f${n}`)),
+      popular: false,
+    },
+  ];
+
+  return (
+    <section ref={sectionRef} id="pricing" className="py-24 relative overflow-hidden bg-[#0A0E1A]" dir={isAr ? "rtl" : "ltr"}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="text-center mb-16">
+          <div className="text-[10px] tracking-[0.18em] uppercase text-[#C9A84C] font-semibold mb-4">
+            <span className={isAr ? "font-arabic flourish-gold" : ""}>{t("pricing.tag")}</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">
+            {isAr ? (
+              <><span className="font-arabic-display block mb-2">{t("pricing.title_1")}</span><span className="text-gradient-gold font-arabic-display block">{t("pricing.title_2")}</span></>
+            ) : (
+              <>{t("pricing.title_1")}<span className="block h-2" /><span className="text-gradient-gold">{t("pricing.title_2")}</span></>
+            )}
+          </h2>
+          <p className={`text-lg max-w-2xl mx-auto text-white-soft ${isAr ? "font-arabic" : ""}`}>{t("pricing.subtitle")}</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {packages.map((pkg) => (
+            <div key={pkg.key}
+              className={`pricing-card relative rounded-xl p-7 flex flex-col ${pkg.popular ? "bg-gradient-to-b from-[rgba(26,107,60,0.15)] to-[rgba(26,107,60,0.05)] border-2 border-[#1A6B3C]/40 shadow-[0_0_40px_rgba(26,107,60,0.12)]" : "bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15]"}`}>
+              {pkg.popular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1A6B3C] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1 rounded-full">
+                  {t("pricing.popular")}
+                </div>
+              )}
+              <h3 className={`text-lg font-bold mb-2 ${isAr ? "font-arabic" : ""} ${pkg.popular ? "text-[#1A6B3C]" : "text-white"}`}>{t(`pricing.${pkg.key}.name`)}</h3>
+              <p className={`text-sm text-white-soft mb-5 min-h-[40px] ${isAr ? "font-arabic" : ""}`}>{t(`pricing.${pkg.key}.desc`)}</p>
+              <div className="mb-6">
+                <span className={`text-4xl font-extrabold ${pkg.popular ? "text-[#1A6B3C]" : "text-gradient-gold"}`}>{t(`pricing.${pkg.key}.price`)}</span>
+                <span className={`text-sm ml-1 ${isAr ? "font-arabic mr-1 ml-0" : ""} text-white-soft`}>{t(`pricing.${pkg.key}.period`)}</span>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {pkg.features.map((f, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-white/70">
+                    <Check size={16} className={`flex-shrink-0 mt-0.5 ${pkg.popular ? "text-[#1A6B3C]" : "text-[#C9A84C]"}`} />
+                    <span className={isAr ? "font-arabic" : ""}>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact"
+                className={`w-full py-3 rounded-lg text-sm font-bold text-center transition-all duration-300 ${pkg.popular ? "bg-[#1A6B3C] text-white hover:bg-[#155a30] shadow-[0_4px_20px_rgba(26,107,60,0.3)]" : "bg-white/[0.08] text-white hover:bg-white/[0.12] border border-white/[0.1]"}`}>
+                {t("pricing.get_started")}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className={`text-white-soft text-sm mb-4 ${isAr ? "font-arabic" : ""}`}>{t("pricing.cta")}</p>
+          <p className={`text-white-muted text-sm mb-6 ${isAr ? "font-arabic" : ""}`}>{t("pricing.cta_desc")}</p>
+          <a href="#contact" className="btn-gold px-8 py-3 rounded-full text-sm font-bold inline-flex items-center gap-2">
+            {t("pricing.cta_btn")} <ArrowRight size={14} style={{ transform: isAr ? "rotate(180deg)" : "none" }} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PortfolioSection() {
   const { locale, t } = useLocale();
   const isAr = locale === "ar";
@@ -2899,6 +3003,7 @@ export default function Home() {
             <HeroSection/>
             <WhyChooseSection/>
             <ServicesSection/>
+            <PricingSection/>
             <PortfolioSection/>
             <ProcessSection/>
             <TestimonialsSection/>
