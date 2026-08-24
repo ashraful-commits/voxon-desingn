@@ -887,7 +887,7 @@ function HeroSection() {
             {/* LEFT — Heading + Subtitle + tagline */}
             <div className="lg:col-start-1 lg:row-start-1 relative z-20 overflow-visible pr-4">
               <h1 className="font-outfit font-extrabold tracking-tight mb-8 lg:mb-10 overflow-visible"
-                style={{ fontSize: isAr ? "5rem" : "3rem", lineHeight: isAr ? "1.35" : "1.1" }}>
+                style={{ fontSize: isAr ? "5rem" : "4rem", lineHeight: isAr ? "1.35" : "1.2" }}>
                 {isAr ? (
                   <>
                     <span className="hero-line block mb-6" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
