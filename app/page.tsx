@@ -307,7 +307,7 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between w-full" dir={isAr ? "rtl" : "ltr"}>
         {/* Logo mark */}
-        <a href="#home" className="flex items-end gap-1 group">
+        <a href="#home" className="flex items-center gap-1 group">
           <Image
             src={isGreen ? "/voxon-green-transparent%20logo.png" : isLight ? "/voxon-dark-transparent%20logo.png" : "/voxon-white-transparent%20logo.png"}
             alt="Voxon Digital"
@@ -388,7 +388,7 @@ function Navbar() {
         </div>
 
         {/* Right actions */}
-        <div className="hidden lg:flex items-center gap-3 justify-end" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+        <div className="hidden lg:flex items-center gap-3 justify-end self-center" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
           <button onClick={toggleTheme}
             className="text-[11px] font-semibold tracking-[0.1em] uppercase cursor-pointer transition-all font-outfit px-3 py-1.5 rounded-full border"
             style={{ color: pillTextBase, borderColor: pillBorder }}
