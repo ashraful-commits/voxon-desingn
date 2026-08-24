@@ -836,8 +836,8 @@ function HeroSection() {
         background: isLight
           ? "linear-gradient(160deg, #F8F6F0 0%, #EDE9E0 50%, #F8F6F0 100%)"
           : "linear-gradient(160deg, #07090F 0%, #0D1117 50%, #07090F 100%)",
-        paddingTop: "calc(var(--nav-height, 72px) + 32px + 7rem)",
-        paddingBottom: "7rem",
+        paddingTop: "calc(var(--nav-height, 72px) + 32px + 3rem)",
+        paddingBottom: "3rem",
       }}
       dir={isAr ? "rtl" : "ltr"}
     >
@@ -864,13 +864,6 @@ function HeroSection() {
         <div className="absolute left-0 right-0 h-px" style={{ top: "55%", background: "linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.08) 30%, rgba(201,168,76,0.08) 70%, transparent 100%)" }} />
       </div>
 
-      {/* ── Arabic calligraphy watermark ── */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-[1]">
-        <p className="text-[22vw] leading-none font-arabic text-white opacity-[0.025] whitespace-nowrap">
-          {t("hero.deco_1")}
-        </p>
-      </div>
-
       {/* ── Particle canvas ── */}
       <ParticleCanvas />
 
@@ -881,34 +874,32 @@ function HeroSection() {
           {/* Tag */}
           <div className="hero-fade flex items-center gap-3 mb-6" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
             <span className="block w-8 h-px bg-[#C9A84C]"/>
-            <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#C9A84C] font-outfit">
+            <span className="text-[12px] font-semibold tracking-[0.22em] uppercase text-[#C9A84C] font-outfit">
               {t("hero.tag")}
             </span>
             <span className="block w-8 h-px bg-[#C9A84C] opacity-40"/>
           </div>
 
-          {/* Full-width heading */}
-          <h1 className="font-outfit font-extrabold tracking-tight leading-[1.1] mb-8 lg:mb-10"
-            style={{ fontSize: "clamp(2.2rem, 4.8vw, 5rem)" }}>
-            {isAr ? (
-              <>
-                <span className="hero-line block" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
-                <span className="hero-line block text-gradient-gold italic">{t("hero.heading_accent")}</span>
-              </>
-            ) : (
-              <>
-                <span className="hero-line block" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
-                <span className="hero-line block" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_2")}</span>
-                <span className="hero-line block text-gradient-gold italic" style={{ fontSize: "0.85em" }}>{t("hero.heading_accent")}</span>
-              </>
-            )}
-          </h1>
-
-          {/* Two-column grid */}
+          {/* Two-column grid: heading+subtitle left, carousel right (desktop) */}
           <div className="flex flex-col lg:grid lg:grid-cols-[1fr_minmax(320px,480px)] gap-10 xl:gap-16 mb-8 lg:mb-10">
 
-            {/* LEFT TOP — Subtitle + tagline (before carousel on mobile) */}
+            {/* LEFT — Heading + Subtitle + tagline */}
             <div className="lg:col-start-1 lg:row-start-1">
+              <h1 className="font-outfit font-extrabold tracking-tight leading-[1.1] mb-8 lg:mb-10"
+                style={{ fontSize: "clamp(2.5rem, 5.5vw, 5rem)" }}>
+                {isAr ? (
+                  <>
+                    <span className="hero-line block" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
+                    <span className="hero-line block text-gradient-gold italic">{t("hero.heading_accent")}</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="hero-line block" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
+                    <span className="hero-line block" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_2")}</span>
+                    <span className="hero-line block text-gradient-gold italic" style={{ fontSize: "0.85em" }}>{t("hero.heading_accent")}</span>
+                  </>
+                )}
+              </h1>
               <p className={`hero-fade text-base lg:text-lg leading-relaxed mb-5 max-w-xl ${isAr ? "font-arabic" : "font-outfit"}`}
                 style={{ color: isLight ? "rgba(10,14,26,0.55)" : "rgba(255,255,255,0.5)" }}>
                 {t("hero.subtitle")}
@@ -916,16 +907,10 @@ function HeroSection() {
 
               {/* Theme divider */}
               <div key={isGreen ? "green-line" : "gold-line"} className="hero-fade w-px h-12 rounded-full mb-5" style={{ background: isGreen ? "linear-gradient(180deg, #1A6B3C 0%, rgba(26,107,60,0.08) 100%)" : "linear-gradient(180deg, #C9A84C 0%, rgba(201,168,76,0.06) 100%)" }} />
-
-              {/* Arabic tagline */}
-              <p className={`hero-fade font-bold mb-6 text-[#C9A84C]/60 ${isAr ? "font-arabic text-base" : "font-outfit tracking-widest uppercase text-[10px]"}`}
-                style={{ direction: "rtl" }}>
-                {t("hero.arabic_tagline")}
-              </p>
             </div>
 
-            {/* CAROUSEL — right column on desktop, above CTAs on mobile */}
-            <div className="lg:col-start-2 lg:row-span-2 self-start mb-6 lg:mb-0 lg:px-4 xl:px-8 w-full">
+            {/* CAROUSEL — right column on desktop, below text on mobile */}
+            <div className="lg:col-start-2 lg:row-start-1 self-start mb-6 lg:mb-0 lg:px-4 xl:px-8 w-full">
               <div className="relative w-full h-[50vh] sm:h-[55vh] md:h-[400px] lg:h-[420px]">
                 <div className="absolute inset-0 rounded-2xl pointer-events-none overflow-hidden"
                   style={{ background: "radial-gradient(circle at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%)", filter: "blur(30px)" }} />
@@ -1008,7 +993,7 @@ function HeroSection() {
                     </div>
                   </div>
                 )}
-                <div className="absolute -bottom-2 right-0 px-4 py-2 rounded-full flex items-center gap-2 text-[10px] font-semibold text-white/70 font-outfit glow-card"
+                <div className="absolute -bottom-5 right-0 px-4 py-2 rounded-full flex items-center gap-2 text-[10px] font-semibold text-white/70 font-outfit glow-card"
                   style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(201,168,76,0.12)", backdropFilter: "blur(16px)", zIndex: 20 }}>
                   <div className="relative w-1.5 h-1.5 flex-shrink-0">
                     <span className="pulse-ring"/>
@@ -1019,33 +1004,33 @@ function HeroSection() {
               </div>
             </div>
 
-            {/* LEFT BOTTOM — CTAs + Stats (below carousel on mobile) */}
-            <div className="lg:col-start-1 lg:row-start-2">
-              <div className="hero-fade flex flex-wrap gap-3 mb-6" style={{ justifyContent: isAr ? "flex-end" : "flex-start" }}>
-                <a href="#contact" onClick={handleRipple}
-                  className="btn-gold px-6 py-3 rounded-sm text-xs font-bold inline-flex items-center gap-2 overflow-hidden relative">
-                  {t("hero.cta")}
-                  <span className="btn-icon"><ArrowRight size={13} style={{ transform: isAr ? "rotate(180deg)" : "none" }}/></span>
-                </a>
-                <a href="#portfolio"
-                  className="btn-outline px-6 py-3 rounded-sm text-xs font-semibold inline-flex items-center gap-2 overflow-hidden">
-                  <Play size={10}/>
-                  {t("hero.view_work")}
-                </a>
-              </div>
-
-              <div className="hero-fade flex flex-wrap gap-x-6 gap-y-1" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
-                {STATS_DATA.map((s) => (
-                  <div key={s.label} className="flex items-baseline gap-1">
-                    <span className="text-sm font-extrabold font-outfit text-gradient-gold">{s.value}</span>
-                    <span className={`text-[9px] ${isLight ? "text-[rgba(10,14,26,0.35)]" : "text-white/25"} font-medium ${isAr ? "font-arabic" : ""}`}>
-                      {t(s.label)}
-                    </span>
-                  </div>
-            ))}
           </div>
+
+          {/* CTAs + Stats — full width row below the two-column grid */}
+          <div className="hero-fade flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:mt-8">
+            <div className="hero-fade flex flex-wrap gap-3" style={{ justifyContent: isAr ? "flex-end" : "flex-start" }}>
+              <a href="#contact" onClick={handleRipple}
+                className="btn-gold px-6 py-3 rounded-sm text-xs font-bold inline-flex items-center gap-2 overflow-hidden relative">
+                {t("hero.cta")}
+                <span className="btn-icon"><ArrowRight size={13} style={{ transform: isAr ? "rotate(180deg)" : "none" }}/></span>
+              </a>
+              <a href="#portfolio"
+                className="btn-outline px-6 py-3 rounded-sm text-xs font-semibold inline-flex items-center gap-2 overflow-hidden">
+                <Play size={10}/>
+                {t("hero.view_work")}
+              </a>
             </div>
 
+            <div className="hero-fade flex gap-x-6 gap-y-2 lg:gap-x-10" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+              {STATS_DATA.map((s) => (
+                <div key={s.label} className="flex items-baseline gap-1 lg:flex-col lg:items-start lg:gap-0">
+                  <span className="text-sm lg:text-2xl font-extrabold font-outfit text-gradient-gold">{s.value}</span>
+                  <span className={`text-[9px] lg:text-xs ${isLight ? "text-[rgba(10,14,26,0.35)]" : "text-white/25"} font-medium ${isAr ? "font-arabic" : ""}`}>
+                    {t(s.label)}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

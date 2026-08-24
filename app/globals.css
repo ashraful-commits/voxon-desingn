@@ -2135,3 +2135,11 @@ button:hover .icon-spin-hover {
 [data-theme="green"] .hero-title-glow {
   background: linear-gradient(180deg, transparent, #1A6B3C 30%, #34A853 70%, transparent) !important;
 }
+
+/* Hero desktop padding */
+@media (min-width: 1024px) {
+  #home {
+    padding-top: calc(var(--nav-height, 72px) + 32px + 7rem) !important;
+    padding-bottom: 7rem !important;
+  }
+}
