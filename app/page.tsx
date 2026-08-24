@@ -281,6 +281,7 @@ function Navbar() {
     <>
       {/* Discount Marquee Bar */}
       <div className="fixed top-0 left-0 right-0 z-[60] h-8 flex items-center overflow-hidden"
+        dir="ltr"
         style={{ background: isLight ? "linear-gradient(90deg, #155a30, #1A6B3C, #155a30)" : isGreen ? "linear-gradient(90deg, #1A6B3C, #0d4025, #1A6B3C)" : "linear-gradient(90deg, #111827, #1f2937, #111827)" }}>
         <div className="marquee-track">
           {Array.from({ length: 16 }).map((_, i) => (

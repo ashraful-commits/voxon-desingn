@@ -631,6 +631,7 @@ html[dir="rtl"] .section-label {
   display: flex;
   width: max-content;
   animation: marqueeScroll 90s linear infinite;
+  animation-delay: -45s;
 }
 .marquee-track:hover {
   animation-play-state: paused;
