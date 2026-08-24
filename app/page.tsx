@@ -1831,7 +1831,7 @@ function PortfolioSection() {
             </button>
           ))}
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {filteredPortfolio.map((p) => {
             const cardClass = "group bg-white rounded-lg overflow-hidden border transition-all duration-300 hover:shadow-xl cursor-pointer border-ink-6 portfolio-card glow-card card-circle relative block";
             const cardContent = (
