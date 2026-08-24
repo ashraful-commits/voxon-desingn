@@ -832,7 +832,7 @@ function HeroSection() {
       id="home"
       className="relative flex flex-col overflow-hidden"
       style={{
-        minHeight: "calc(100svh - 32px)",
+        minHeight: "calc(100svh - var(--nav-height, 72px) - 32px)",
         background: isLight
           ? "linear-gradient(160deg, #F8F6F0 0%, #EDE9E0 50%, #F8F6F0 100%)"
           : "linear-gradient(160deg, #07090F 0%, #0D1117 50%, #07090F 100%)",
@@ -889,7 +889,7 @@ function HeroSection() {
                 style={{ fontSize: isAr ? "5rem" : "3rem" }}>
                 {isAr ? (
                   <>
-                    <span className="hero-line block" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
+                    <span className="hero-line block mb-3" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
                     <span className="hero-line block text-gradient-gold italic">{t("hero.heading_accent")}</span>
                   </>
                 ) : (
