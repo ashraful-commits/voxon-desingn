@@ -830,9 +830,9 @@ function HeroSection() {
     <section
       ref={heroRef}
       id="home"
-      className="relative flex flex-col overflow-hidden"
+      className="relative flex flex-col overflow-x-hidden"
       style={{
-        minHeight: "calc(100svh - var(--nav-height, 72px) - 32px)",
+        minHeight: "100svh",
         background: isLight
           ? "linear-gradient(160deg, #F8F6F0 0%, #EDE9E0 50%, #F8F6F0 100%)"
           : "linear-gradient(160deg, #07090F 0%, #0D1117 50%, #07090F 100%)",
@@ -884,13 +884,13 @@ function HeroSection() {
           <div className="flex flex-col lg:grid lg:grid-cols-[1fr_minmax(320px,480px)] gap-10 xl:gap-16 mb-8 lg:mb-10">
 
             {/* LEFT — Heading + Subtitle + tagline */}
-            <div className="lg:col-start-1 lg:row-start-1 relative z-20">
-              <h1 className="font-outfit font-extrabold tracking-tight leading-[1.1] mb-8 lg:mb-10"
+            <div className="lg:col-start-1 lg:row-start-1 relative z-20 overflow-visible pr-4">
+              <h1 className="font-outfit font-extrabold tracking-tight leading-[1.1] mb-8 lg:mb-10 overflow-visible"
                 style={{ fontSize: isAr ? "5rem" : "3rem" }}>
                 {isAr ? (
                   <>
                     <span className="hero-line block mb-3" style={{ color: isLight ? "#0A0E1A" : "#fff" }}>{t("hero.heading_1")}</span>
-                    <span className="hero-line block text-gradient-gold italic">{t("hero.heading_accent")}</span>
+                    <span className="hero-line block text-gradient-gold italic" style={{ fontStyle: "italic" }}>{t("hero.heading_accent")}</span>
                   </>
                 ) : (
                   <>
