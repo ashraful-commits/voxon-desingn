@@ -884,7 +884,7 @@ function HeroSection() {
           <div className="flex flex-col lg:grid lg:grid-cols-[1fr_minmax(320px,480px)] gap-10 xl:gap-16 mb-8 lg:mb-10">
 
             {/* LEFT — Heading + Subtitle + tagline */}
-            <div className="lg:col-start-1 lg:row-start-1">
+            <div className="lg:col-start-1 lg:row-start-1 relative z-20">
               <h1 className="font-outfit font-extrabold tracking-tight leading-[1.1] mb-8 lg:mb-10"
                 style={{ fontSize: isAr ? "5rem" : "3rem" }}>
                 {isAr ? (
