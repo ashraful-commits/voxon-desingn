@@ -831,7 +831,8 @@ function HeroSection() {
         background: isLight
           ? "linear-gradient(160deg, #F8F6F0 0%, #EDE9E0 50%, #F8F6F0 100%)"
           : "linear-gradient(160deg, #07090F 0%, #0D1117 50%, #07090F 100%)",
-        paddingTop: "calc(var(--nav-height, 72px) + 32px)",
+        paddingTop: "calc(var(--nav-height, 72px) + 32px + 3rem)",
+        paddingBottom: "3rem",
       }}
       dir={isAr ? "rtl" : "ltr"}
     >
@@ -842,27 +843,6 @@ function HeroSection() {
       <div className="hero-geo-star absolute" style={{ top: "10%", left: "5%", animation: "geoFloat 25s ease-in-out infinite" }} />
       <div className="hero-geo-star absolute" style={{ bottom: "15%", right: "8%", width: "80px", height: "80px", animation: "geoFloat 30s ease-in-out infinite reverse", opacity: 0.05 }} />
       <div className="hero-geo-star absolute" style={{ top: "45%", right: "35%", width: "60px", height: "60px", animation: "geoFloat 20s ease-in-out infinite 5s", opacity: 0.04 }} />
-
-      {/* ── KSA Sun / Moon ── */}
-      {isLight ? (
-        <div className="absolute pointer-events-none z-[2]" style={{ top: "3%", right: "8%", width: "100px", height: "100px", opacity: 0.15 }}>
-          <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" style={{ animation: "spin 30s linear infinite" }}>
-            <circle cx="50" cy="50" r="18" fill="#C9A84C" />
-            {[0,1,2,3,4,5,6,7,8,9,10,11].map((i) => (
-              <rect key={i} x="47" y="4" width="6" height="20" rx="3" fill="#C9A84C"
-                transform={`rotate(${i * 30} 50 50)`} />
-            ))}
-            <circle cx="50" cy="50" r="8" fill="#E8C96A" />
-          </svg>
-        </div>
-      ) : (
-        <div className="absolute pointer-events-none z-[2]" style={{ top: "3%", right: "8%", width: "80px", height: "80px", opacity: 0.2 }}>
-          <svg viewBox="0 0 80 80" fill="none" className="w-full h-full">
-            <path d="M55 10C42 10 30 22 30 40s12 30 25 30C48 68 42 55 42 40s6-28 13-30z" fill="#C9A84C" />
-            <path d="M56 28l2 6 6-2-4 5 5 4-6 1 1 6-4-4-4 4 1-6-6-1 5-4-4-5 6 2 2-6z" fill="#C9A84C" />
-          </svg>
-        </div>
-      )}
 
       {/* ── Per-section desert background ── */}
       <SectionDesert speed={0.8} heavy variant={1} />
@@ -1246,7 +1226,7 @@ function SectionIndicator() {
             <span
               style={{
                 fontSize: isActive ? "13px" : "10px",
-                fontFamily: "var(--font-outfit)",
+                fontFamily: "var(--font-almarai)",
                 fontWeight: 600,
                 color: isActive ? accent : inactiveColor,
                 transition: "all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -1482,14 +1462,14 @@ function ServicesSection() {
           <div className="text-[10px] tracking-[0.18em] uppercase text-[#C9A84C] font-semibold mb-4">
             <span className={isAr ? "font-arabic flourish-gold" : ""}>{t("services.tag")}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-playfair">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">
             {isAr ? (
-              <><span className="font-arabic-display">{t("services.title_1")}</span><br/><span className="text-gradient-gold font-arabic-display">{t("services.title_2")}</span></>
+              <><span className="font-arabic-display block mb-2">{t("services.title_1")}</span><span className="text-gradient-gold font-arabic-display block">{t("services.title_2")}</span></>
             ) : (
-              <>{t("services.title_1")}<br/><span className="text-gradient-gold">{t("services.title_2")}</span></>
+              <>{t("services.title_1")}<span className="block h-2" /><span className="text-gradient-gold">{t("services.title_2")}</span></>
             )}
           </h2>
-          <p className={`text-base max-w-xl mx-auto text-white-soft ${isAr ? "font-arabic" : ""}`}>{t("services.subtitle")}</p>
+          <p className={`text-lg max-w-xl mx-auto text-white-soft mb-4 ${isAr ? "font-arabic" : ""}`}>{t("services.subtitle")}</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((s, i) => {
@@ -1705,9 +1685,9 @@ function PortfolioSection() {
             </div>
             <h2 className="text-4xl font-bold text-[#0A0E1A] leading-tight font-playfair">
               {isAr ? (
-                <><span className="font-arabic-display">{t("portfolio.title_1")}</span><br/><span style={{color:"#1A6B3C"}} className="font-arabic-display">{t("portfolio.title_2")}</span></>
-              ) : (
-                <>{t("portfolio.title_1")}<br/><span style={{color:"#1A6B3C"}}>{t("portfolio.title_2")}</span></>
+                <><span className="font-arabic-display block mb-2">{t("portfolio.title_1")}</span><span style={{color:"#1A6B3C"}} className="font-arabic-display block">{t("portfolio.title_2")}</span></>
+            ) : (
+                <>{t("portfolio.title_1")}<span className="block h-2" /><span style={{color:"#1A6B3C"}}>{t("portfolio.title_2")}</span></>
               )}
             </h2>
           </div>
@@ -1978,9 +1958,9 @@ function TestimonialsSection() {
             </div>
             <h2 className="testimonials-reveal text-4xl font-bold text-[#0A0E1A] leading-tight mb-6 font-playfair">
               {isAr ? (
-                <><span className="font-arabic-display">{t("testimonials.title_1")}</span><br/><span className="text-emerald font-arabic-display">{t("testimonials.title_2")}</span></>
-              ) : (
-                <>{t("testimonials.title_1")}<br/><span className="text-emerald">{t("testimonials.title_2")}</span></>
+                <><span className="font-arabic-display block mb-2">{t("testimonials.title_1")}</span><span className="text-emerald font-arabic-display block">{t("testimonials.title_2")}</span></>
+            ) : (
+                <>{t("testimonials.title_1")}<span className="block h-2" /><span className="text-emerald">{t("testimonials.title_2")}</span></>
               )}
             </h2>
             <p className={`testimonials-reveal text-sm leading-relaxed mb-8 text-ink-mid ${isAr ? "font-arabic" : ""}`}>{t("testimonials.subtitle")}</p>
@@ -2141,9 +2121,9 @@ function CtaBanner() {
         </div>
         <h2 className="cta-reveal text-4xl md:text-5xl font-bold text-white mb-5 leading-tight font-playfair cta-heading-glow">
           {isAr ? (
-            <><span className="font-arabic-display">{t("cta.title_1")}</span><br/><span className="text-gradient-gold italic font-arabic-display">{t("cta.title_2")}</span></>
-          ) : (
-            <>{t("cta.title_1")}<br/><span className="text-gradient-gold italic">{t("cta.title_2")}</span></>
+            <><span className="font-arabic-display block mb-2">{t("cta.title_1")}</span><span className="text-gradient-gold italic font-arabic-display block">{t("cta.title_2")}</span></>
+            ) : (
+            <>{t("cta.title_1")}<span className="block h-2" /><span className="text-gradient-gold italic">{t("cta.title_2")}</span></>
           )}
         </h2>
         <p className={`cta-reveal text-base mb-10 max-w-lg mx-auto leading-relaxed text-white-soft ${isAr ? "font-arabic" : ""}`}>{t("cta.subtitle")}</p>
@@ -2228,9 +2208,9 @@ function ContactSection() {
             </div>
             <h2 className="text-4xl font-bold text-[#0A0E1A] mb-6 leading-tight font-playfair">
               {isAr ? (
-                <><span className="font-arabic-display">{t("contact.title_1")}</span><br/><span className="text-emerald font-arabic-display">{t("contact.title_2")}</span></>
-              ) : (
-                <>{t("contact.title_1")}<br/><span className="text-emerald">{t("contact.title_2")}</span></>
+                <><span className="font-arabic-display block mb-2">{t("contact.title_1")}</span><span className="text-emerald font-arabic-display block">{t("contact.title_2")}</span></>
+            ) : (
+                <>{t("contact.title_1")}<span className="block h-2" /><span className="text-emerald">{t("contact.title_2")}</span></>
               )}
             </h2>
             <p className={`text-base leading-relaxed mb-10 text-ink-soft ${isAr ? "font-arabic" : ""}`}>{t("contact.subtitle")}</p>

@@ -1,23 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Almarai, Plus_Jakarta_Sans } from "next/font/google";
+import { Almarai } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 const almarai = Almarai({
-  subsets: ["arabic"],
+  subsets: ["arabic", "latin"],
   weight: ["300", "400", "700", "800"],
   variable: "--font-almarai",
-});
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plus-jakarta",
-});
-import { Outfit } from "next/font/google";
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-outfit",
 });
 
 export const viewport: Viewport = {
@@ -190,7 +178,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="ar" className={`${playfair.variable} ${almarai.variable} ${plusJakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
+    <html lang="ar" className={`${almarai.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

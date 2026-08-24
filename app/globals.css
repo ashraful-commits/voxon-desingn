@@ -18,9 +18,11 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: auto; }
+html { scroll-behavior: auto; font-size: 18px; }
+@media (max-width: 640px) { html { font-size: 16px; } }
+@media (min-width: 1280px) { html { font-size: 20px; } }
 body {
-  font-family: var(--font-plus-jakarta), Helvetica, Arial, sans-serif;
+  font-family: var(--font-almarai), 'Almarai', sans-serif;
   background: #0A0E1A;
   color: #fff;
   overflow-x: hidden;
@@ -33,8 +35,8 @@ body {
 .hero-line { transform: translateY(20px); }
 .hero-fade { transform: translateY(15px); }
 
-.font-playfair { font-family: var(--font-playfair, 'Playfair Display', serif); }
-.font-outfit { font-family: var(--font-outfit, 'Outfit', sans-serif); }
+.font-playfair { font-family: var(--font-almarai, 'Almarai', sans-serif); }
+.font-outfit { font-family: var(--font-almarai, 'Almarai', sans-serif); }
 .text-gold { color: #C9A84C; }
 .text-gold-soft { color: rgba(201, 168, 76, 0.7); }
 .text-emerald { color: #1A6B3C; }
@@ -130,7 +132,7 @@ body {
 
 /* Arabic body text */
 html[dir="rtl"] body {
-  font-family: var(--font-plus-jakarta), Helvetica, Arial, sans-serif;
+  font-family: var(--font-almarai), 'Almarai', sans-serif;
 }
 
 /* Arabic headings */
@@ -169,7 +171,7 @@ html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 {
 
 /* Gold shimmer calligraphy accent */
 .calligraphy-accent {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-almarai), sans-serif;
   font-style: italic;
   background: linear-gradient(135deg, #C9A84C, #E8C96A, #C9A84C);
   -webkit-background-clip: text;
@@ -238,7 +240,7 @@ html[dir="rtl"] .section-label {
   color: #07090F;
   font-weight: 700;
   letter-spacing: 0.04em;
-  font-family: var(--font-outfit, sans-serif);
+  font-family: var(--font-almarai, sans-serif);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -304,7 +306,7 @@ html[dir="rtl"] .section-label {
   color: rgba(255,255,255,0.7);
   transition: color 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255,255,255,0.15);
-  font-family: var(--font-outfit, sans-serif);
+  font-family: var(--font-almarai, sans-serif);
   letter-spacing: 0.03em;
 }
 .btn-outline::before {
