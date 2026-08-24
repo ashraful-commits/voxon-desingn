@@ -836,8 +836,8 @@ function HeroSection() {
         background: isLight
           ? "linear-gradient(160deg, #F8F6F0 0%, #EDE9E0 50%, #F8F6F0 100%)"
           : "linear-gradient(160deg, #07090F 0%, #0D1117 50%, #07090F 100%)",
-        paddingTop: "calc(var(--nav-height, 72px) + 32px + 5rem)",
-        paddingBottom: "5rem",
+        paddingTop: "calc(var(--nav-height, 72px) + 32px + 7rem)",
+        paddingBottom: "7rem",
       }}
       dir={isAr ? "rtl" : "ltr"}
     >
