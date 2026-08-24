@@ -184,6 +184,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
+        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('voxon-theme');if(t==='light'||t==='green')document.documentElement.setAttribute('data-theme',t)}catch(e){}" }} />
       </head>
       <body className="antialiased" suppressHydrationWarning>{children}</body>
     </html>

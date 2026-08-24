@@ -281,9 +281,9 @@ function Navbar() {
     <>
       {/* Discount Marquee Bar */}
       <div className="fixed top-0 left-0 right-0 z-[60] h-8 flex items-center overflow-hidden"
-        style={{ background: "linear-gradient(90deg, #1A6B3C, #0d4025, #1A6B3C)" }}>
+        style={{ background: isLight ? "linear-gradient(90deg, #155a30, #1A6B3C, #155a30)" : isGreen ? "linear-gradient(90deg, #1A6B3C, #0d4025, #1A6B3C)" : "linear-gradient(90deg, #111827, #1f2937, #111827)" }}>
         <div className="marquee-track">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 16 }).map((_, i) => (
             <span key={i} className="marquee-item text-[11px] font-bold tracking-wider uppercase text-white/90">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E8C96A] flex-shrink-0" />
               {t("discount.marquee")}
@@ -334,7 +334,7 @@ function Navbar() {
                   onMouseLeave={() => { portfolioTimerRef.current = setTimeout(() => setPortfolioOpen(false), 150); }}
                 >
                   <a href={l.href}
-                    className="relative px-4 py-2 text-[11px] font-semibold tracking-[0.12em] uppercase transition-colors font-outfit inline-flex items-center gap-1"
+                    className="relative px-4 py-2 text-[15px] font-semibold tracking-[0.12em] uppercase transition-colors font-outfit inline-flex items-center gap-1"
                     style={{ color: isActive ? activeColor : navTextBase }}
                     onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextHover; }}
                     onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextBase; }}
@@ -836,8 +836,8 @@ function HeroSection() {
         background: isLight
           ? "linear-gradient(160deg, #F8F6F0 0%, #EDE9E0 50%, #F8F6F0 100%)"
           : "linear-gradient(160deg, #07090F 0%, #0D1117 50%, #07090F 100%)",
-        paddingTop: "calc(var(--nav-height, 72px) + 32px + 3rem)",
-        paddingBottom: "3rem",
+        paddingTop: "calc(var(--nav-height, 72px) + 32px + 5rem)",
+        paddingBottom: "5rem",
       }}
       dir={isAr ? "rtl" : "ltr"}
     >
@@ -1607,7 +1607,7 @@ function PricingSection() {
   ];
 
   return (
-    <section ref={sectionRef} id="pricing" className="py-24 relative overflow-hidden bg-[#0A0E1A]" dir={isAr ? "rtl" : "ltr"}>
+    <section ref={sectionRef} id="pricing" className="py-24 relative overflow-hidden bg-[#0A0E1A] dark:bg-[#0A0E1A]" dir="ltr">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-16">
           <div className="text-[10px] tracking-[0.18em] uppercase text-[#C9A84C] font-semibold mb-4">
@@ -1626,29 +1626,28 @@ function PricingSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {packages.map((pkg) => (
             <div key={pkg.key}
-              className={`pricing-card relative rounded-xl p-7 flex flex-col ${pkg.popular ? "bg-gradient-to-b from-[rgba(26,107,60,0.15)] to-[rgba(26,107,60,0.05)] border-2 border-[#1A6B3C]/40 shadow-[0_0_40px_rgba(26,107,60,0.12)]" : "bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15]"}`}>
+              className={`pricing-card relative rounded-xl p-7 pb-8 flex flex-col ${pkg.popular ? "bg-gradient-to-b from-[rgba(26,107,60,0.15)] to-[rgba(26,107,60,0.05)] border-2 border-[#1A6B3C]/40 shadow-[0_0_40px_rgba(26,107,60,0.12)]" : "bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15]"}`}>
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1A6B3C] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1 rounded-full">
                   {t("pricing.popular")}
                 </div>
               )}
-              <div className="absolute top-4 right-4 bg-[#C9A84C]/20 border border-[#C9A84C]/40 text-[#C9A84C] text-[10px] font-bold px-2 py-0.5 rounded-full">
-                50% OFF
+              <div className="flex items-center justify-between mb-2">
+                <h3 className={`text-lg font-bold ${isAr ? "font-arabic" : ""} ${pkg.popular ? "text-[#4ADE80]" : "text-white"}`}>{t(`pricing.${pkg.key}.name`)}</h3>
+                <span className={`text-[11px] font-extrabold px-2.5 py-1 rounded-md ${pkg.popular ? "text-white bg-[#1A6B3C]" : "text-[#0A0E1A] bg-[#C9A84C]"}`}>50% OFF</span>
               </div>
-              <h3 className={`text-lg font-bold mb-2 ${isAr ? "font-arabic" : ""} ${pkg.popular ? "text-[#1A6B3C]" : "text-white"}`}>{t(`pricing.${pkg.key}.name`)}</h3>
-              <p className={`text-sm text-white-soft mb-5 min-h-[40px] ${isAr ? "font-arabic" : ""}`}>{t(`pricing.${pkg.key}.desc`)}</p>
-              <div className="mb-6 flex items-baseline gap-2">
-                <span className={`text-4xl font-extrabold ${pkg.popular ? "text-[#1A6B3C]" : "text-gradient-gold"}`}>{t(`pricing.${pkg.key}.price`)}</span>
-                <span className={`text-sm ${isAr ? "font-arabic" : ""} text-white-soft`}>{t(`pricing.${pkg.key}.period`)}</span>
+              <p className="text-sm mb-5 min-h-[40px]" style={{color:"rgba(255,255,255,0.6)"}}>{t(`pricing.${pkg.key}.desc`)}</p>
+              <div className="mb-1 flex items-baseline gap-2">
+                <span className={`text-4xl font-extrabold ${pkg.popular ? "text-[#4ADE80]" : "text-gradient-gold"}`}>{t(`pricing.${pkg.key}.price`)}</span>
+                <span className="text-sm" style={{color:"rgba(255,255,255,0.5)"}}>{t(`pricing.${pkg.key}.period`)}</span>
               </div>
-              <div className="flex items-center gap-2 mb-6 -mt-4">
-                <span className="text-sm text-white/30 line-through">{t(`pricing.${pkg.key}.original_price`)}</span>
-                <span className={`text-[10px] font-bold text-[#C9A84C] bg-[#C9A84C]/10 px-1.5 py-0.5 rounded`}>50% OFF</span>
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-sm line-through" style={{color:"rgba(255,255,255,0.35)"}}>{t(`pricing.${pkg.key}.original_price`)}</span>
               </div>
               <ul className="space-y-3 mb-8 flex-1">
                 {pkg.features.map((f, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-white/70">
-                    <Check size={16} className={`flex-shrink-0 mt-0.5 ${pkg.popular ? "text-[#1A6B3C]" : "text-[#C9A84C]"}`} />
+                  <li key={i} className="flex items-start gap-2.5 text-sm" style={{color:"rgba(255,255,255,0.8)"}}>
+                    <Check size={16} className={`flex-shrink-0 mt-0.5 ${pkg.popular ? "text-[#4ADE80]" : "text-[#C9A84C]"}`} />
                     <span className={isAr ? "font-arabic" : ""}>{f}</span>
                   </li>
                 ))}
@@ -2551,14 +2550,7 @@ export default function Home() {
   const [locale, setLocale] = useState<Locale>("ar");
   const [progress, setProgress] = useState(0);
   const [preloaderDone, setPreloaderDone] = useState(false);
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "green";
-    try {
-      const stored = localStorage.getItem("voxon-theme");
-      if (stored === "light" || stored === "green") return stored;
-    } catch {}
-    return "green";
-  });
+  const [theme, setTheme] = useState<Theme>("green");
 
   const updateHtml = useCallback((l: Locale) => {
     document.documentElement.lang = l;
@@ -2571,8 +2563,16 @@ export default function Home() {
   };
 
   useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
+    try {
+      const stored = localStorage.getItem("voxon-theme");
+      if (stored === "light" || stored === "green") {
+        setTheme(stored);
+        applyTheme(stored);
+        return;
+      }
+    } catch {}
+    applyTheme("green");
+  }, []);
 
   const toggleTheme = useCallback(() => {
     setTheme(prev => {
@@ -2706,14 +2706,6 @@ export default function Home() {
       window.removeEventListener("mousemove", onMouseMove);
       observer.disconnect();
     };
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      const stored = localStorage.getItem("voxon-theme");
-      applyTheme(stored === "light" ? "light" : "dark");
-    } catch {}
   }, []);
 
   const t = useCallback((key: string) => {

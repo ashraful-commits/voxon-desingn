@@ -543,6 +543,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "pricing.starter.f7": "نموذج اتصال",
     "pricing.starter.f8": "دعم مجاني لمدة شهر",
     "pricing.business.name": "المتقدمة",
+    "pricing.business.original_price": "٤٬٩٩٩",
     "pricing.business.price": "٢٬٤٩٩",
     "pricing.business.period": "ريال",
     "pricing.business.desc": "موقع شركة متكامل بصفحات متعددة وSEO متقدم.",
