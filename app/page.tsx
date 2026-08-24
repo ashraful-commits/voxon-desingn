@@ -836,7 +836,7 @@ function HeroSection() {
         background: isLight
           ? "linear-gradient(160deg, #F8F6F0 0%, #EDE9E0 50%, #F8F6F0 100%)"
           : "linear-gradient(160deg, #07090F 0%, #0D1117 50%, #07090F 100%)",
-        paddingTop: "calc(var(--nav-height, 72px) + 32px + 3rem)",
+        paddingTop: "calc(var(--nav-height, 72px) + 32px)",
         paddingBottom: "3rem",
       }}
       dir={isAr ? "rtl" : "ltr"}
@@ -1608,39 +1608,66 @@ function PricingSection() {
           <p className={`text-lg max-w-2xl mx-auto text-white-soft ${isAr ? "font-arabic" : ""}`}>{t("pricing.subtitle")}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-stretch">
           {packages.map((pkg) => (
             <div key={pkg.key}
-              className={`pricing-card relative rounded-xl p-7 pb-8 flex flex-col ${pkg.popular ? "bg-gradient-to-b from-[rgba(26,107,60,0.15)] to-[rgba(26,107,60,0.05)] border-2 border-[#1A6B3C]/40 shadow-[0_0_40px_rgba(26,107,60,0.12)]" : "bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15]"}`}>
-              {pkg.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1A6B3C] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1 rounded-full">
-                  {t("pricing.popular")}
-                </div>
+              className={`pricing-card group relative rounded-2xl p-[1px] flex flex-col transition-all duration-500 ${pkg.popular ? "" : "hover:-translate-y-1"}`}>
+              {/* Gradient border wrapper */}
+              {pkg.popular ? (
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#4ADE80] via-[#1A6B3C] to-[#0D3A1F] opacity-80" />
+              ) : (
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/[0.12] via-white/[0.05] to-white/[0.01] group-hover:from-[#C9A84C]/30 group-hover:via-[#C9A84C]/10 group-hover:to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
               )}
-              <div className="flex items-center justify-between mb-2">
-                <h3 className={`text-lg font-bold ${isAr ? "font-arabic" : ""} ${pkg.popular ? "text-[#4ADE80]" : "text-white"}`}>{t(`pricing.${pkg.key}.name`)}</h3>
-                <span className={`text-[11px] font-extrabold px-2.5 py-1 rounded-md ${pkg.popular ? "text-white bg-[#1A6B3C]" : "text-[#0A0E1A] bg-[#C9A84C]"}`}>50% OFF</span>
+
+              {/* Inner card */}
+              <div className={`relative rounded-2xl p-6 pb-7 flex flex-col h-full ${pkg.popular ? "bg-gradient-to-b from-[#0a1a12] via-[#0A0E1A] to-[#0A0E1A]" : "bg-[#0c1019] group-hover:bg-[#0e1320]"} transition-colors duration-500`}>
+                {/* Top accent line */}
+                <div className={`absolute top-0 left-6 right-6 h-[1px] ${pkg.popular ? "bg-gradient-to-r from-transparent via-[#4ADE80]/60 to-transparent" : "bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-[#C9A84C]/30"} transition-colors duration-500`} />
+
+                {pkg.popular && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-gradient-to-r from-[#1A6B3C] to-[#0D5A2C] text-white text-[10px] font-bold uppercase tracking-[0.15em] px-5 py-1.5 rounded-full shadow-[0_4px_20px_rgba(26,107,60,0.4)] border border-[#4ADE80]/20">
+                    <span className="w-1.5 h-1.5 bg-[#4ADE80] rounded-full animate-pulse" />
+                    {t("pricing.popular")}
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className={`text-base font-bold ${isAr ? "font-arabic" : "font-outfit"} ${pkg.popular ? "text-[#4ADE80]" : "text-white/90"}`}>{t(`pricing.${pkg.key}.name`)}</h3>
+                  <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-md ${pkg.popular ? "bg-[#4ADE80]/15 text-[#4ADE80] border border-[#4ADE80]/20" : "bg-[#C9A84C]/10 text-[#C9A84C] border border-[#C9A84C]/15"}`}>50% OFF</span>
+                </div>
+                <p className="text-[13px] mb-5 min-h-[36px] leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>{t(`pricing.${pkg.key}.desc`)}</p>
+
+                <div className="mb-1 flex items-baseline gap-2">
+                  <span className={`text-[2.5rem] leading-none font-extrabold font-outfit ${pkg.popular ? "text-[#4ADE80]" : "text-gradient-gold"}`}>{t(`pricing.${pkg.key}.price`)}</span>
+                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>{t(`pricing.${pkg.key}.period`)}</span>
+                </div>
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="text-xs line-through" style={{ color: "rgba(255,255,255,0.25)" }}>{t(`pricing.${pkg.key}.original_price`)}</span>
+                  <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${pkg.popular ? "bg-[#4ADE80]/10 text-[#4ADE80]" : "bg-[#C9A84C]/10 text-[#C9A84C]"}`}>SAVE 50%</span>
+                </div>
+
+                {/* Divider */}
+                <div className={`h-px mb-5 ${pkg.popular ? "bg-gradient-to-r from-transparent via-[#4ADE80]/20 to-transparent" : "bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"}`} />
+
+                <ul className="space-y-2.5 mb-7 flex-1">
+                  {pkg.features.map((f, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+                      <span className={`flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center ${pkg.popular ? "bg-[#4ADE80]/10" : "bg-[#C9A84C]/10"}`}>
+                        <Check size={12} className={pkg.popular ? "text-[#4ADE80]" : "text-[#C9A84C]"} />
+                      </span>
+                      <span className={isAr ? "font-arabic" : ""}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a href="#contact"
+                  className={`w-full py-3.5 rounded-xl text-sm font-bold text-center transition-all duration-300 ${pkg.popular
+                    ? "bg-gradient-to-r from-[#1A6B3C] to-[#0D5A2C] text-white hover:from-[#155a30] hover:to-[#0a4a22] shadow-[0_4px_24px_rgba(26,107,60,0.35)] hover:shadow-[0_6px_32px_rgba(26,107,60,0.5)]"
+                    : "bg-white/[0.05] text-white/80 hover:bg-white/[0.1] border border-white/[0.08] hover:border-[#C9A84C]/20 hover:text-white"
+                  }`}>
+                  {t("pricing.get_started")}
+                </a>
               </div>
-              <p className="text-sm mb-5 min-h-[40px]" style={{color:"rgba(255,255,255,0.6)"}}>{t(`pricing.${pkg.key}.desc`)}</p>
-              <div className="mb-1 flex items-baseline gap-2">
-                <span className={`text-4xl font-extrabold ${pkg.popular ? "text-[#4ADE80]" : "text-gradient-gold"}`}>{t(`pricing.${pkg.key}.price`)}</span>
-                <span className="text-sm" style={{color:"rgba(255,255,255,0.5)"}}>{t(`pricing.${pkg.key}.period`)}</span>
-              </div>
-              <div className="flex items-center gap-2 mb-5">
-                <span className="text-sm line-through" style={{color:"rgba(255,255,255,0.35)"}}>{t(`pricing.${pkg.key}.original_price`)}</span>
-              </div>
-              <ul className="space-y-3 mb-8 flex-1">
-                {pkg.features.map((f, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm" style={{color:"rgba(255,255,255,0.8)"}}>
-                    <Check size={16} className={`flex-shrink-0 mt-0.5 ${pkg.popular ? "text-[#4ADE80]" : "text-[#C9A84C]"}`} />
-                    <span className={isAr ? "font-arabic" : ""}>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href="#contact"
-                className={`w-full py-3 rounded-lg text-sm font-bold text-center transition-all duration-300 ${pkg.popular ? "bg-[#1A6B3C] text-white hover:bg-[#155a30] shadow-[0_4px_20px_rgba(26,107,60,0.3)]" : "bg-white/[0.08] text-white hover:bg-white/[0.12] border border-white/[0.1]"}`}>
-                {t("pricing.get_started")}
-              </a>
             </div>
           ))}
         </div>
