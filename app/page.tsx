@@ -1013,7 +1013,7 @@ function HeroSection() {
           </div>
 
           {/* CTAs + Stats — full width row below the two-column grid */}
-          <div className="hero-fade flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:mt-8">
+          <div className="hero-fade flex flex-col md:flex-row md:items-center md:justify-between gap-4 lg:mt-8">
             <div className="hero-fade flex flex-wrap gap-3" style={{ justifyContent: isAr ? "flex-end" : "flex-start" }}>
               <a href="#contact" onClick={handleRipple}
                 className="btn-gold px-6 py-3 rounded-sm text-xs font-bold inline-flex items-center gap-2 overflow-hidden relative">
@@ -1027,11 +1027,11 @@ function HeroSection() {
               </a>
             </div>
 
-            <div className="hero-fade flex gap-x-6 gap-y-2 lg:gap-x-10" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+            <div className="hero-fade flex gap-x-4 gap-y-2 md:gap-x-6 lg:gap-x-10" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
               {STATS_DATA.map((s) => (
                 <div key={s.label} className="flex items-baseline gap-1 lg:flex-col lg:items-start lg:gap-0">
-                  <span className="text-sm lg:text-2xl font-extrabold font-outfit text-gradient-gold">{s.value}</span>
-                  <span className={`text-[9px] lg:text-xs ${isLight ? "text-[rgba(10,14,26,0.35)]" : "text-white/25"} font-medium ${isAr ? "font-arabic" : ""}`}>
+                  <span className="text-sm md:text-base lg:text-2xl font-extrabold font-outfit text-gradient-gold">{s.value}</span>
+                  <span className={`text-[9px] md:text-[10px] lg:text-xs ${isLight ? "text-[rgba(10,14,26,0.35)]" : "text-white/25"} font-medium ${isAr ? "font-arabic" : ""}`}>
                     {t(s.label)}
                   </span>
                 </div>
