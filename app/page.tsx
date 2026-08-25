@@ -341,7 +341,7 @@ function Navbar() {
                 >
                   <a href={l.href}
                     className="relative px-3 lg:px-4 py-2 font-semibold tracking-[0.12em] uppercase transition-colors font-outfit inline-flex items-center gap-1"
-                    style={{ color: isActive ? activeColor : navTextBase, fontSize: isAr ? "15px" : "13px" }}
+                    style={{ color: isActive ? activeColor : navTextBase, fontSize: "13px" }}
                     onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextHover; }}
                     onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextBase; }}
                   >
@@ -379,7 +379,7 @@ function Navbar() {
             return (
               <a key={l.href} href={l.href}
                 className="relative px-3 lg:px-4 py-2 font-semibold tracking-[0.12em] uppercase transition-colors font-outfit"
-                style={{ color: isActive ? activeColor : navTextBase, fontSize: isAr ? "15px" : "13px" }}
+                style={{ color: isActive ? activeColor : navTextBase, fontSize: "13px" }}
                 onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextHover; }}
                 onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextBase; }}
               >
@@ -942,7 +942,7 @@ function HeroSection() {
                     {slides.map((item, idx) => (
                       <SwiperSlide key={item.name} className="rounded-xl overflow-hidden">
                         <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
-                          <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" loading={idx === 0 ? "eager" : "lazy"} />
+                            <Image src={item.image} alt={`${item.name} — ${item.cat} by Voxon Digital`} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" loading={idx === 0 ? "eager" : "lazy"} />
                             <div className="card-overlay" />
                             <div className="card-content">
                               <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
@@ -970,7 +970,7 @@ function HeroSection() {
                       {slides.map((item, idx) => (
                         <div key={item.name} className="min-w-full h-full shrink-0 overflow-hidden">
                           <div className="w-full h-full relative overflow-hidden" style={{ background: isLight ? "#EDE9E0" : "#111827" }}>
-                            <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" loading={idx === 0 ? "eager" : "lazy"} />
+                            <Image src={item.image} alt={`${item.name} — ${item.cat} by Voxon Digital`} fill sizes="(max-width: 768px) 100vw, 480px" className="object-contain" loading={idx === 0 ? "eager" : "lazy"} />
                               <div className="card-overlay" />
                               <div className="card-content">
                                 <div className={`text-[10px] font-semibold tracking-wider uppercase mb-1.5 ${isAr ? "font-arabic" : ""}`}
@@ -1721,7 +1721,7 @@ function LightboxModal({ src, alt, onClose }: { src: string; alt: string; onClos
   );
 }
 
-function PortfolioSection({ lightbox, setLightbox }: { lightbox: string | null; setLightbox: (v: string | null) => void }) {
+function PortfolioSection({ setLightbox }: { setLightbox: (v: {src: string; alt: string} | null) => void }) {
   const { locale, t } = useLocale();
   const isAr = locale === "ar";
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -1901,7 +1901,7 @@ function PortfolioSection({ lightbox, setLightbox }: { lightbox: string | null; 
                         <button
                           type="button"
                           aria-label={t("portfolio.view_image")}
-                          onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLightbox(p.image); }}
+                          onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLightbox({src: p.image, alt: `${p.name} — ${p.cat} by Voxon Digital`}); }}
                           className="border text-white text-xs px-4 py-2 rounded-full font-semibold flex items-center gap-2 border-[rgba(255,255,255,0.6)] hover:bg-white hover:text-[#0A0E1A] transition-colors cursor-pointer"
                         >
                           {t("portfolio.view_image")}
@@ -2552,8 +2552,15 @@ export default function Home() {
   const [locale, setLocale] = useState<Locale>("ar");
   const [progress, setProgress] = useState(0);
   const [preloaderDone, setPreloaderDone] = useState(false);
-  const [theme, setTheme] = useState<Theme>("green");
-  const [lightbox, setLightbox] = useState<string | null>(null);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "green";
+    try {
+      const stored = localStorage.getItem("voxon-theme");
+      if (stored === "light" || stored === "green") return stored;
+    } catch {}
+    return "green";
+  });
+  const [lightbox, setLightbox] = useState<{src: string; alt: string} | null>(null);
 
   const updateHtml = useCallback((l: Locale) => {
     document.documentElement.lang = l;
@@ -2569,7 +2576,6 @@ export default function Home() {
     try {
       const stored = localStorage.getItem("voxon-theme");
       if (stored === "light" || stored === "green") {
-        setTheme(stored);
         applyTheme(stored);
         return;
       }
@@ -2768,8 +2774,8 @@ export default function Home() {
             "@id": "https://voxondigital.net/#organization",
             name: "Voxon Digital Agency",
             url: "https://voxondigital.net",
-            logo: "https://voxondigital.net/og-image.svg",
-            image: "https://voxondigital.net/og-image.svg",
+            logo: "https://voxondigital.net/og-image.png",
+            image: "https://voxondigital.net/og-image.png",
             description: "Premium web design, development, SEO, and branding services for Saudi businesses.",
             foundingDate: "2020",
             address: {
@@ -3022,7 +3028,7 @@ export default function Home() {
             <WhyChooseSection/>
             <ServicesSection/>
             <PricingSection/>
-            <PortfolioSection lightbox={lightbox} setLightbox={setLightbox}/>
+            <PortfolioSection setLightbox={setLightbox}/>
             <ProcessSection/>
             <TestimonialsSection/>
             <CtaBanner/>
@@ -3037,7 +3043,7 @@ export default function Home() {
         <svg width="24" height="24" viewBox="0 0 24 24" fill="white" className="icon-bounce"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.587-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
       </a>
       {lightbox && (
-        <LightboxModal src={lightbox} alt="" onClose={() => setLightbox(null)} />
+        <LightboxModal src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
       )}
       </LoadingCtx.Provider>
     </ThemeCtx.Provider>

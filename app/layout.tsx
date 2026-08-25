@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Almarai } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const almarai = Almarai({
@@ -20,8 +21,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://voxondigital.net"),
-  title: {
-    default: "Voxon Digital | تصميم مواقع وتطوير رقمي | Web Design & Development Saudi Arabia",
+    title: {
+    default: "Voxon Digital — Web Design Saudi Arabia",
     template: "%s | Voxon Digital",
   },
   description: "فوكسون ديجيتال وكالة رقمية سعودية — تصميم مواقع احترافي، متاجر إلكترونية، SEO، هوية تجارية. Voxon Digital: premium web design, e-commerce, SEO & digital growth for Saudi businesses.",
@@ -88,6 +89,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "7DFypz2--zSS4u3vmuJIDF_Xc00JCfM3Bpmov46RmI8",
+    other: {
+      "msvalidate.01": "BING_VERIFICATION_CODE_HERE",
+    },
   },
   openGraph: {
     type: "website",
@@ -99,7 +103,7 @@ export const metadata: Metadata = {
     description: "فوكسون ديجيتال — تصميم مواقع احترافي، متاجر إلكترونية، SEO، هوية تجارية. Premium web design, e-commerce, SEO & digital growth for Saudi businesses.",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Voxon digital agency branding — web design and development in Saudi Arabia",
@@ -114,7 +118,7 @@ export const metadata: Metadata = {
     description: "تصميم مواقع احترافي وتطوير رقمي — Web design, e-commerce, SEO & digital growth for Saudi businesses.",
     creator: "@voxon_sa",
     site: "@voxon_sa",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   appleWebApp: {
     capable: true,
@@ -145,8 +149,8 @@ export default function RootLayout({
     name: "Voxon Digital",
     alternateName: "فوكسون ديجيتال",
     url: "https://voxondigital.net",
-    logo: "https://voxondigital.net/og-image.svg",
-    image: "https://voxondigital.net/og-image.svg",
+    logo: "https://voxondigital.net/og-image.png",
+    image: "https://voxondigital.net/og-image.png",
     telephone: "+966542288828",
     email: "info@voxondigital.net",
     description: "Voxon Digital — وكالة رقمية سعودية متخصصة في تصميم المواقع والتطوير والتسويق الإلكتروني. Premium web design, e-commerce, SEO & digital growth agency in Saudi Arabia.",
@@ -184,9 +188,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
-        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('voxon-theme');if(t==='light'||t==='green')document.documentElement.setAttribute('data-theme',t)}catch(e){}" }} />
       </head>
-      <body className="antialiased" suppressHydrationWarning>{children}</body>
+      <body className="antialiased" suppressHydrationWarning>
+        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('voxon-theme');if(t==='light'||t==='green')document.documentElement.setAttribute('data-theme',t)}catch(e){}" }} />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-N7ETY6CT1T" strategy="afterInteractive" />
+        <Script id="ga4-config" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N7ETY6CT1T');`}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }

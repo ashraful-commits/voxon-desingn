@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { SEO_PAGES, getSeoPage, type SeoLandingPage } from "@/lib/seo-pages";
+import SlugShell from "./SlugShell";
 
 export const dynamicParams = false;
 
@@ -35,14 +35,14 @@ export async function generateMetadata({
       siteName: "Voxon Digital",
       title: page.title,
       description: page.description,
-      images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: page.title }],
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: page.title }],
       countryName: "Saudi Arabia",
     },
     twitter: {
       card: "summary_large_image",
       title: page.title,
       description: page.description,
-      images: ["/og-image.svg"],
+      images: ["/og-image.png"],
     },
     robots: {
       index: true,
@@ -101,8 +101,8 @@ function jsonLd(page: SeoLandingPage) {
         "@id": `${url}#localbusiness`,
         name: `Voxon Digital — ${page.h1}`,
         url,
-        image: "https://voxondigital.net/og-image.svg",
-        logo: "https://voxondigital.net/og-image.svg",
+        image: "https://voxondigital.net/og-image.png",
+        logo: "https://voxondigital.net/og-image.png",
         telephone: "+966542288828",
         email: "info@voxondigital.net",
         priceRange: "$$",
@@ -166,46 +166,7 @@ export default async function SeoLandingPage({
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
 
-      <div className="bg-midnight min-h-screen text-white">
-        {/* Top bar */}
-        <header className="sticky top-0 z-50 border-b border-white/5 bg-midnight/90 backdrop-blur-lg">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
-            <Link href="/" className="flex items-end gap-1">
-              <Image
-                src="/voxon-white-transparent%20logo.png"
-                alt="Voxon Digital"
-                width={3904}
-                height={1406}
-                priority
-                sizes="120px"
-                className="h-8 w-auto object-contain"
-              />
-              <span className="text-[8px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5" style={{ color: "#fff", background: "#C9A84C" }}>
-                digital
-              </span>
-            </Link>
-            <nav className="hidden md:flex items-center gap-6 text-xs font-semibold tracking-wider uppercase text-white/50">
-              <Link href="/#services" className="hover:text-white/90 transition-colors">Services</Link>
-              <Link href="/#portfolio" className="hover:text-white/90 transition-colors">Portfolio</Link>
-              <Link href="/#contact" className="hover:text-white/90 transition-colors">Contact</Link>
-            </nav>
-            <Link href="/#contact" className="text-[11px] font-semibold tracking-wider uppercase px-4 py-2 rounded-full border border-[#C9A84C]/50 text-[#C9A84C] hover:bg-[#C9A84C] hover:text-white transition-colors">
-              Free Consultation
-            </Link>
-          </div>
-        </header>
-
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 lg:px-10 pt-8 text-xs text-white/40">
-          <ol className="flex flex-wrap items-center gap-2">
-            <li><Link href="/" className="hover:text-[#C9A84C] transition-colors">Home</Link></li>
-            <li aria-hidden="true">/</li>
-            <li><Link href="/#services" className="hover:text-[#C9A84C] transition-colors">{page.kind === "city" ? "Cities" : "Services"}</Link></li>
-            <li aria-hidden="true">/</li>
-            <li aria-current="page" className="text-white/70">{page.h1}</li>
-          </ol>
-        </nav>
-
+      <SlugShell kind={page.kind} h1={page.h1}>
         {/* Hero */}
         <section className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C9A84C]/30 text-[10px] font-bold tracking-[0.2em] uppercase text-[#C9A84C] mb-6">
@@ -291,52 +252,7 @@ export default async function SeoLandingPage({
             </div>
           </section>
         )}
-
-        {/* CTA */}
-        <section className="border-t border-white/5 py-16 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, transparent, rgba(201,168,76,0.06))" }} />
-          <div className="max-w-3xl mx-auto px-6 text-center relative">
-            <h2 className="font-playfair text-3xl md:text-4xl font-semibold mb-4">
-              Ready to Build Something Great?
-            </h2>
-            <p className="text-white/70 mb-8">
-              Get a free consultation with our Riyadh-based team. We&apos;ll audit your needs and show you how a professional website grows your business.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/#contact" className="px-6 py-3 rounded-full bg-[#C9A84C] text-white text-sm font-semibold hover:bg-[#b8953d] transition-colors">
-                Start Your Project
-              </Link>
-              <a href="https://wa.me/966542288828" className="px-6 py-3 rounded-full border border-white/20 text-white/80 text-sm font-semibold hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors">
-                WhatsApp Us
-              </a>
-          </div>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="border-t border-white/5 py-10">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/40">
-            <div className="flex items-end gap-1">
-              <Image
-                src="/voxon-white-transparent%20logo.png"
-                alt="Voxon Digital"
-                width={3904}
-                height={1406}
-                sizes="100px"
-                className="h-6 w-auto object-contain"
-              />
-              <span className="text-[7px] font-bold tracking-[0.22em] uppercase px-1.5 py-0.5 rounded-sm mb-0.5" style={{ color: "#fff", background: "#C9A84C" }}>
-                digital
-              </span>
-            </div>
-            <p>© 2026 Voxon Digital Agency · Riyadh · Serving All of Saudi Arabia</p>
-            <div className="flex gap-5">
-              <Link href="/#contact" className="hover:text-white/70 transition-colors">Contact</Link>
-              <Link href="/sitemap.xml" className="hover:text-white/70 transition-colors">Sitemap</Link>
-            </div>
-          </div>
-        </footer>
-      </div>
+      </SlugShell>
     </>
   );
 }
