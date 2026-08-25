@@ -327,7 +327,7 @@ function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center justify-center gap-1" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+        <div className="hidden lg:flex items-center justify-center" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
           {NAV_LINKS_EN.map((l) => {
             const id = l.href.slice(1);
             const isActive = activeSection === id;
@@ -340,8 +340,8 @@ function Navbar() {
                   onMouseLeave={() => { portfolioTimerRef.current = setTimeout(() => setPortfolioOpen(false), 150); }}
                 >
                   <a href={l.href}
-                    className="relative px-3 lg:px-4 py-2 font-semibold tracking-[0.12em] uppercase transition-colors font-outfit inline-flex items-center gap-1"
-                    style={{ color: isActive ? activeColor : navTextBase, fontSize: "13px" }}
+                    className="relative px-2 py-2 font-semibold tracking-normal uppercase transition-colors font-outfit inline-flex items-center gap-1 whitespace-nowrap"
+                    style={{ color: isActive ? activeColor : navTextBase, fontSize: "12px" }}
                     onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextHover; }}
                     onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextBase; }}
                   >
@@ -378,8 +378,8 @@ function Navbar() {
 
             return (
               <a key={l.href} href={l.href}
-                className="relative px-3 lg:px-4 py-2 font-semibold tracking-[0.12em] uppercase transition-colors font-outfit"
-                style={{ color: isActive ? activeColor : navTextBase, fontSize: "13px" }}
+                className="relative px-2 py-2 font-semibold tracking-normal uppercase transition-colors font-outfit whitespace-nowrap"
+                style={{ color: isActive ? activeColor : navTextBase, fontSize: "12px" }}
                 onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextHover; }}
                 onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = navTextBase; }}
               >
@@ -391,9 +391,9 @@ function Navbar() {
         </div>
 
         {/* Right actions */}
-        <div className="hidden lg:flex items-center gap-3 justify-end self-center" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+        <div className="hidden lg:flex items-center gap-2 justify-end self-center whitespace-nowrap" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
           <button onClick={toggleTheme}
-            className="text-[11px] font-semibold tracking-[0.1em] uppercase cursor-pointer transition-all font-outfit px-3 py-1.5 rounded-full border"
+            className="text-[10px] font-semibold tracking-normal uppercase cursor-pointer transition-all font-outfit px-2.5 py-1.5 rounded-full border whitespace-nowrap"
             style={{ color: pillTextBase, borderColor: pillBorder }}
             onMouseEnter={e => { const el = e.currentTarget; el.style.color = accentColor; el.style.borderColor = pillBorderHover; }}
             onMouseLeave={e => { const el = e.currentTarget; el.style.color = pillTextBase; el.style.borderColor = pillBorder; }}
@@ -402,7 +402,7 @@ function Navbar() {
             {theme === "dark" ? <Sun size={14} className="icon-spin-hover"/> : theme === "green" ? <Leaf size={14} className="icon-spin-hover"/> : <Moon size={14} className="icon-spin-hover"/>}
           </button>
           <button onClick={toggleLang}
-            className="text-[11px] font-semibold tracking-[0.1em] uppercase cursor-pointer transition-all font-outfit px-3 py-1.5 rounded-full border"
+            className="text-[10px] font-semibold tracking-normal uppercase cursor-pointer transition-all font-outfit px-2.5 py-1.5 rounded-full border whitespace-nowrap"
             style={{ color: pillTextBase, borderColor: pillBorder }}
             onMouseEnter={e => { const el = e.currentTarget; el.style.color = pillTextHover; el.style.borderColor = pillBorderHover; }}
             onMouseLeave={e => { const el = e.currentTarget; el.style.color = pillTextBase; el.style.borderColor = pillBorder; }}
@@ -410,7 +410,7 @@ function Navbar() {
           >
             <span className="font-arabic">{t("nav.lang_toggle")}</span>
           </button>
-          <a href="#contact" className="btn-gold px-5 py-2.5 rounded-full text-xs font-bold inline-flex items-center gap-2 font-outfit tracking-wide">
+          <a href="#contact" className="btn-gold px-5 py-2.5 rounded-full text-[11px] font-bold inline-flex items-center gap-1.5 font-outfit tracking-normal whitespace-nowrap">
             {t("nav.free_consultation")}
             <span className="btn-icon"><ArrowRight size={13} style={{ transform: isAr ? "rotate(180deg)" : "none" }}/></span>
           </a>
