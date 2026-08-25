@@ -1013,7 +1013,7 @@ function HeroSection() {
           </div>
 
           {/* CTAs + Stats — full width row below the two-column grid */}
-          <div className="hero-fade flex flex-col md:flex-row md:items-center md:justify-between gap-4 lg:mt-8">
+          <div className="hero-fade flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 mt-12 md:mt-8">
             <div className="hero-fade flex flex-wrap gap-3" style={{ justifyContent: isAr ? "flex-end" : "flex-start" }}>
               <a href="#contact" onClick={handleRipple}
                 className="btn-gold px-6 py-3 rounded-sm text-xs font-bold inline-flex items-center gap-2 overflow-hidden relative">
