@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     default: "Voxon Digital — Web Design Saudi Arabia",
     template: "%s | Voxon Digital",
   },
-  description: "فوكسون ديجيتال وكالة رقمية سعودية — تصميم مواقع احترافي، متاجر إلكترونية، SEO، هوية تجارية. Voxon Digital: premium web design, e-commerce, SEO & digital growth for Saudi businesses.",
+  description: "Premium web design, e-commerce & SEO agency in Saudi Arabia. Bilingual Arabic-English websites that rank and convert. Get your free consultation.",
   keywords: [
     "تصميم مواقع السعودية",
     "web design Saudi Arabia",

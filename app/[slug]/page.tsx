@@ -68,6 +68,54 @@ function relatedLinks(page: SeoLandingPage) {
     .filter((p): p is SeoLandingPage => Boolean(p));
 }
 
+const KEYWORD_LINKS: [RegExp, string][] = [
+  [/web design company in Saudi Arabia/gi, "/web-design-company-saudi-arabia"],
+  [/web development company in Saudi Arabia/gi, "/web-development-company-saudi"],
+  [/SEO company in Saudi Arabia/gi, "/seo-company-saudi"],
+  [/digital marketing agency in Saudi Arabia/gi, "/digital-marketing-agency-saudi"],
+  [/WordPress development company in Saudi Arabia/gi, "/wordpress-development-company-saudi"],
+  [/e-commerce website development in Saudi Arabia/gi, "/ecommerce-website-development-saudi"],
+  [/web design company in Riyadh/gi, "/web-design-riyadh"],
+  [/web design company in Jeddah/gi, "/web-design-jeddah"],
+  [/web design company in Dammam/gi, "/web-design-dammam"],
+  [/web design company in Al Khobar/gi, "/web-design-khobar"],
+  [/web design company in Mecca/gi, "/web-design-mecca"],
+  [/web design company in Medina/gi, "/web-design-medina"],
+  [/web design company in Abha/gi, "/web-design-abha"],
+  [/web design company in Jubail/gi, "/web-design-jubail"],
+  [/Voxon Digital/gi, "/"],
+];
+
+function linkify(text: string, excludeSlug: string): React.ReactNode {
+  const parts: React.ReactNode[] = [];
+  let remaining = text;
+  let key = 0;
+  while (remaining.length > 0) {
+    let earliest: { idx: number; len: number; href: string } | null = null;
+    for (const [re, href] of KEYWORD_LINKS) {
+      re.lastIndex = 0;
+      const m = re.exec(remaining);
+      if (m && m.index !== undefined && (!earliest || m.index < earliest.idx)) {
+        if (href !== `/${excludeSlug}`) {
+          earliest = { idx: m.index, len: m[0].length, href };
+        }
+      }
+    }
+    if (!earliest) {
+      parts.push(remaining);
+      break;
+    }
+    if (earliest.idx > 0) parts.push(remaining.slice(0, earliest.idx));
+    parts.push(
+      <Link key={key++} href={earliest.href} className="text-[#C9A84C] hover:underline">
+        {remaining.slice(earliest.idx, earliest.idx + earliest.len)}
+      </Link>
+    );
+    remaining = remaining.slice(earliest.idx + earliest.len);
+  }
+  return parts;
+}
+
 function jsonLd(page: SeoLandingPage) {
   const url = `${BASE}/${page.slug}`;
   const isCity = page.kind === "city";
@@ -190,7 +238,7 @@ export default async function SeoLandingPage({
         <section className="max-w-7xl mx-auto px-6 lg:px-10 pb-16">
           <div className="grid md:grid-cols-2 gap-8">
             {page.intro.map((p, i) => (
-              <p key={i} className="text-white/70 leading-relaxed">{p}</p>
+              <p key={i} className="text-white/70 leading-relaxed">{linkify(p, page.slug)}</p>
             ))}
           </div>
         </section>

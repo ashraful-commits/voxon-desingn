@@ -84,15 +84,15 @@ const NAV_LINKS_EN = [
 ];
 
 const SERVICES = [
-  { icon: <Globe size={22}/>, title: "Websites", titleAr: "المواقع الإلكترونية", ar: "service.websites", desc: "Professional corporate websites, landing pages, and bilingual web experiences built to convert Saudi audiences.", descAr: "مواقع شركات احترافية وصفحات هبوط وتجارب ويب ثنائية اللغة مصممة لتحويل الجمهور السعودي.", tags: ["Corporate","Landing Pages","Bilingual"], tagsAr: ["شركات", "صفحات هبوط", "ثنائي اللغة"] },
-  { icon: <ShoppingCart size={22}/>, title: "Salla Stores", titleAr: "متاجر سلة", ar: "service.salla", desc: "Full-featured Salla e-commerce stores with Arabic payment gateways, inventory, and order management.", descAr: "متاجر سلة إلكترونية متكاملة مع بوابات دفع عربية وإدارة المخزون والطلبات.", tags: ["Salla","Payments","Inventory"], tagsAr: ["سلة", "مدفوعات", "مخزون"] },
+  { icon: <Globe size={22}/>, title: "Websites", titleAr: "المواقع الإلكترونية", ar: "service.websites", slug: "web-design-company-saudi-arabia", desc: "Professional corporate websites, landing pages, and bilingual web experiences built to convert Saudi audiences.", descAr: "مواقع شركات احترافية وصفحات هبوط وتجارب ويب ثنائية اللغة مصممة لتحويل الجمهور السعودي.", tags: ["Corporate","Landing Pages","Bilingual"], tagsAr: ["شركات", "صفحات هبوط", "ثنائي اللغة"] },
+  { icon: <ShoppingCart size={22}/>, title: "Salla Stores", titleAr: "متاجر سلة", ar: "service.salla", slug: "ecommerce-website-development-saudi", desc: "Full-featured Salla e-commerce stores with Arabic payment gateways, inventory, and order management.", descAr: "متاجر سلة إلكترونية متكاملة مع بوابات دفع عربية وإدارة المخزون والطلبات.", tags: ["Salla","Payments","Inventory"], tagsAr: ["سلة", "مدفوعات", "مخزون"] },
   { icon: <Globe size={22}/>, title: "Domain", titleAr: "النطاقات", ar: "service.domain", desc: "Domain registration and management for .sa, .com, and all major extensions to secure your brand online.", descAr: "تسجيل وإدارة النطاقات `.sa` و`.com` وجميع الامتدادات الرئيسية لتأمين علامتك التجارية.", tags: [".sa",".com","Registration"], tagsAr: [".sa", ".com", "تسجيل"] },
   { icon: <Mail size={22}/>, title: "Business Email", titleAr: "البريد الإلكتروني", ar: "service.email", desc: "Professional business email setup with your domain name for a credible, branded communication.", descAr: "إعداد بريد إلكتروني احترافي باسم نطاقك لتواصل موثوق وهوية موحدة.", tags: ["Custom Domain","Secure","Professional"], tagsAr: ["نطاق مخصص", "آمن", "احترافي"] },
-  { icon: <Server size={22}/>, title: "Hosting", titleAr: "الاستضافة", ar: "service.hosting", desc: "Fast, reliable hosting with SSL, daily backups, and 99.9% uptime to keep your site running 24/7.", descAr: "استضافة سريعة وموثوقة مع شهادة SSL ونسخ احتياطي يومي ووقت تشغيل 99.9%.", tags: ["SSL","Backups","99.9% Uptime"], tagsAr: ["SSL", "نسخ احتياطي", "وقت تشغيل"] },
+  { icon: <Server size={22}/>, title: "Hosting", titleAr: "الاستضافة", ar: "service.hosting", slug: "web-development-company-saudi", desc: "Fast, reliable hosting with SSL, daily backups, and 99.9% uptime to keep your site running 24/7.", descAr: "استضافة سريعة وموثوقة مع شهادة SSL ونسخ احتياطي يومي ووقت تشغيل 99.9%.", tags: ["SSL","Backups","99.9% Uptime"], tagsAr: ["SSL", "نسخ احتياطي", "وقت تشغيل"] },
   { icon: <Palette size={22}/>, title: "Logo & Branding", titleAr: "الشعار والهوية البصرية", ar: "service.branding", desc: "Logo, visual identity, and brand guidelines designed with Saudi cultural aesthetics in mind.", descAr: "شعار، هوية بصرية، ودليل علامة تجارية مصممة وفقاً للجماليات الثقافية السعودية.", tags: ["Logo","Visual Identity","Guidelines"], tagsAr: ["شعار", "هوية بصرية", "إرشادات"] },
   { icon: <ImageIcon size={22}/>, title: "Banner Design", titleAr: "تصميم البانرات", ar: "service.banner", desc: "Eye-catching banners for social media, ads, and websites designed to drive engagement and clicks.", descAr: "بانرات جذابة لوسائل التواصل والإعلانات والمواقع مصممة لزيادة التفاعل والنقرات.", tags: ["Social Media","Ads","Websites"], tagsAr: ["وسائل التواصل", "إعلانات", "مواقع"] },
   { icon: <FileText size={22}/>, title: "Company Profile", titleAr: "بروفايل الشركة", ar: "service.profile", desc: "Professional company profiles and pitch decks that present your business with credibility and impact.", descAr: "بروفايلات وعروض تقديمية احترافية تعرض نشاطك التجاري بثقة واحترافية.", tags: ["PDF","Presentation","Corporate"], tagsAr: ["PDF", "عرض تقديمي", "شركات"] },
-  { icon: <TrendingUp size={22}/>, title: "SEO", titleAr: "تحسين محركات البحث", ar: "service.seo", desc: "Arabic and English SEO to rank higher on Google and attract more organic traffic to your business.", descAr: "تحسين محركات البحث بالعربية والإنجليزية للحصول على مرتبة أعلى على Google وزيادة الزيارات.", tags: ["Arabic SEO","Google","Ranking"], tagsAr: ["SEO عربي", "Google", "ترتيب"] },
+  { icon: <TrendingUp size={22}/>, title: "SEO", titleAr: "تحسين محركات البحث", ar: "service.seo", slug: "seo-company-saudi", desc: "Arabic and English SEO to rank higher on Google and attract more organic traffic to your business.", descAr: "تحسين محركات البحث بالعربية والإنجليزية للحصول على مرتبة أعلى على Google وزيادة الزيارات.", tags: ["Arabic SEO","Google","Ranking"], tagsAr: ["SEO عربي", "Google", "ترتيب"] },
 ];
 
 const STATS_DATA = [
@@ -1470,7 +1470,7 @@ function ServicesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((s, i) => {
             if (i === 0) {
-              return (
+              const cardContent = (
                 <div 
                   key={s.title} 
                   onMouseMove={handleCardMouseMove}
@@ -1496,9 +1496,10 @@ function ServicesSection() {
                   </div>
                 </div>
               );
+              return s.slug ? <a key={s.title} href={`/${s.slug}`}>{cardContent}</a> : cardContent;
             }
             if (i === 5) {
-              return (
+              const cardContent = (
                 <div 
                   key={s.title} 
                   onMouseMove={handleCardMouseMove}
@@ -1524,8 +1525,9 @@ function ServicesSection() {
                   </div>
                 </div>
               );
+              return s.slug ? <a key={s.title} href={`/${s.slug}`}>{cardContent}</a> : cardContent;
             }
-            return (
+            const cardContent = (
               <div 
                 key={s.title} 
                 onMouseMove={handleCardMouseMove}
@@ -1547,6 +1549,7 @@ function ServicesSection() {
                 </div>
               </div>
             );
+            return s.slug ? <a key={s.title} href={`/${s.slug}`}>{cardContent}</a> : cardContent;
           })}
         </div>
       </div>

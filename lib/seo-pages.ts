@@ -19,7 +19,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-company-saudi-arabia",
     kind: "service",
-    title: "Web Design Company in Saudi Arabia",
+    title: "Best Web Design Company in Saudi Arabia",
     description:
       "Premium web design company in Saudi Arabia. Voxon Digital builds fast, bilingual Arabic-English, SEO-ready websites for businesses across Riyadh, Jeddah, Dammam and the Kingdom. Get your free consultation.",
     keywords: [
@@ -77,7 +77,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-development-company-saudi",
     kind: "service",
-    title: "Web Development Company in Saudi Arabia",
+    title: "Top Web Development Company in Saudi Arabia",
     description:
       "Leading web development company in Saudi Arabia. Voxon Digital builds custom React, Next.js and headless websites, web applications and portals with Arabic-English RTL support across KSA.",
     keywords: [
@@ -133,7 +133,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "seo-company-saudi",
     kind: "service",
-    title: "SEO Company in Saudi Arabia",
+    title: "Leading SEO Company in Saudi Arabia",
     description:
       "Top SEO company in Saudi Arabia. Voxon Digital delivers Arabic-English SEO, local SEO, technical audits, and authority link building that ranks your business on Google.com.sa.",
     keywords: [
@@ -191,7 +191,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "digital-marketing-agency-saudi",
     kind: "service",
-    title: "Digital Marketing Agency in Saudi Arabia",
+    title: "Top Digital Marketing Agency in Saudi Arabia",
     description:
       "Results-driven digital marketing agency in Saudi Arabia. PPC, Google Ads, social media (Snapchat, TikTok, Instagram), and lead generation campaigns for Saudi brands across KSA.",
     keywords: [
@@ -259,7 +259,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "wordpress-development-company-saudi",
     kind: "service",
-    title: "WordPress Development Company in Saudi Arabia",
+    title: "Expert WordPress Development in Saudi Arabia",
     description:
       "Professional WordPress development in Saudi Arabia. Custom themes, WooCommerce stores, and bilingual Arabic-English WordPress sites for Riyadh, Jeddah, Dammam and beyond.",
     keywords: [
@@ -314,7 +314,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "ecommerce-website-development-saudi",
     kind: "service",
-    title: "E-commerce Website Development in Saudi Arabia",
+    title: "E-commerce Website Development Saudi Arabia",
     description:
       "E-commerce website development in Saudi Arabia. Build high-converting online stores with Mada, STC Pay, Tamara, and Tabby — bilingual, fast, and built to sell in KSA.",
     keywords: [
@@ -380,7 +380,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-riyadh",
     kind: "city",
-    title: "Web Design Company in Riyadh",
+    title: "Top Web Design Company in Riyadh",
     description:
       "Web design company in Riyadh. Voxon Digital builds fast, bilingual Arabic-English websites for Riyadh businesses — corporate sites, e-commerce, and landing pages that rank and convert.",
     keywords: [
@@ -435,7 +435,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-jeddah",
     kind: "city",
-    title: "Web Design Company in Jeddah",
+    title: "Best Web Design Company in Jeddah",
     description:
       "Web design company in Jeddah. Voxon Digital builds modern, bilingual websites for Jeddah businesses — retail, hospitality, and service brands that stand out online.",
     keywords: [
@@ -487,7 +487,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-dammam",
     kind: "city",
-    title: "Web Design Company in Dammam",
+    title: "Leading Web Design Company in Dammam",
     description:
       "Web design company in Dammam. Voxon Digital builds bilingual, SEO-ready websites for Dammam and Eastern Province businesses — corporate, industrial, and B2B focused.",
     keywords: [
@@ -539,7 +539,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-khobar",
     kind: "city",
-    title: "Web Design Company in Al Khobar",
+    title: "Top Web Design Company in Al Khobar",
     description:
       "Web design company in Al Khobar. Voxon Digital builds bilingual websites for Al Khobar and Dhahran businesses, reaching both Saudi and expatriate audiences.",
     keywords: [
@@ -591,7 +591,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-mecca",
     kind: "city",
-    title: "Web Design Company in Mecca",
+    title: "Best Web Design Company in Mecca",
     description:
       "Web design company in Mecca. Voxon Digital builds bilingual websites for Mecca businesses — hospitality, retail, and services serving pilgrims and residents.",
     keywords: [
@@ -641,7 +641,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-medina",
     kind: "city",
-    title: "Web Design Company in Medina",
+    title: "Top Web Design Company in Medina",
     description:
       "Web design company in Medina. Voxon Digital builds professional bilingual websites for Medina businesses serving residents and visitors.",
     keywords: [
@@ -689,7 +689,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-abha",
     kind: "city",
-    title: "Web Design Company in Abha",
+    title: "Best Web Design Company in Abha",
     description:
       "Web design company in Abha. Voxon Digital builds bilingual websites for Asir businesses — tourism, retail, and services that stand out online.",
     keywords: [
@@ -738,7 +738,7 @@ export const SEO_PAGES: SeoLandingPage[] = [
   {
     slug: "web-design-jubail",
     kind: "city",
-    title: "Web Design Company in Jubail",
+    title: "Top Web Design Company in Jubail",
     description:
       "Web design company in Jubail. Voxon Digital builds bilingual websites for Jubail and Eastern Province industrial and B2B businesses.",
     keywords: [
